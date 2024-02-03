@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_adaptive_scaffold/flutter_adaptive_scaffold.dart';
+import 'package:nguyenhoangvannha/src/l10n/app_localizations.dart';
 
 void main() {
   runApp(const MyApp());
@@ -19,6 +20,8 @@ class MyApp extends StatelessWidget {
         primarySwatch: Colors.deepPurple,
         colorScheme: ColorScheme.fromSeed(seedColor: Colors.deepPurple),
       ),
+      localizationsDelegates: AppLocalizations.localizationsDelegates,
+      supportedLocales: AppLocalizations.supportedLocales,
       home: const MyHomePage(),
     );
   }
@@ -430,11 +433,11 @@ class _LargeComposeIcon extends StatelessWidget {
       child: Column(children: <Widget>[
         Container(
           padding: const EdgeInsets.fromLTRB(6, 0, 0, 0),
-          child: const Row(
+          child:  Row(
             mainAxisAlignment: MainAxisAlignment.spaceBetween,
             children: <Widget>[
               Text(
-                'REPLY',
+                AppLocalizations.of(context).nguyenhoangvannha,
                 style: TextStyle(color: Colors.deepPurple, fontSize: 15),
               ),
               Icon(Icons.menu_open, size: 22)
