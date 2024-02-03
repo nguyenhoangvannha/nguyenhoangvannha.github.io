@@ -1,2 +1,2 @@
 build-web:
-	flutter build web
+	flutter build web -o ./docs
