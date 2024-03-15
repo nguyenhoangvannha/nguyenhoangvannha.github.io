@@ -96,11 +96,83 @@ abstract class AppLocalizations {
     Locale('vi')
   ];
 
-  /// No description provided for @nguyenhoangvannha.
+  /// The author name
   ///
   /// In en, this message translates to:
   /// **'Nha Nguyen Hoang Van'**
-  String get nguyenhoangvannha;
+  String get authorName;
+
+  /// No description provided for @home.
+  ///
+  /// In en, this message translates to:
+  /// **'Home'**
+  String get home;
+
+  /// No description provided for @projects.
+  ///
+  /// In en, this message translates to:
+  /// **'Projects'**
+  String get projects;
+
+  /// No description provided for @articles.
+  ///
+  /// In en, this message translates to:
+  /// **'Articles'**
+  String get articles;
+
+  /// No description provided for @resumeCV.
+  ///
+  /// In en, this message translates to:
+  /// **'Resume/CV'**
+  String get resumeCV;
+
+  /// No description provided for @chat.
+  ///
+  /// In en, this message translates to:
+  /// **'Chat'**
+  String get chat;
+
+  /// No description provided for @readingList.
+  ///
+  /// In en, this message translates to:
+  /// **'Reading List'**
+  String get readingList;
+
+  /// No description provided for @settings.
+  ///
+  /// In en, this message translates to:
+  /// **'Settings'**
+  String get settings;
+
+  /// No description provided for @theme.
+  ///
+  /// In en, this message translates to:
+  /// **'Theme'**
+  String get theme;
+
+  /// No description provided for @lightDark.
+  ///
+  /// In en, this message translates to:
+  /// **'Light/Dark'**
+  String get lightDark;
+
+  /// No description provided for @syncWithOS.
+  ///
+  /// In en, this message translates to:
+  /// **'Sync with OS'**
+  String get syncWithOS;
+
+  /// No description provided for @language.
+  ///
+  /// In en, this message translates to:
+  /// **'Language'**
+  String get language;
+
+  /// No description provided for @englishVietnamese.
+  ///
+  /// In en, this message translates to:
+  /// **'English/Vietnamese'**
+  String get englishVietnamese;
 }
 
 class _AppLocalizationsDelegate

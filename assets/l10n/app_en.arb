@@ -1,0 +1,18 @@
+{
+  "authorName": "Nha Nguyen Hoang Van",
+  "@authorName": {
+    "description": "The author name"
+  },
+  "home": "Home",
+  "projects": "Projects",
+  "articles": "Articles",
+  "resumeCV": "Resume/CV",
+  "chat": "Chat",
+  "readingList": "Reading List",
+  "settings": "Settings",
+  "theme": "Theme",
+  "lightDark": "Light/Dark",
+  "syncWithOS": "Sync with OS",
+  "language": "Language",
+  "englishVietnamese": "English/Vietnamese"
+}

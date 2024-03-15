@@ -1,8 +1,8 @@
-arb-dir: ./l10n
+arb-dir: ./assets/l10n
 template-arb-file: app_en.arb
 output-dir: ./lib/src/l10n/
 output-localization-file: app_localizations.dart
-untranslated-messages-file: ./l10n/untranslated-messages-file.json
+untranslated-messages-file: ./assets/l10n/untranslated-messages-file.json
 output-class: AppLocalizations
 preferred-supported-locales: [en, vi]
 use-deferred-loading: false
