@@ -1,7 +1,6 @@
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter/material.dart';
 import 'package:nha_theme/nha_theme.dart';
-import 'package:nha_theme/src/extensions/theme_type_ext.dart';
 
 class ThemeListTile extends StatelessWidget {
   const ThemeListTile({super.key});

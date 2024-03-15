@@ -5,6 +5,8 @@ install-dep:
 
 	flutter pub add bloc
 	flutter pub add flutter_bloc
+	flutter pub add hydrated_bloc
+	flutter pub add path_provider
 
 	flutter pub add built_value
 	flutter pub add built_collection

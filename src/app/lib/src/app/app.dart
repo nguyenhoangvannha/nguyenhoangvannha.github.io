@@ -1,7 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:nguyenhoangvannha/src/app/di/injection.dart';
-import 'package:nguyenhoangvannha/src/app/helpers/extensions/theme_type_ext.dart';
 import 'package:nguyenhoangvannha/src/app/routes/app_router.dart';
 import 'package:nguyenhoangvannha/src/l10n/app_localizations.dart';
 import 'package:nha_theme/nha_theme.dart';
