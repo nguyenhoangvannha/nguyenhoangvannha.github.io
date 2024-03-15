@@ -5,18 +5,18 @@ import 'package:nguyenhoangvannha/src/features/settings/presentation/view/settin
 
 /// Creates a basic adaptive page with navigational elements and a body using
 /// [AdaptiveLayout].
-class MyHomePage extends StatefulWidget {
-  /// Creates a const [MyHomePage].
-  const MyHomePage({super.key, this.transitionDuration = 1000});
+class HomePage extends StatefulWidget {
+  /// Creates a const [HomePage].
+  const HomePage({super.key, this.transitionDuration = 1000});
 
   /// Declare transition duration.
   final int transitionDuration;
 
   @override
-  State<MyHomePage> createState() => _MyHomePageState();
+  State<HomePage> createState() => _HomePageState();
 }
 
-class _MyHomePageState extends State<MyHomePage> {
+class _HomePageState extends State<HomePage> {
   int selectedNavigation = 0;
   int _transitionDuration = 1000;
 

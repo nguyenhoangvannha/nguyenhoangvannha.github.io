@@ -10,9 +10,6 @@
   "chat": "Chat",
   "readingList": "Reading List",
   "settings": "Settings",
-  "theme": "Theme",
-  "lightDark": "Light/Dark",
-  "syncWithOS": "Sync with OS",
   "language": "Language",
   "englishVietnamese": "English/Vietnamese"
 }

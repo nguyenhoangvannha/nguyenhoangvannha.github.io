@@ -1,20 +1,24 @@
+import 'package:bloc/bloc.dart';
 import 'package:flutter/material.dart';
-import 'package:nguyenhoangvannha/src/features/home/presentation/views/home_screen.dart';
-import 'package:nguyenhoangvannha/src/l10n/app_localizations.dart';
+import 'package:logger/logger.dart';
+import 'package:nguyenhoangvannha/src/app/app.dart';
+import 'package:nguyenhoangvannha/src/app/di/injection.dart';
+import 'package:nguyenhoangvannha/src/app/observers/app_bloc_observer.dart';
 
 void main() {
-  runApp(const MyApp());
+  initializeSingletons();
+  configureDependencies();
+  Bloc.observer = getIt<AppBlocObserver>();
+  runApp(App());
 }
 
-class MyApp extends StatelessWidget {
-  const MyApp({super.key});
-
-  @override
-  Widget build(BuildContext context) {
-    return const MaterialApp(
-      home: MyHomePage(),
-      localizationsDelegates: AppLocalizations.localizationsDelegates,
-      supportedLocales: AppLocalizations.supportedLocales,
+void initializeSingletons() {
+  getIt
+    .registerLazySingleton<Logger>(
+      () => Logger(
+        filter: ProductionFilter(),
+        printer: PrettyPrinter(),
+        output: ConsoleOutput(),
+      ),
     );
-  }
 }
