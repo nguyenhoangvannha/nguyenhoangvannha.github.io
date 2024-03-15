@@ -477,6 +477,13 @@ packages:
       url: "https://pub.dev"
     source: hosted
     version: "1.0.0"
+  nha_language:
+    dependency: "direct main"
+    description:
+      path: "../nha_language"
+      relative: true
+    source: path
+    version: "0.0.1"
   nha_theme:
     dependency: "direct main"
     description:

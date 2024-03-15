@@ -2,5 +2,12 @@
   "authorName": "Nguyễn Hoàng Văn Nhã",
   "@authorName": {
     "description": "The author name"
-  }
+  },
+  "home": "Trang chủ",
+  "projects": "Dự án",
+  "articles": "Bài viết",
+  "resumeCV": "Resume/CV",
+  "chat": "Trò chuyện",
+  "readingList": "Đọc sách",
+  "settings": "Cài đặt"
 }

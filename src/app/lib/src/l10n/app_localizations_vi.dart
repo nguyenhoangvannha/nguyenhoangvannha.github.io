@@ -8,29 +8,23 @@ class AppLocalizationsVi extends AppLocalizations {
   String get authorName => 'Nguyễn Hoàng Văn Nhã';
 
   @override
-  String get home => 'Home';
+  String get home => 'Trang chủ';
 
   @override
-  String get projects => 'Projects';
+  String get projects => 'Dự án';
 
   @override
-  String get articles => 'Articles';
+  String get articles => 'Bài viết';
 
   @override
   String get resumeCV => 'Resume/CV';
 
   @override
-  String get chat => 'Chat';
+  String get chat => 'Trò chuyện';
 
   @override
-  String get readingList => 'Reading List';
+  String get readingList => 'Đọc sách';
 
   @override
-  String get settings => 'Settings';
-
-  @override
-  String get language => 'Language';
-
-  @override
-  String get englishVietnamese => 'English/Vietnamese';
+  String get settings => 'Cài đặt';
 }

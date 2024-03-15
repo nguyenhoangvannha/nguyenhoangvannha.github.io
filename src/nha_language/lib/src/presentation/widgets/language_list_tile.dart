@@ -1,9 +1,9 @@
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter/material.dart';
-import 'package:nha_theme/nha_theme.dart';
+import 'package:nha_language/nha_language.dart';
 
-class ThemeListTile extends StatelessWidget {
-  const ThemeListTile({
+class LanguageListTile extends StatelessWidget {
+  const LanguageListTile({
     super.key,
     this.hasTitle = true,
   });
@@ -12,23 +12,23 @@ class ThemeListTile extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return BlocBuilder<ThemeBloc, ThemeType>(
+    return BlocBuilder<LanguageBloc, LanguageType>(
       builder: (context, state) {
         return ListTile(
-          leading: const Icon(Icons.format_paint),
+          leading: const Icon(Icons.language),
           title: hasTitle
               ? Text(
-                  ThemeLocalizations.of(context).theme,
+                  LanguageLocalizations.of(context).language,
                   style: Theme.of(context).textTheme.bodyMedium,
                 )
               : null,
-          trailing: DropdownButton<ThemeType>(
+          trailing: DropdownButton<LanguageType>(
             value: state,
             onChanged: (selected) {
-              BlocProvider.of<ThemeBloc>(context).add(selected!);
+              BlocProvider.of<LanguageBloc>(context).add(selected!);
             },
-            items: ThemeType.values
-                .map((e) => DropdownMenuItem<ThemeType>(
+            items: LanguageType.values
+                .map((e) => DropdownMenuItem<LanguageType>(
                     value: e, child: Text(e.localized(context))))
                 .toList(),
           ),

@@ -15,8 +15,8 @@ class App extends StatelessWidget {
   App({super.key});
 
   final List<BlocProvider<dynamic>> _providers = <BlocProvider<dynamic>>[
-    BlocProvider<ThemeBloc>(
-      create: (BuildContext context) => ThemeBloc(),
+    BlocProvider<LanguageBloc>(
+      create: (BuildContext context) => LanguageBloc(),
     ),
   ];
 
@@ -24,15 +24,13 @@ class App extends StatelessWidget {
   Widget build(BuildContext context) {
     return MultiBlocProvider(
       providers: _providers,
-      child: BlocBuilder<ThemeBloc, ThemeType>(
-        builder: (BuildContext context, ThemeType themeType) =>
+      child: BlocBuilder<LanguageBloc, LanguageType>(
+        builder: (BuildContext context, LanguageType languageType) =>
             MaterialApp(
-              themeMode: themeType.themeMode,
-              theme: ThemeData.light(),
-              darkTheme: ThemeData.dark(),
+              locale: Locale.fromSubtags(languageCode: languageType.languageCode),
               localizationsDelegates: const [
                 ...AppLocalizations.localizationsDelegates,
-                ThemeLocalizations.delegate,
+                LanguageLocalizations.delegate,
               ],
               supportedLocales: AppLocalizations.supportedLocales,
             ),

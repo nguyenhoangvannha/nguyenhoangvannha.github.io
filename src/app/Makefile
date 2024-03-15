@@ -21,6 +21,7 @@ install-dep:
 	flutter pub add injectable
 	dart pub add dev:injectable_generator
 built:
+	flutter clean
 	dart run build_runner watch --delete-conflicting-outputs
 l10n:
 	flutter gen-l10n
