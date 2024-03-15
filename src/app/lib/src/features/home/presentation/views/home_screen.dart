@@ -83,16 +83,10 @@ class _HomePageState extends State<HomePage> {
                   });
                 },
                 leading: const Icon(Icons.menu),
-                destinations: destinations
-                    .map((NavigationDestination destination) =>
-                        AdaptiveScaffold.toRailDestination(destination))
-                    .toList(),
-                trailing: Column(
-                  children: [
-                    Divider(),
-                    buildSettingIcon(),
-                  ],
-                ),
+                destinations: [
+                  ...destinations.map((NavigationDestination destination) =>
+                      AdaptiveScaffold.toRailDestination(destination)),
+                ],
                 backgroundColor: navRailTheme.backgroundColor,
                 selectedIconTheme: navRailTheme.selectedIconTheme,
                 unselectedIconTheme: navRailTheme.unselectedIconTheme,
@@ -140,19 +134,13 @@ class _HomePageState extends State<HomePage> {
         // breakpoints and onwards.
         body: SlotLayout(
           config: <Breakpoint, SlotLayoutConfig>{
-            Breakpoints.small: SlotLayout.from(
-              key: const Key('Body Small'),
-              builder: (_) => ListView.builder(
-                itemCount: children.length,
-                itemBuilder: (BuildContext context, int index) =>
-                    children[index],
-              ),
-            ),
-            Breakpoints.mediumAndUp: SlotLayout.from(
-              key: const Key('Body Medium'),
-              builder: (_) =>
-                  GridView.count(crossAxisCount: 2, children: children),
-            )
+            Breakpoints.smallAndUp: SlotLayout.from(
+                key: const Key('Body Medium'),
+                builder: (_) => switch (selectedNavigation) {
+                      6 => SettingsPage(),
+                      int() => Text(
+                          "mediumAndUp selectedNavigation=$selectedNavigation"),
+                    })
           },
         ),
       ),
@@ -211,21 +199,21 @@ class _HomePageState extends State<HomePage> {
         icon: const Icon(Icons.contact_page_outlined),
         selectedIcon: const Icon(Icons.contact_page),
       ),
+      NavigationDestination(
+        label: context.l10n.settings,
+        icon: const Icon(Icons.settings_outlined),
+        selectedIcon: const Icon(Icons.settings),
+      ),
     ];
   }
 
   Widget trailingNavRail() => Column(
+        mainAxisSize: MainAxisSize.max,
+        mainAxisAlignment: MainAxisAlignment.end,
         children: <Widget>[
-          const Divider(color: Colors.black),
+          const Divider(),
           const SizedBox(height: 10),
-          Row(
-            children: <Widget>[
-              const SizedBox(width: 27),
-              Text(context.l10n.settings, style: context.textTheme.titleMedium),
-            ],
-          ),
-          const SizedBox(height: 10),
-          const SettingsPage()
+           SettingsPage(hasTitle: false,),
         ],
       );
 
