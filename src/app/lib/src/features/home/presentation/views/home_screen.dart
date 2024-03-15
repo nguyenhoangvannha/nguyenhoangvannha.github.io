@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_adaptive_scaffold/flutter_adaptive_scaffold.dart';
 import 'package:nguyenhoangvannha/src/app/helpers/extensions/build_context_extension.dart';
+import 'package:nguyenhoangvannha/src/features/resume/presentation/view/resume_page.dart';
 import 'package:nguyenhoangvannha/src/features/settings/presentation/view/settings_page.dart';
 
 /// Creates a basic adaptive page with navigational elements and a body using
@@ -137,6 +138,7 @@ class _HomePageState extends State<HomePage> {
             Breakpoints.smallAndUp: SlotLayout.from(
                 key: const Key('Body Medium'),
                 builder: (_) => switch (selectedNavigation) {
+                      5 => const ResumePage(),
                       6 => SettingsPage(),
                       int() => Text(
                           "mediumAndUp selectedNavigation=$selectedNavigation"),
