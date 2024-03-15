@@ -95,12 +95,12 @@ class _HomePageState extends State<HomePage> {
               leading: Row(
                 mainAxisAlignment: MainAxisAlignment.spaceAround,
                 children: <Widget>[
+                  const Icon(Icons.account_circle_rounded),
                   Text(
                     context.l10n.authorName,
                     style: const TextStyle(
                         color: Color.fromARGB(255, 255, 201, 197)),
                   ),
-                  const Icon(Icons.menu_open)
                 ],
               ),
               destinations: destinations
@@ -188,8 +188,8 @@ class _HomePageState extends State<HomePage> {
       ),
       NavigationDestination(
         label: context.l10n.resumeCV,
-        icon: const Icon(Icons.work_history_outlined),
-        selectedIcon: const Icon(Icons.work_history),
+        icon: const Icon(Icons.contact_page_outlined),
+        selectedIcon: const Icon(Icons.contact_page),
       ),
     ];
   }
