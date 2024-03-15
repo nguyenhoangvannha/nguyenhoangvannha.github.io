@@ -29,3 +29,5 @@ migrate_working_dir/
 build/
 
 .firebase/
+/src/app/.flutter-plugins
+/src/app/.flutter-plugins-dependencies
