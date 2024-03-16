@@ -143,6 +143,12 @@ abstract class AppLocalizations {
   /// In en, this message translates to:
   /// **'Settings'**
   String get settings;
+
+  /// No description provided for @resumeFileName.
+  ///
+  /// In en, this message translates to:
+  /// **'Nguyen Hoang Van Nha - Mobile Engineer.pdf'**
+  String get resumeFileName;
 }
 
 class _AppLocalizationsDelegate

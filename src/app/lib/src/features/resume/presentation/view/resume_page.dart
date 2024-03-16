@@ -2,10 +2,11 @@ import 'dart:developer';
 
 import 'package:flutter/foundation.dart';
 import 'package:flutter/material.dart';
+import 'package:nguyenhoangvannha/src/app/helpers/extensions/build_context_extension.dart';
 import 'package:nguyenhoangvannha/src/assets/generated/assets.gen.dart';
 import 'package:pdfx/pdfx.dart';
 import 'package:share_plus/share_plus.dart';
-import 'package:cross_file/cross_file.dart';
+import 'package:download/download.dart';
 
 class ResumePage extends StatefulWidget {
   const ResumePage({super.key});
@@ -37,6 +38,8 @@ class _ResumePageState extends State<ResumePage> {
       document: document,
     );
 
+    final resumeFileName = context.l10n.resumeFileName;
+
     return Column(
       mainAxisSize: MainAxisSize.min,
       children: [
@@ -54,7 +57,11 @@ class _ResumePageState extends State<ResumePage> {
             ),
             const Spacer(),
             IconButton(
-              onPressed: () {},
+              onPressed: () async {
+                final data = await XFile(pdfFile).openRead().first;
+                final stream = Stream.fromIterable(data);
+                download(stream, resumeFileName);
+              },
               icon: const Icon(Icons.download_outlined),
               selectedIcon: const Icon(Icons.download),
             ),

@@ -27,4 +27,7 @@ class AppLocalizationsVi extends AppLocalizations {
 
   @override
   String get settings => 'Cài đặt';
+
+  @override
+  String get resumeFileName => 'Nguyen Hoang Van Nha - Mobile Engineer.pdf';
 }
