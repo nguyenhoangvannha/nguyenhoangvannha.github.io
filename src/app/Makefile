@@ -1,5 +1,7 @@
 build-web:
 	flutter build web -o ../../docs
+server:
+	flutter run -d web-server
 install-dep:
 	dart pub add dev:build_runner
 

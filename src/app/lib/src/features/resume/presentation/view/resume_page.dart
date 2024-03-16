@@ -42,55 +42,58 @@ class _ResumePageState extends State<ResumePage> {
     return Column(
       mainAxisSize: MainAxisSize.min,
       children: [
-        Row(
-          children: [
-            PdfPageNumber(
-              controller: useViewPitch ? pdfPinchController : pdfController,
-              builder: (_, state, page, pagesCount) => Container(
-                alignment: Alignment.center,
-                child: Text(
-                  '$page/${pagesCount ?? 0}',
-                  style: const TextStyle(fontSize: 22),
+        Padding(
+          padding: const EdgeInsets.all(8.0),
+          child: Row(
+            children: [
+              PdfPageNumber(
+                controller: useViewPitch ? pdfPinchController : pdfController,
+                builder: (_, state, page, pagesCount) => Container(
+                  alignment: Alignment.center,
+                  child: Text(
+                    '$page/${pagesCount ?? 0}',
+                    style: const TextStyle(fontSize: 22),
+                  ),
                 ),
               ),
-            ),
-            const Spacer(),
-            buildDownloadButton(resumeFileName),
-            Builder(
-              builder: (context) {
-                final box = context.findRenderObject() as RenderBox?;
-                return IconButton(
-                  onPressed: () async{
-                   await Share.share(
-                      context.l10n.shareResumeMessage(ResumeConstants.bioLink),
-                      subject: context.l10n.shareResumeTitle,
-                      //sharePositionOrigin: box?.localToGlobal(Offset.zero) & box?.size,
-                    );
-                  },
-                  icon: const Icon(Icons.share_outlined),
-                  selectedIcon: const Icon(Icons.share),
-                );
-              }
-            ),
-            // IconButton(
-            //   onPressed: () async {
-            //     final data = await rootBundle.load(pdfFile);
-            //     Share.shareXFiles(
-            //       [
-            //         XFile.fromData(
-            //           data.buffer.asUint8List(),
-            //           name: resumeFileName,
-            //         )
-            //       ],
-            //       text: 'Great Resume',
-            //       subject: 'Look what he made!',
-            //       sharePositionOrigin: box!.localToGlobal(Offset.zero) & box.size,
-            //     );
-            //   },
-            //   icon: const Icon(Icons.share_outlined),
-            //   selectedIcon: const Icon(Icons.share),
-            // ),
-          ],
+              const Spacer(),
+              buildDownloadButton(resumeFileName),
+              Builder(
+                builder: (context) {
+                  final box = context.findRenderObject() as RenderBox?;
+                  return IconButton(
+                    onPressed: () async{
+                     await Share.share(
+                        context.l10n.shareResumeMessage(ResumeConstants.resumeLink),
+                        subject: context.l10n.shareResumeTitle,
+                        //sharePositionOrigin: box?.localToGlobal(Offset.zero) & box?.size,
+                      );
+                    },
+                    icon: const Icon(Icons.share_outlined),
+                    selectedIcon: const Icon(Icons.share),
+                  );
+                }
+              ),
+              // IconButton(
+              //   onPressed: () async {
+              //     final data = await rootBundle.load(pdfFile);
+              //     Share.shareXFiles(
+              //       [
+              //         XFile.fromData(
+              //           data.buffer.asUint8List(),
+              //           name: resumeFileName,
+              //         )
+              //       ],
+              //       text: 'Great Resume',
+              //       subject: 'Look what he made!',
+              //       sharePositionOrigin: box!.localToGlobal(Offset.zero) & box.size,
+              //     );
+              //   },
+              //   icon: const Icon(Icons.share_outlined),
+              //   selectedIcon: const Icon(Icons.share),
+              // ),
+            ],
+          ),
         ),
         Expanded(
           child: buildPdfView(

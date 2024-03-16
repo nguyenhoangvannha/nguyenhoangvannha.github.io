@@ -1,29 +1,46 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_adaptive_scaffold/flutter_adaptive_scaffold.dart';
 import 'package:nguyenhoangvannha/src/app/helpers/extensions/build_context_extension.dart';
+import 'package:nguyenhoangvannha/src/app/routes/go_router_builder.dart';
+import 'package:nguyenhoangvannha/src/app/routes/route_name.dart';
 import 'package:nguyenhoangvannha/src/features/resume/presentation/view/resume_page.dart';
 import 'package:nguyenhoangvannha/src/features/settings/presentation/view/settings_page.dart';
 
 /// Creates a basic adaptive page with navigational elements and a body using
 /// [AdaptiveLayout].
-class HomePage extends StatefulWidget {
-  /// Creates a const [HomePage].
-  const HomePage({super.key, this.transitionDuration = 1000});
+class HomeScreen extends StatefulWidget {
+  /// Creates a const [HomeScreen].
+  const HomeScreen(this.destination,
+      {super.key, this.transitionDuration = 1000});
 
   /// Declare transition duration.
   final int transitionDuration;
+  final String destination;
 
   @override
-  State<HomePage> createState() => _HomePageState();
+  State<HomeScreen> createState() => _HomeScreenState();
 }
 
-class _HomePageState extends State<HomePage> {
+class _HomeScreenState extends State<HomeScreen> {
   int selectedNavigation = 0;
   int _transitionDuration = 1000;
+  final routeNumberToName = {
+    0: RouteName.home.path,
+    1: RouteName.articles.path,
+    2: RouteName.chat.path,
+    3: RouteName.reading.path,
+    4: RouteName.projects.path,
+    5: RouteName.resume.path,
+    6: RouteName.settings.path,
+  };
 
   // Initialize transition time variable.
   @override
   void initState() {
+    selectedNavigation = routeNumberToName.entries
+        .firstWhere((element) => element.value == widget.destination,
+            orElse: () => MapEntry(0, RouteName.home.path))
+        .key;
     super.initState();
     setState(() {
       _transitionDuration = widget.transitionDuration;
@@ -78,11 +95,7 @@ class _HomePageState extends State<HomePage> {
               key: const Key('Primary Navigation Medium'),
               builder: (_) => AdaptiveScaffold.standardNavigationRail(
                 selectedIndex: selectedNavigation,
-                onDestinationSelected: (int newIndex) {
-                  setState(() {
-                    selectedNavigation = newIndex;
-                  });
-                },
+                onDestinationSelected: onDestinationSelected,
                 leading: const Icon(Icons.menu),
                 destinations: [
                   ...destinations.map((NavigationDestination destination) =>
@@ -100,11 +113,7 @@ class _HomePageState extends State<HomePage> {
               inAnimation: AdaptiveScaffold.leftOutIn,
               builder: (_) => AdaptiveScaffold.standardNavigationRail(
                 selectedIndex: selectedNavigation,
-                onDestinationSelected: (int newIndex) {
-                  setState(() {
-                    selectedNavigation = newIndex;
-                  });
-                },
+                onDestinationSelected: onDestinationSelected,
                 extended: true,
                 leading: Row(
                   mainAxisAlignment: MainAxisAlignment.spaceAround,
@@ -155,11 +164,7 @@ class _HomePageState extends State<HomePage> {
             builder: (_) => AdaptiveScaffold.standardBottomNavigationBar(
               destinations: destinations,
               currentIndex: selectedNavigation,
-              onDestinationSelected: (int newIndex) {
-                setState(() {
-                  selectedNavigation = newIndex;
-                });
-              },
+              onDestinationSelected: onDestinationSelected,
             ),
           )
         },
@@ -167,47 +172,57 @@ class _HomePageState extends State<HomePage> {
     );
   }
 
+  void onDestinationSelected(int newIndex) {
+    selectedNavigation = newIndex;
+    HomeRoute(
+            destination:
+                routeNumberToName[newIndex] ?? routeNumberToName.values.first)
+        .go(context);
+
+    // setState(() {
+    //   selectedNavigation = newIndex;
+    // });
+  }
+
   Icon buildSettingIcon() => Icon(Icons.settings);
 
-  List<NavigationDestination> _destinations() {
-    return <NavigationDestination>[
-      NavigationDestination(
-        label: context.l10n.home,
-        icon: const Icon(Icons.home_outlined),
-        selectedIcon: const Icon(Icons.home),
-      ),
-      NavigationDestination(
-        label: context.l10n.articles,
-        icon: const Icon(Icons.article_outlined),
-        selectedIcon: const Icon(Icons.article),
-      ),
-      NavigationDestination(
-        label: context.l10n.chat,
-        icon: const Icon(Icons.chat_outlined),
-        selectedIcon: const Icon(Icons.chat),
-      ),
-      NavigationDestination(
-        label: context.l10n.readingList,
-        icon: const Icon(Icons.book_outlined),
-        selectedIcon: const Icon(Icons.book),
-      ),
-      NavigationDestination(
-        label: context.l10n.projects,
-        icon: const Icon(Icons.work_history_outlined),
-        selectedIcon: const Icon(Icons.work_history),
-      ),
-      NavigationDestination(
-        label: context.l10n.resumeCV,
-        icon: const Icon(Icons.contact_page_outlined),
-        selectedIcon: const Icon(Icons.contact_page),
-      ),
-      NavigationDestination(
-        label: context.l10n.settings,
-        icon: const Icon(Icons.settings_outlined),
-        selectedIcon: const Icon(Icons.settings),
-      ),
-    ];
-  }
+  _destinations() => <NavigationDestination>[
+        NavigationDestination(
+          label: context.l10n.home,
+          icon: const Icon(Icons.home_outlined),
+          selectedIcon: const Icon(Icons.home),
+        ),
+        NavigationDestination(
+          label: context.l10n.articles,
+          icon: const Icon(Icons.article_outlined),
+          selectedIcon: const Icon(Icons.article),
+        ),
+        NavigationDestination(
+          label: context.l10n.chat,
+          icon: const Icon(Icons.chat_outlined),
+          selectedIcon: const Icon(Icons.chat),
+        ),
+        NavigationDestination(
+          label: context.l10n.readingList,
+          icon: const Icon(Icons.book_outlined),
+          selectedIcon: const Icon(Icons.book),
+        ),
+        NavigationDestination(
+          label: context.l10n.projects,
+          icon: const Icon(Icons.work_history_outlined),
+          selectedIcon: const Icon(Icons.work_history),
+        ),
+        NavigationDestination(
+          label: context.l10n.resumeCV,
+          icon: const Icon(Icons.contact_page_outlined),
+          selectedIcon: const Icon(Icons.contact_page),
+        ),
+        NavigationDestination(
+          label: context.l10n.settings,
+          icon: const Icon(Icons.settings_outlined),
+          selectedIcon: const Icon(Icons.settings),
+        ),
+      ];
 
   Widget trailingNavRail() => Column(
         mainAxisSize: MainAxisSize.max,
@@ -215,7 +230,9 @@ class _HomePageState extends State<HomePage> {
         children: <Widget>[
           const Divider(),
           const SizedBox(height: 10),
-           SettingsPage(hasTitle: false,),
+          SettingsPage(
+            hasTitle: false,
+          ),
         ],
       );
 

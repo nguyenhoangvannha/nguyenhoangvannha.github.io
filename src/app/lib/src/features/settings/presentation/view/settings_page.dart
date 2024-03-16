@@ -4,7 +4,8 @@ import 'package:nha_language/nha_language.dart';
 import 'package:nha_theme/nha_theme.dart';
 
 class SettingsPage extends StatelessWidget {
-   SettingsPage({super.key , this.hasTitle = true});
+  SettingsPage({super.key, this.hasTitle = true});
+
   final bool hasTitle;
 
   @override
@@ -12,13 +13,6 @@ class SettingsPage extends StatelessWidget {
     return Column(
       crossAxisAlignment: CrossAxisAlignment.start,
       children: [
-        Row(
-          children: <Widget>[
-            const SizedBox(width: 27),
-            Text(context.l10n.settings, style: context.textTheme.titleMedium),
-          ],
-        ),
-        const SizedBox(height: 16),
         ThemeListTile(
           hasTitle: hasTitle,
         ),
