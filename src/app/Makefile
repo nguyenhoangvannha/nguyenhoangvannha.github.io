@@ -20,6 +20,12 @@ install-dep:
 	flutter pub add get_it
 	flutter pub add injectable
 	dart pub add dev:injectable_generator
+
+	dart pub global activate flutter_gen
+	dart pub add dev:build_runner
+	dart pub add dev:flutter_gen_runner
+assets:
+	fluttergen
 built:
 	flutter clean
 	dart run build_runner watch --delete-conflicting-outputs

@@ -1,6 +1,11 @@
+import 'dart:developer';
+
 import 'package:flutter/foundation.dart';
 import 'package:flutter/material.dart';
+import 'package:nguyenhoangvannha/src/assets/generated/assets.gen.dart';
 import 'package:pdfx/pdfx.dart';
+import 'package:share_plus/share_plus.dart';
+import 'package:cross_file/cross_file.dart';
 
 class ResumePage extends StatefulWidget {
   const ResumePage({super.key});
@@ -13,31 +18,28 @@ class _ResumePageState extends State<ResumePage> {
   final pdfLink =
       "https://drive.google.com/file/d/1XtQLWi1j0I6Yv7uB5UvGEELlHXLnNhjW/view?usp=sharing";
 
-  final pdfFile = "assets/resume/nha_flutter_resume.pdf";
+  final bioLink = "https://nguyenhoangvannha.github.io/";
+
+  final pdfFile = AppAssets.resume.nhaFlutterResume;
 
   int page = 1;
 
   @override
   Widget build(BuildContext context) {
     final useViewPitch = defaultTargetPlatform != TargetPlatform.windows;
+
+    final document = PdfDocument.openAsset(pdfFile);
     final pdfController = PdfController(
-      document: PdfDocument.openAsset(pdfFile),
+      document: document,
     );
 
     final pdfPinchController = PdfControllerPinch(
-      document: PdfDocument.openAsset(pdfFile),
+      document: document,
     );
 
     return Column(
       mainAxisSize: MainAxisSize.min,
       children: [
-        Expanded(
-          child: buildPdfView(
-            useViewPitch,
-            pdfController,
-            pdfPinchController,
-          ),
-        ),
         Row(
           children: [
             PdfPageNumber(
@@ -57,12 +59,38 @@ class _ResumePageState extends State<ResumePage> {
               selectedIcon: const Icon(Icons.download),
             ),
             IconButton(
-              onPressed: () {},
+              onPressed: () {
+                Share.share(
+                  'Check out this website $bioLink',
+                  subject: 'Look what he made!',
+                );
+              },
+              icon: const Icon(Icons.share_outlined),
+              selectedIcon: const Icon(Icons.share),
+            ),
+            IconButton(
+              onPressed: () async {
+                final sourceName = (await document).sourceName;
+                final id = (await document).id;
+                log("nha $sourceName   $id");
+                await Share.shareXFiles(
+                  [XFile(pdfFile, mimeType: "application/pdf")],
+                  text: 'Great Resume',
+                  subject: 'Look what he made!',
+                );
+              },
               icon: const Icon(Icons.share_outlined),
               selectedIcon: const Icon(Icons.share),
             ),
           ],
-        )
+        ),
+        Expanded(
+          child: buildPdfView(
+            useViewPitch,
+            pdfController,
+            pdfPinchController,
+          ),
+        ),
       ],
     );
   }
