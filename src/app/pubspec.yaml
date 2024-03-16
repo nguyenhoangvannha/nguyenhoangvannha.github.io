@@ -54,9 +54,10 @@ dependencies:
   logger: ^2.1.0
   hydrated_bloc: ^9.1.4
   path_provider: ^2.1.2
-  pdfx: ^2.6.0
   share_plus: ^7.2.2
   download: ^1.0.0
+  pdfrx: ^1.0.49
+  url_launcher: ^6.2.5
 
 dev_dependencies:
   flutter_test:

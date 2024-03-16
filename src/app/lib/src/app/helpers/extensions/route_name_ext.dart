@@ -10,7 +10,7 @@ extension RouteNameExt on RouteName {
         RouteName.chat => context.l10n.chat,
         RouteName.reading => context.l10n.readingList,
         RouteName.projects => context.l10n.projects,
-        RouteName.resume => context.l10n.authorName,
+        RouteName.resume => context.l10n.resumeCV,
         RouteName.settings => context.l10n.settings,
       };
 }
