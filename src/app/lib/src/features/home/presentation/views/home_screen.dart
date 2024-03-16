@@ -6,6 +6,7 @@ import 'package:nguyenhoangvannha/src/app/routes/go_router_builder.dart';
 import 'package:nguyenhoangvannha/src/app/routes/route_name.dart';
 import 'package:nguyenhoangvannha/src/features/resume/presentation/view/resume_page.dart';
 import 'package:nguyenhoangvannha/src/features/settings/presentation/view/settings_page.dart';
+import 'package:nha_portfolio/nha_portfolio.dart';
 
 /// Creates a basic adaptive page with navigational elements and a body using
 /// [AdaptiveLayout].
@@ -68,18 +69,18 @@ class _HomeScreenState extends State<HomeScreen> {
     List<NavigationDestination> destinations = _destinations();
 
     return Scaffold(
-      appBar: PreferredSize(
-        preferredSize: const Size.fromHeight(kToolbarHeight),
-        child: SlotLayout(
-          config: <Breakpoint, SlotLayoutConfig>{
-            Breakpoints.small: SlotLayout.from(
-              key: const Key('Top Navigation Small'),
-              outAnimation: AdaptiveScaffold.bottomToTop,
-              builder: (_) => appBar(),
-            )
-          },
-        ),
-      ),
+      // appBar: PreferredSize(
+      //   preferredSize: const Size.fromHeight(kToolbarHeight),
+      //   child: SlotLayout(
+      //     config: <Breakpoint, SlotLayoutConfig>{
+      //       Breakpoints.small: SlotLayout.from(
+      //         key: const Key('Top Navigation Small'),
+      //         outAnimation: AdaptiveScaffold.bottomToTop,
+      //         builder: (_) => appBar(),
+      //       )
+      //     },
+      //   ),
+      // ),
       // #docregion Example
       // AdaptiveLayout has a number of slots that take SlotLayouts and these
       // SlotLayouts' configs take maps of Breakpoints to SlotLayoutConfigs.
@@ -148,6 +149,7 @@ class _HomeScreenState extends State<HomeScreen> {
             Breakpoints.smallAndUp: SlotLayout.from(
                 key: const Key('Body Medium'),
                 builder: (_) => switch (selectedNavigation) {
+                      0 => const PortfolioPage(),
                       5 => const ResumePage(),
                       6 => SettingsPage(),
                       int() => Text(

@@ -8,13 +8,21 @@ environment:
   flutter: ">=1.17.0"
 
 dependencies:
+  built_collection: ^5.1.1
+  built_value: ^8.9.1
   flutter:
     sdk: flutter
+  flutter_localizations:
+    sdk: flutter
+  flutter_svg: ^2.0.10+1
+  intl: 0.18.1
 
 dev_dependencies:
   flutter_test:
     sdk: flutter
   flutter_lints: ^3.0.0
+  built_value_generator: ^8.9.1
+  build_runner: ^2.4.8
 
 # For information on the generic Dart part of this file, see the
 # following page: https://dart.dev/tools/pub/pubspec
@@ -24,7 +32,8 @@ flutter:
 
 #   To add assets to your package, add an assets section, like this:
    assets:
-     - assets/images
+     - assets/images/
+     - assets/icons/
   #
   # For details regarding assets in packages, see
   # https://flutter.dev/assets-and-images/#from-packages

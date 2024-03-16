@@ -4,6 +4,7 @@ import 'package:nguyenhoangvannha/src/app/di/injection.dart';
 import 'package:nguyenhoangvannha/src/app/routes/app_router.dart';
 import 'package:nguyenhoangvannha/src/l10n/app_localizations.dart';
 import 'package:nha_language/nha_language.dart';
+import 'package:nha_portfolio/nha_portfolio.dart';
 import 'package:nha_theme/nha_theme.dart';
 
 class App extends StatelessWidget {
@@ -39,6 +40,7 @@ class App extends StatelessWidget {
                     ...AppLocalizations.localizationsDelegates,
                     ThemeLocalizations.delegate,
                     LanguageLocalizations.delegate,
+                    PortfolioLocalizations.delegate,
                   ],
                   locale: Locale.fromSubtags(languageCode: languageType.languageCode),
                   supportedLocales: AppLocalizations.supportedLocales,

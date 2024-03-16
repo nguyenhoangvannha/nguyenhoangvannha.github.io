@@ -548,6 +548,13 @@ packages:
       relative: true
     source: path
     version: "0.0.1"
+  nha_portfolio:
+    dependency: "direct main"
+    description:
+      path: "../nha_portfolio"
+      relative: true
+    source: path
+    version: "0.0.1"
   nha_theme:
     dependency: "direct main"
     description:

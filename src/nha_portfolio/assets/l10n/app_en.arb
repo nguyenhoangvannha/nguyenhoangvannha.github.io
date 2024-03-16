@@ -1,0 +1,31 @@
+{
+  "authorName": "Nguyen Hoang Van Nha",
+  "@authorName": {
+    "description": "The author name"
+  },
+  "home": "Home",
+  "projects": "Projects",
+  "articles": "Articles",
+  "resumeCV": "Resume/CV",
+  "chat": "Chat",
+  "readingList": "Reading List",
+  "settings": "Settings",
+  "resumeFileName": "Nguyen Hoang Van Nha - Mobile Engineer.pdf",
+  "summaryParagraph": "Hi \uD83D\uDC4B,\nMy name is\n{name}\nI build things for web",
+  "@summaryParagraph": {
+    "description": "Share resume message",
+    "placeholders": {
+      "name": {
+        "type": "String",
+        "example": "Nha Nguyen"
+      }
+    }
+  },
+  "shareResumeTitle": "Nguyen Hoang Van Nha - Mobile Engineer",
+  "myTechStack": "My Tech Stack",
+  "technologiesIVeBeenWorkingWithRecently": "Technologies I’ve been working with recently",
+  "thingsIVeBuiltSoFar": "Things I’ve built so far",
+  "viewCode": "View Code",
+  "livePreview": "Live Preview",
+  "techStack": "Tech stack"
+}

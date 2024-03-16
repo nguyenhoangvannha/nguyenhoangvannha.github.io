@@ -9,6 +9,93 @@
 
 import 'package:flutter/widgets.dart';
 
+class $AssetsIconsGen {
+  const $AssetsIconsGen();
+
+  /// File path: assets/icons/android-studio-stable.png
+  AssetGenImage get androidStudioStable =>
+      const AssetGenImage('assets/icons/android-studio-stable.png');
+
+  /// File path: assets/icons/github.png
+  AssetGenImage get github => const AssetGenImage('assets/icons/github.png');
+
+  /// File path: assets/icons/icons8-agile-64.png
+  AssetGenImage get icons8Agile64 =>
+      const AssetGenImage('assets/icons/icons8-agile-64.png');
+
+  /// File path: assets/icons/icons8-agile2-64.png
+  AssetGenImage get icons8Agile264 =>
+      const AssetGenImage('assets/icons/icons8-agile2-64.png');
+
+  /// File path: assets/icons/icons8-android-48.png
+  AssetGenImage get icons8Android48 =>
+      const AssetGenImage('assets/icons/icons8-android-48.png');
+
+  /// File path: assets/icons/icons8-dart-48.png
+  AssetGenImage get icons8Dart48 =>
+      const AssetGenImage('assets/icons/icons8-dart-48.png');
+
+  /// File path: assets/icons/icons8-flutter-48.png
+  AssetGenImage get icons8Flutter48 =>
+      const AssetGenImage('assets/icons/icons8-flutter-48.png');
+
+  /// File path: assets/icons/icons8-git-48.png
+  AssetGenImage get icons8Git48 =>
+      const AssetGenImage('assets/icons/icons8-git-48.png');
+
+  /// File path: assets/icons/icons8-gmail-48.png
+  AssetGenImage get icons8Gmail48 =>
+      const AssetGenImage('assets/icons/icons8-gmail-48.png');
+
+  /// File path: assets/icons/icons8-java-48.png
+  AssetGenImage get icons8Java48 =>
+      const AssetGenImage('assets/icons/icons8-java-48.png');
+
+  /// File path: assets/icons/icons8-javascript-48.png
+  AssetGenImage get icons8Javascript48 =>
+      const AssetGenImage('assets/icons/icons8-javascript-48.png');
+
+  /// File path: assets/icons/icons8-kotlin-48.png
+  AssetGenImage get icons8Kotlin48 =>
+      const AssetGenImage('assets/icons/icons8-kotlin-48.png');
+
+  /// File path: assets/icons/icons8-scrum-64.png
+  AssetGenImage get icons8Scrum64 =>
+      const AssetGenImage('assets/icons/icons8-scrum-64.png');
+
+  /// File path: assets/icons/icons8-visual-studio-code-48.png
+  AssetGenImage get icons8VisualStudioCode48 =>
+      const AssetGenImage('assets/icons/icons8-visual-studio-code-48.png');
+
+  /// File path: assets/icons/linkedin.png
+  AssetGenImage get linkedin =>
+      const AssetGenImage('assets/icons/linkedin.png');
+
+  /// File path: assets/icons/logos_react.png
+  AssetGenImage get logosReact =>
+      const AssetGenImage('assets/icons/logos_react.png');
+
+  /// List of all assets
+  List<AssetGenImage> get values => [
+        androidStudioStable,
+        github,
+        icons8Agile64,
+        icons8Agile264,
+        icons8Android48,
+        icons8Dart48,
+        icons8Flutter48,
+        icons8Git48,
+        icons8Gmail48,
+        icons8Java48,
+        icons8Javascript48,
+        icons8Kotlin48,
+        icons8Scrum64,
+        icons8VisualStudioCode48,
+        linkedin,
+        logosReact
+      ];
+}
+
 class $AssetsImagesGen {
   const $AssetsImagesGen();
 
@@ -25,6 +112,7 @@ class Assets {
 
   static const String package = 'nha_portfolio';
 
+  static const $AssetsIconsGen icons = $AssetsIconsGen();
   static const $AssetsImagesGen images = $AssetsImagesGen();
 }
 

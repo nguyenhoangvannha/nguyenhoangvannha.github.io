@@ -24,6 +24,7 @@ install-dep:
 
 	flutter pub add built_value
 	flutter pub add built_collection
+	dart pub add dev:build_runner
 	dart pub add dev:built_value_generator
 
 	flutter pub add go_router
