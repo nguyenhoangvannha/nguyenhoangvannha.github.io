@@ -4,12 +4,12 @@ import 'dart:developer';
 import 'package:flutter/foundation.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
+import 'package:nguyenhoangvannha/src/app/constants/resume_constrants.dart';
 import 'package:nguyenhoangvannha/src/app/helpers/extensions/build_context_extension.dart';
 import 'package:nguyenhoangvannha/src/assets/generated/assets.gen.dart';
 import 'package:pdfx/pdfx.dart';
 import 'package:share_plus/share_plus.dart';
 import 'package:download/download.dart';
-
 
 class ResumePage extends StatefulWidget {
   const ResumePage({super.key});
@@ -19,12 +19,8 @@ class ResumePage extends StatefulWidget {
 }
 
 class _ResumePageState extends State<ResumePage> {
-  final pdfLink =
-      "https://drive.google.com/file/d/1XtQLWi1j0I6Yv7uB5UvGEELlHXLnNhjW/view?usp=sharing";
 
-  final bioLink = "https://nguyenhoangvannha.github.io/";
-
-  final pdfFile = AppAssets.resume.nhaFlutterResume;
+  final pdfFile = AppAssets.resume.nguyenHoangVanNhaMobileEngineer;
 
   int page = 1;
 
@@ -60,30 +56,40 @@ class _ResumePageState extends State<ResumePage> {
             ),
             const Spacer(),
             buildDownloadButton(resumeFileName),
-            IconButton(
-              onPressed: () {
-                Share.share(
-                  'Check out this website $bioLink',
-                  subject: 'Look what he made!',
+            Builder(
+              builder: (context) {
+                final box = context.findRenderObject() as RenderBox?;
+                return IconButton(
+                  onPressed: () async{
+                   await Share.share(
+                      context.l10n.shareResumeMessage(ResumeConstants.bioLink),
+                      subject: context.l10n.shareResumeTitle,
+                      //sharePositionOrigin: box?.localToGlobal(Offset.zero) & box?.size,
+                    );
+                  },
+                  icon: const Icon(Icons.share_outlined),
+                  selectedIcon: const Icon(Icons.share),
                 );
-              },
-              icon: const Icon(Icons.share_outlined),
-              selectedIcon: const Icon(Icons.share),
+              }
             ),
-            IconButton(
-              onPressed: () async {
-                final sourceName = (await document).sourceName;
-                final id = (await document).id;
-                log("nha $sourceName   $id");
-                await Share.shareXFiles(
-                  [XFile(pdfFile, mimeType: "application/pdf")],
-                  text: 'Great Resume',
-                  subject: 'Look what he made!',
-                );
-              },
-              icon: const Icon(Icons.share_outlined),
-              selectedIcon: const Icon(Icons.share),
-            ),
+            // IconButton(
+            //   onPressed: () async {
+            //     final data = await rootBundle.load(pdfFile);
+            //     Share.shareXFiles(
+            //       [
+            //         XFile.fromData(
+            //           data.buffer.asUint8List(),
+            //           name: resumeFileName,
+            //         )
+            //       ],
+            //       text: 'Great Resume',
+            //       subject: 'Look what he made!',
+            //       sharePositionOrigin: box!.localToGlobal(Offset.zero) & box.size,
+            //     );
+            //   },
+            //   icon: const Icon(Icons.share_outlined),
+            //   selectedIcon: const Icon(Icons.share),
+            // ),
           ],
         ),
         Expanded(
@@ -123,7 +129,6 @@ class _ResumePageState extends State<ResumePage> {
     controller.close();
     return controller.stream;
   }
-
 
   Widget buildPdfView(
     bool useViewPitch,

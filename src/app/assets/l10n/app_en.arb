@@ -10,5 +10,16 @@
   "chat": "Chat",
   "readingList": "Reading List",
   "settings": "Settings",
-  "resumeFileName": "Nguyen Hoang Van Nha - Mobile Engineer.pdf"
+  "resumeFileName": "Nguyen Hoang Van Nha - Mobile Engineer.pdf",
+  "shareResumeMessage": "Check out this website {websiteLink}",
+  "@shareResumeMessage": {
+    "description": "Share resume message",
+    "placeholders": {
+      "websiteLink": {
+        "type": "String",
+        "example": "google.com"
+      }
+    }
+  },
+  "shareResumeTitle": "Nguyen Hoang Van Nha - Mobile Engineer"
 }

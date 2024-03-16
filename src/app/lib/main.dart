@@ -12,7 +12,6 @@ void main() async {
   initializeSingletons();
   configureDependencies();
   Bloc.observer = getIt<AppBlocObserver>();
-
   WidgetsFlutterBinding.ensureInitialized();
   HydratedBloc.storage = await HydratedStorage.build(
       storageDirectory: kIsWeb

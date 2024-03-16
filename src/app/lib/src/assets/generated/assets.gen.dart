@@ -10,11 +10,12 @@
 class $AssetsResumeGen {
   const $AssetsResumeGen();
 
-  /// File path: assets/resume/nha_flutter_resume.pdf
-  String get nhaFlutterResume => 'assets/resume/nha_flutter_resume.pdf';
+  /// File path: assets/resume/Nguyen Hoang Van Nha - Mobile Engineer.pdf
+  String get nguyenHoangVanNhaMobileEngineer =>
+      'assets/resume/Nguyen Hoang Van Nha - Mobile Engineer.pdf';
 
   /// List of all assets
-  List<String> get values => [nhaFlutterResume];
+  List<String> get values => [nguyenHoangVanNhaMobileEngineer];
 }
 
 class AppAssets {

@@ -149,6 +149,18 @@ abstract class AppLocalizations {
   /// In en, this message translates to:
   /// **'Nguyen Hoang Van Nha - Mobile Engineer.pdf'**
   String get resumeFileName;
+
+  /// Share resume message
+  ///
+  /// In en, this message translates to:
+  /// **'Check out this website {websiteLink}'**
+  String shareResumeMessage(String websiteLink);
+
+  /// No description provided for @shareResumeTitle.
+  ///
+  /// In en, this message translates to:
+  /// **'Nguyen Hoang Van Nha - Mobile Engineer'**
+  String get shareResumeTitle;
 }
 
 class _AppLocalizationsDelegate
