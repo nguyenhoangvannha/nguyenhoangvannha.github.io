@@ -1,4 +1,4 @@
-enum TechStackEnum{
+enum TechStackEnum {
   flutter,
   dart,
   android,

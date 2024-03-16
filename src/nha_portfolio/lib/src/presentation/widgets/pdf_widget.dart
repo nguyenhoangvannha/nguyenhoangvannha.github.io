@@ -8,7 +8,8 @@ class PdfWidget extends StatelessWidget {
   const PdfWidget(
       {super.key,
       required this.asset,
-      required this.onPageChangeStreamController, this.onViewerReady});
+      required this.onPageChangeStreamController,
+      this.onViewerReady});
 
   final String asset;
   final StreamController<int?> onPageChangeStreamController;

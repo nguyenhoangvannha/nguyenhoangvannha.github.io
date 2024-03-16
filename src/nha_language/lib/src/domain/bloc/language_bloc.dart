@@ -14,5 +14,6 @@ class LanguageBloc extends HydratedBloc<LanguageType, LanguageType> {
       (json['value'] as String).languageType;
 
   @override
-  Map<String, dynamic>? toJson(LanguageType state) => {'value': state.languageCode};
+  Map<String, dynamic>? toJson(LanguageType state) =>
+      {'value': state.languageCode};
 }

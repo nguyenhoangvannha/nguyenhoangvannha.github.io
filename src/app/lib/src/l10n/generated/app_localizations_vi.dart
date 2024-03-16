@@ -27,15 +27,4 @@ class AppLocalizationsVi extends AppLocalizations {
 
   @override
   String get settings => 'Cài đặt';
-
-  @override
-  String get resumeFileName => 'Nguyen Hoang Van Nha - Mobile Engineer.pdf';
-
-  @override
-  String shareResumeMessage(String websiteLink) {
-    return 'Check out this website $websiteLink';
-  }
-
-  @override
-  String get shareResumeTitle => 'Nguyen Hoang Van Nha - Mobile Engineer';
 }

@@ -15,5 +15,6 @@ class HomeRoute extends GoRouteData {
   final String destination;
 
   @override
-  Widget build(BuildContext context, GoRouterState state) => HomeScreen(destination);
+  Widget build(BuildContext context, GoRouterState state) =>
+      HomeScreen(destination);
 }

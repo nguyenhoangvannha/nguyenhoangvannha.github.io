@@ -107,6 +107,17 @@ class $AssetsImagesGen {
   List<AssetGenImage> get values => [avatarWork];
 }
 
+class $AssetsResumeGen {
+  const $AssetsResumeGen();
+
+  /// File path: assets/resume/Nguyen_Hoang_Van_Nha_Mobile_Engineer.pdf
+  String get nguyenHoangVanNhaMobileEngineer =>
+      'packages/nha_portfolio/assets/resume/Nguyen_Hoang_Van_Nha_Mobile_Engineer.pdf';
+
+  /// List of all assets
+  List<String> get values => [nguyenHoangVanNhaMobileEngineer];
+}
+
 class Assets {
   Assets._();
 
@@ -114,6 +125,7 @@ class Assets {
 
   static const $AssetsIconsGen icons = $AssetsIconsGen();
   static const $AssetsImagesGen images = $AssetsImagesGen();
+  static const $AssetsResumeGen resume = $AssetsResumeGen();
 }
 
 class AssetGenImage {

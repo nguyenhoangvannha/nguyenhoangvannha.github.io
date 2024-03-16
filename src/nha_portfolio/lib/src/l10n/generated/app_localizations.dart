@@ -16,7 +16,7 @@ import 'app_localizations_vi.dart';
 /// `supportedLocales` list. For example:
 ///
 /// ```dart
-/// import 'l10n/app_localizations.dart';
+/// import 'generated/app_localizations.dart';
 ///
 /// return MaterialApp(
 ///   localizationsDelegates: PortfolioLocalizations.localizationsDelegates,
@@ -156,6 +156,12 @@ abstract class PortfolioLocalizations {
   /// In en, this message translates to:
   /// **'Hi 👋,\nMy name is\n{name}\nI build things for web'**
   String summaryParagraph(String name);
+
+  /// Share resume message
+  ///
+  /// In en, this message translates to:
+  /// **'Check out this website {websiteLink}'**
+  String shareResumeMessage(String websiteLink);
 
   /// No description provided for @shareResumeTitle.
   ///

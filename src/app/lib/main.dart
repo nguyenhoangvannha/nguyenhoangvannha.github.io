@@ -14,20 +14,19 @@ void main() async {
   Bloc.observer = getIt<AppBlocObserver>();
   WidgetsFlutterBinding.ensureInitialized();
   HydratedBloc.storage = await HydratedStorage.build(
-      storageDirectory: kIsWeb
-          ? HydratedStorage.webStorageDirectory
-          : await getApplicationDocumentsDirectory(),
+    storageDirectory: kIsWeb
+        ? HydratedStorage.webStorageDirectory
+        : await getApplicationDocumentsDirectory(),
   );
   runApp(App());
 }
 
 void initializeSingletons() {
-  getIt
-    .registerLazySingleton<Logger>(
-      () => Logger(
-        filter: ProductionFilter(),
-        printer: PrettyPrinter(),
-        output: ConsoleOutput(),
-      ),
-    );
+  getIt.registerLazySingleton<Logger>(
+    () => Logger(
+      filter: ProductionFilter(),
+      printer: PrettyPrinter(),
+      output: ConsoleOutput(),
+    ),
+  );
 }

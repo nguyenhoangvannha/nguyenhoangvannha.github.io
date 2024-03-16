@@ -1,32 +1,32 @@
 import 'app_localizations.dart';
 
-/// The translations for Vietnamese (`vi`).
-class PortfolioLocalizationsVi extends PortfolioLocalizations {
-  PortfolioLocalizationsVi([String locale = 'vi']) : super(locale);
+/// The translations for English (`en`).
+class PortfolioLocalizationsEn extends PortfolioLocalizations {
+  PortfolioLocalizationsEn([String locale = 'en']) : super(locale);
 
   @override
-  String get authorName => 'Nguyễn Hoàng Văn Nhã';
+  String get authorName => 'Nguyen Hoang Van Nha';
 
   @override
-  String get home => 'Trang chủ';
+  String get home => 'Home';
 
   @override
-  String get projects => 'Dự án';
+  String get projects => 'Projects';
 
   @override
-  String get articles => 'Bài viết';
+  String get articles => 'Articles';
 
   @override
   String get resumeCV => 'Resume/CV';
 
   @override
-  String get chat => 'Trò chuyện';
+  String get chat => 'Chat';
 
   @override
-  String get readingList => 'Đọc sách';
+  String get readingList => 'Reading List';
 
   @override
-  String get settings => 'Cài đặt';
+  String get settings => 'Settings';
 
   @override
   String get resumeFileName => 'Nguyen Hoang Van Nha - Mobile Engineer.pdf';
@@ -34,6 +34,11 @@ class PortfolioLocalizationsVi extends PortfolioLocalizations {
   @override
   String summaryParagraph(String name) {
     return 'Hi 👋,\nMy name is\n$name\nI build things for web';
+  }
+
+  @override
+  String shareResumeMessage(String websiteLink) {
+    return 'Check out this website $websiteLink';
   }
 
   @override

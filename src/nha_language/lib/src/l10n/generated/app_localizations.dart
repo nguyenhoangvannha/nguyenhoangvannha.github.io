@@ -8,19 +8,19 @@ import 'package:intl/intl.dart' as intl;
 import 'app_localizations_en.dart';
 import 'app_localizations_vi.dart';
 
-/// Callers can lookup localized strings with an instance of ThemeLocalizations
-/// returned by `ThemeLocalizations.of(context)`.
+/// Callers can lookup localized strings with an instance of LanguageLocalizations
+/// returned by `LanguageLocalizations.of(context)`.
 ///
-/// Applications need to include `ThemeLocalizations.delegate()` in their app's
+/// Applications need to include `LanguageLocalizations.delegate()` in their app's
 /// `localizationDelegates` list, and the locales they support in the app's
 /// `supportedLocales` list. For example:
 ///
 /// ```dart
-/// import 'l10n/app_localizations.dart';
+/// import 'generated/app_localizations.dart';
 ///
 /// return MaterialApp(
-///   localizationsDelegates: ThemeLocalizations.localizationsDelegates,
-///   supportedLocales: ThemeLocalizations.supportedLocales,
+///   localizationsDelegates: LanguageLocalizations.localizationsDelegates,
+///   supportedLocales: LanguageLocalizations.supportedLocales,
 ///   home: MyApplicationHome(),
 /// );
 /// ```
@@ -57,20 +57,21 @@ import 'app_localizations_vi.dart';
 /// Select and expand the newly-created Localizations item then, for each
 /// locale your application supports, add a new item and select the locale
 /// you wish to add from the pop-up menu in the Value field. This list should
-/// be consistent with the languages listed in the ThemeLocalizations.supportedLocales
+/// be consistent with the languages listed in the LanguageLocalizations.supportedLocales
 /// property.
-abstract class ThemeLocalizations {
-  ThemeLocalizations(String locale)
+abstract class LanguageLocalizations {
+  LanguageLocalizations(String locale)
       : localeName = intl.Intl.canonicalizedLocale(locale.toString());
 
   final String localeName;
 
-  static ThemeLocalizations of(BuildContext context) {
-    return Localizations.of<ThemeLocalizations>(context, ThemeLocalizations)!;
+  static LanguageLocalizations of(BuildContext context) {
+    return Localizations.of<LanguageLocalizations>(
+        context, LanguageLocalizations)!;
   }
 
-  static const LocalizationsDelegate<ThemeLocalizations> delegate =
-      _ThemeLocalizationsDelegate();
+  static const LocalizationsDelegate<LanguageLocalizations> delegate =
+      _LanguageLocalizationsDelegate();
 
   /// A list of this localizations delegate along with the default localizations
   /// delegates.
@@ -96,39 +97,33 @@ abstract class ThemeLocalizations {
     Locale('vi')
   ];
 
-  /// No description provided for @theme.
+  /// No description provided for @language.
   ///
   /// In en, this message translates to:
-  /// **'Theme'**
-  String get theme;
+  /// **'Ngôn ngữ'**
+  String get language;
 
-  /// No description provided for @light.
+  /// No description provided for @english.
   ///
   /// In en, this message translates to:
-  /// **'Light'**
-  String get light;
+  /// **'Tiếng Anh'**
+  String get english;
 
-  /// No description provided for @dark.
+  /// No description provided for @vietnamese.
   ///
   /// In en, this message translates to:
-  /// **'Dark'**
-  String get dark;
-
-  /// No description provided for @system.
-  ///
-  /// In en, this message translates to:
-  /// **'System'**
-  String get system;
+  /// **'Tiếng việt'**
+  String get vietnamese;
 }
 
-class _ThemeLocalizationsDelegate
-    extends LocalizationsDelegate<ThemeLocalizations> {
-  const _ThemeLocalizationsDelegate();
+class _LanguageLocalizationsDelegate
+    extends LocalizationsDelegate<LanguageLocalizations> {
+  const _LanguageLocalizationsDelegate();
 
   @override
-  Future<ThemeLocalizations> load(Locale locale) {
-    return SynchronousFuture<ThemeLocalizations>(
-        lookupThemeLocalizations(locale));
+  Future<LanguageLocalizations> load(Locale locale) {
+    return SynchronousFuture<LanguageLocalizations>(
+        lookupLanguageLocalizations(locale));
   }
 
   @override
@@ -136,20 +131,20 @@ class _ThemeLocalizationsDelegate
       <String>['en', 'vi'].contains(locale.languageCode);
 
   @override
-  bool shouldReload(_ThemeLocalizationsDelegate old) => false;
+  bool shouldReload(_LanguageLocalizationsDelegate old) => false;
 }
 
-ThemeLocalizations lookupThemeLocalizations(Locale locale) {
+LanguageLocalizations lookupLanguageLocalizations(Locale locale) {
   // Lookup logic when only language code is specified.
   switch (locale.languageCode) {
     case 'en':
-      return ThemeLocalizationsEn();
+      return LanguageLocalizationsEn();
     case 'vi':
-      return ThemeLocalizationsVi();
+      return LanguageLocalizationsVi();
   }
 
   throw FlutterError(
-      'ThemeLocalizations.delegate failed to load unsupported locale "$locale". This is likely '
+      'LanguageLocalizations.delegate failed to load unsupported locale "$locale". This is likely '
       'an issue with the localizations generation tool. Please file an issue '
       'on GitHub with a reproducible sample app and the gen-l10n configuration '
       'that was used.');

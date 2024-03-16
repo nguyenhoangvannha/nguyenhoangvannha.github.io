@@ -4,7 +4,6 @@ import 'package:nguyenhoangvannha/src/app/helpers/extensions/build_context_exten
 import 'package:nguyenhoangvannha/src/app/helpers/extensions/route_name_ext.dart';
 import 'package:nguyenhoangvannha/src/app/routes/go_router_builder.dart';
 import 'package:nguyenhoangvannha/src/app/routes/route_name.dart';
-import 'package:nguyenhoangvannha/src/features/resume/presentation/view/resume_page.dart';
 import 'package:nguyenhoangvannha/src/features/settings/presentation/view/settings_page.dart';
 import 'package:nha_portfolio/nha_portfolio.dart';
 
@@ -228,7 +227,7 @@ class _HomeScreenState extends State<HomeScreen> {
       ];
 
   Widget trailingNavRail() => Expanded(
-    child: Column(
+        child: Column(
           mainAxisSize: MainAxisSize.max,
           mainAxisAlignment: MainAxisAlignment.end,
           children: <Widget>[
@@ -238,7 +237,7 @@ class _HomeScreenState extends State<HomeScreen> {
             ),
           ],
         ),
-  );
+      );
 
   AppBar appBar() => AppBar(
         title: Text(

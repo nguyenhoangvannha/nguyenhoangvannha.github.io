@@ -21,6 +21,16 @@
       }
     }
   },
+  "shareResumeMessage": "Check out this website {websiteLink}",
+  "@shareResumeMessage": {
+    "description": "Share resume message",
+    "placeholders": {
+      "websiteLink": {
+        "type": "String",
+        "example": "google.com"
+      }
+    }
+  },
   "shareResumeTitle": "Nguyen Hoang Van Nha - Mobile Engineer",
   "myTechStack": "My Tech Stack",
   "technologiesIVeBeenWorkingWithRecently": "Technologies I’ve been working with recently",

@@ -1,14 +1,12 @@
 import 'dart:async';
 
-import 'package:flutter/cupertino.dart';
-import 'package:flutter/foundation.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
-import 'package:nguyenhoangvannha/src/app/constants/resume_constrants.dart';
-import 'package:nguyenhoangvannha/src/app/helpers/extensions/build_context_extension.dart';
-import 'package:nguyenhoangvannha/src/assets/generated/assets.gen.dart';
-import 'package:nguyenhoangvannha/src/features/resume/presentation/widgets/pdf_page_number.dart';
-import 'package:nguyenhoangvannha/src/features/resume/presentation/widgets/pdf_widget.dart';
+import 'package:nha_portfolio/src/assets/generated/assets.gen.dart';
+import 'package:nha_portfolio/src/helpers/consts/resume_constrants.dart';
+import 'package:nha_portfolio/src/helpers/ext/context_ext.dart';
+import 'package:nha_portfolio/src/presentation/widgets/pdf_page_number.dart';
+import 'package:nha_portfolio/src/presentation/widgets/pdf_widget.dart';
 import 'package:pdfrx/pdfrx.dart';
 import 'package:share_plus/share_plus.dart';
 import 'package:download/download.dart';
@@ -21,7 +19,7 @@ class ResumePage extends StatefulWidget {
 }
 
 class _ResumePageState extends State<ResumePage> {
-  final pdfFile = AppAssets.resume.nguyenHoangVanNhaMobileEngineer;
+  final pdfFile = Assets.resume.nguyenHoangVanNhaMobileEngineer;
 
   PdfViewerController? pdfViewerController;
   final onPageChangeStreamController = StreamController<int?>();
@@ -40,7 +38,9 @@ class _ResumePageState extends State<ResumePage> {
                 onPageChangeStream: onPageChangeStreamController.stream,
                 pagesCount: pdfViewerController?.pages.length ?? 0,
               ),
-              const SizedBox(width: 8,),
+              const SizedBox(
+                width: 8,
+              ),
               IconButton(
                 onPressed: () {
                   pdfViewerController?.zoomDown();
