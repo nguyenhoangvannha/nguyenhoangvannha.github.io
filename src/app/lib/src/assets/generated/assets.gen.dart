@@ -10,9 +10,9 @@
 class $AssetsResumeGen {
   const $AssetsResumeGen();
 
-  /// File path: assets/resume/Nguyen Hoang Van Nha - Mobile Engineer.pdf
+  /// File path: assets/resume/Nguyen_Hoang_Van_Nha_Mobile_Engineer.pdf
   String get nguyenHoangVanNhaMobileEngineer =>
-      'assets/resume/Nguyen Hoang Van Nha - Mobile Engineer.pdf';
+      'assets/resume/Nguyen_Hoang_Van_Nha_Mobile_Engineer.pdf';
 
   /// List of all assets
   List<String> get values => [nguyenHoangVanNhaMobileEngineer];

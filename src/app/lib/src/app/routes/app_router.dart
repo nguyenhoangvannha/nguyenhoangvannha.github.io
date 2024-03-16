@@ -12,7 +12,7 @@ final class AppRouter {
 
   late final router = GoRouter(
     routes: $appRoutes,
-    initialLocation: RouteName.home.path,
+    initialLocation: RouteName.initial.path,
     observers: <NavigatorObserver>[getIt<GoRouteObserver>(param1: debugLabel)],
   );
 }

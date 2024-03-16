@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_adaptive_scaffold/flutter_adaptive_scaffold.dart';
 import 'package:nguyenhoangvannha/src/app/helpers/extensions/build_context_extension.dart';
+import 'package:nguyenhoangvannha/src/app/helpers/extensions/route_name_ext.dart';
 import 'package:nguyenhoangvannha/src/app/routes/go_router_builder.dart';
 import 'package:nguyenhoangvannha/src/app/routes/route_name.dart';
 import 'package:nguyenhoangvannha/src/features/resume/presentation/view/resume_page.dart';
@@ -25,21 +26,21 @@ class _HomeScreenState extends State<HomeScreen> {
   int selectedNavigation = 0;
   int _transitionDuration = 1000;
   final routeNumberToName = {
-    0: RouteName.home.path,
-    1: RouteName.articles.path,
-    2: RouteName.chat.path,
-    3: RouteName.reading.path,
-    4: RouteName.projects.path,
-    5: RouteName.resume.path,
-    6: RouteName.settings.path,
+    0: RouteName.home,
+    1: RouteName.articles,
+    2: RouteName.chat,
+    3: RouteName.reading,
+    4: RouteName.projects,
+    5: RouteName.resume,
+    6: RouteName.settings,
   };
 
   // Initialize transition time variable.
   @override
   void initState() {
     selectedNavigation = routeNumberToName.entries
-        .firstWhere((element) => element.value == widget.destination,
-            orElse: () => MapEntry(0, RouteName.home.path))
+        .firstWhere((element) => element.value.path == widget.destination,
+            orElse: () => const MapEntry(0, RouteName.home))
         .key;
     super.initState();
     setState(() {
@@ -175,8 +176,8 @@ class _HomeScreenState extends State<HomeScreen> {
   void onDestinationSelected(int newIndex) {
     selectedNavigation = newIndex;
     HomeRoute(
-            destination:
-                routeNumberToName[newIndex] ?? routeNumberToName.values.first)
+            destination: routeNumberToName[newIndex]?.path ??
+                routeNumberToName.values.first.path)
         .go(context);
 
     // setState(() {
@@ -224,24 +225,24 @@ class _HomeScreenState extends State<HomeScreen> {
         ),
       ];
 
-  Widget trailingNavRail() => Column(
-        mainAxisSize: MainAxisSize.max,
-        mainAxisAlignment: MainAxisAlignment.end,
-        children: <Widget>[
-          const Divider(),
-          const SizedBox(height: 10),
-          SettingsPage(
-            hasTitle: false,
-          ),
-        ],
-      );
+  Widget trailingNavRail() => Expanded(
+    child: Column(
+          mainAxisSize: MainAxisSize.max,
+          mainAxisAlignment: MainAxisAlignment.end,
+          children: <Widget>[
+            Spacer(),
+            SettingsPage(
+              hasTitle: false,
+            ),
+          ],
+        ),
+  );
 
   AppBar appBar() => AppBar(
-        title: Text(context.l10n.authorName),
+        title: Text(
+          routeNumberToName[selectedNavigation]?.toL10n(context) ??
+              context.l10n.authorName,
+        ),
         centerTitle: true,
-        actions: [
-          buildSettingIcon(),
-          const SizedBox(width: 10),
-        ],
       );
 }

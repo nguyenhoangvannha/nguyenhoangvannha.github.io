@@ -1,15 +1,14 @@
 enum RouteName {
-  initial("/"),
+  initial("/home"),
   home("home"),
   articles("articles"),
   chat("chat"),
   reading("reading"),
   projects("projects"),
   resume("resume"),
-  settings("settings"),
-  ;
+  settings("settings");
 
-   const RouteName(this.path);
+  const RouteName(this.path);
 
   final String path;
 }

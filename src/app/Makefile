@@ -1,7 +1,19 @@
-build-web:
+web:
 	flutter build web -o ../../docs
+apk:
+	flutter build apk
+apks:
+	flutter build apk --split-per-abi
 server:
 	flutter run -d web-server
+assets:
+	fluttergen
+built:
+	flutter clean
+	dart run build_runner watch --delete-conflicting-outputs
+l10n:
+	flutter gen-l10n
+
 install-dep:
 	dart pub add dev:build_runner
 
@@ -26,10 +38,3 @@ install-dep:
 	dart pub global activate flutter_gen
 	dart pub add dev:build_runner
 	dart pub add dev:flutter_gen_runner
-assets:
-	fluttergen
-built:
-	flutter clean
-	dart run build_runner watch --delete-conflicting-outputs
-l10n:
-	flutter gen-l10n
