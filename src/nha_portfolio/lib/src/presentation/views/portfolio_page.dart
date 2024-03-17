@@ -24,6 +24,10 @@ class PortfolioPage extends StatelessWidget {
         child: Column(
           crossAxisAlignment: CrossAxisAlignment.center,
           children: [
+            TextButton(
+              onPressed: () => throw Exception(),
+              child: const Text("Throw Test Exception"),
+            ),
             Sumary(
               onPressedDownloadCV: onPressedDownloadCV,
             ),
