@@ -5,3 +5,7 @@ Initial release.
 ## 1.1.1+2
 
 Responsive UI
+
+## 1.1.2+2
+
+Improve Responsive UI
