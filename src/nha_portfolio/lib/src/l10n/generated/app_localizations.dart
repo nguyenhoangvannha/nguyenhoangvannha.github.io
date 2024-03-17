@@ -154,7 +154,7 @@ abstract class PortfolioLocalizations {
   /// Share resume message
   ///
   /// In en, this message translates to:
-  /// **'Hi 👋,\nMy name is\n{name}\nI build things for web'**
+  /// **'Hi 👋,\nMy name is\n{name}\nI build things for mobile'**
   String summaryParagraph(String name);
 
   /// Share resume message

@@ -67,6 +67,10 @@ class $AssetsIconsGen {
   AssetGenImage get icons8Kotlin48 =>
       const AssetGenImage('assets/icons/icons8-kotlin-48.png');
 
+  /// File path: assets/icons/icons8-phone-48.png
+  AssetGenImage get icons8Phone48 =>
+      const AssetGenImage('assets/icons/icons8-phone-48.png');
+
   /// File path: assets/icons/icons8-scrum-64.png
   AssetGenImage get icons8Scrum64 =>
       const AssetGenImage('assets/icons/icons8-scrum-64.png');
@@ -103,6 +107,7 @@ class $AssetsIconsGen {
         icons8Java48,
         icons8Javascript48,
         icons8Kotlin48,
+        icons8Phone48,
         icons8Scrum64,
         icons8Testing96,
         icons8VisualStudioCode48,

@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:nha_portfolio/src/assets/generated/assets.gen.dart';
 import 'package:nha_portfolio/src/domain/entity/project.dart';
 import 'package:nha_portfolio/src/helpers/ext/context_ext.dart';
@@ -10,31 +11,35 @@ class ProjectCard extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return Card(
+    final fontSize = 16.sp;
+    return Card.outlined(
+      clipBehavior: Clip.antiAliasWithSaveLayer,
       child: Column(
         mainAxisSize: MainAxisSize.min,
         crossAxisAlignment: CrossAxisAlignment.center,
         children: [
           Assets.images.projectCover.image(
             height: 120,
-            fit: BoxFit.scaleDown,
+            width: double.infinity,
+            fit: BoxFit.fitWidth,
           ),
           Padding(
-            padding: const EdgeInsets.all(12.0),
+            padding: EdgeInsets.all(12.w),
             child: Column(
-              mainAxisSize: MainAxisSize.min,
               crossAxisAlignment: CrossAxisAlignment.start,
               children: [
                 Text(
                   project.title,
                   style: TextStyle(
-                    fontWeight: FontWeight.w600,
-                    fontSize: 20,
+                    fontWeight: FontWeight.w500,
+                    fontSize: 18.sp,
                   ),
                 ),
                 Text(
                   project.description,
-                  style: context.themeData.textTheme.titleSmall,
+                  style: TextStyle(
+                    fontSize: fontSize,
+                  ),
                 ),
                 Row(
                   mainAxisSize: MainAxisSize.min,
@@ -42,19 +47,26 @@ class ProjectCard extends StatelessWidget {
                   children: [
                     Text(
                       context.l10n.techStack,
-                      style: context.themeData.textTheme.titleSmall,
+                      style: TextStyle(
+                        fontSize: fontSize,
+                      ),
                     ),
                     Text(
                       project.techStack,
-                      style: context.themeData.textTheme.titleSmall,
+                      style: TextStyle(
+                        fontWeight: FontWeight.w600,
+                        fontSize: fontSize,
+                      ),
                     ),
                   ],
                 ),
                 Row(
                   crossAxisAlignment: CrossAxisAlignment.center,
                   children: [
-                    textButton(context, context.l10n.livePreview, Assets.icons.akarIconsLinkChain.provider()),
-                    textButton(context, context.l10n.viewCode, Assets.icons.github.provider()),
+                    textButton(context, context.l10n.livePreview,
+                        Assets.icons.akarIconsLinkChain.provider()),
+                    textButton(context, context.l10n.viewCode,
+                        Assets.icons.github.provider()),
                   ],
                 ),
               ],
@@ -65,18 +77,16 @@ class ProjectCard extends StatelessWidget {
     );
   }
 
-  Widget textButton(
-    BuildContext context,
-    String text,
-    ImageProvider image,
-  ) {
+  Widget textButton(BuildContext context,
+      String text,
+      ImageProvider image,) {
     return TextButton(
       onPressed: () {},
       child: Row(
         children: [
           ImageIcon(
             image,
-            size: 12.0,
+            size: 12.w,
           ),
           Text(text),
         ],
@@ -84,7 +94,7 @@ class ProjectCard extends StatelessWidget {
       style: ButtonStyle(
         textStyle: MaterialStateProperty.all(
           TextStyle(
-            fontSize: 12,
+            fontSize: 12.sp,
             decoration: TextDecoration.underline,
           ),
         ),

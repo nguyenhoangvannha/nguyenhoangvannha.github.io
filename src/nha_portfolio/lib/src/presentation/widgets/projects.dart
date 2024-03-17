@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:nha_portfolio/src/domain/entity/project.dart';
 import 'package:nha_portfolio/src/helpers/ext/context_ext.dart';
 import 'package:nha_portfolio/src/presentation/widgets/project_card.dart';
@@ -23,37 +24,34 @@ class Projects extends StatelessWidget {
           context.l10n.projects,
           style: TextStyle(
             fontWeight: FontWeight.bold,
-            fontSize: 28.0,
+            fontSize: 28.sp,
             height: 0.5,
           ),
         ),
         SizedBox(
-          height: 28,
+          height: 20.w,
         ),
         Text(
           context.l10n.thingsIVeBuiltSoFar,
           style: TextStyle(
-            fontSize: 16.0,
+            fontSize: 16.sp,
             height: 0.7,
           ),
         ),
         SizedBox(
-          height: 48,
+          height: 28.w,
         ),
-        GridView.builder(
+        GridView(
           shrinkWrap: true,
-          itemCount: 6,
           physics: const NeverScrollableScrollPhysics(),
-          gridDelegate: const SliverGridDelegateWithFixedCrossAxisCount(
+          gridDelegate:  SliverGridDelegateWithFixedCrossAxisCount(
             crossAxisCount: 3,
-            mainAxisSpacing: 24,
-            crossAxisSpacing: 24,
+            mainAxisSpacing: 24.w,
+            crossAxisSpacing: 24.w,
           ),
-          itemBuilder: (context, index) {
-            return ProjectCard(
-              project: project,
-            );
-          },
+          children: List.generate(6, (index) => project).map((e) => ProjectCard(
+            project: project,
+          )).toList(),
         ),
       ],
     );

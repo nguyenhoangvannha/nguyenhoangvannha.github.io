@@ -33,7 +33,7 @@ class PortfolioLocalizationsEn extends PortfolioLocalizations {
 
   @override
   String summaryParagraph(String name) {
-    return 'Hi 👋,\nMy name is\n$name\nI build things for web';
+    return 'Hi 👋,\nMy name is\n$name\nI build things for mobile';
   }
 
   @override

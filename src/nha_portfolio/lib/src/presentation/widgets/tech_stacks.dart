@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:nha_portfolio/src/domain/entity/tech_stack_enum.dart';
 import 'package:nha_portfolio/src/helpers/ext/context_ext.dart';
 import 'package:nha_portfolio/src/helpers/ext/tech_stack_ext.dart';
@@ -19,30 +20,28 @@ class TechStacks extends StatelessWidget {
           context.l10n.myTechStack,
           style: TextStyle(
             fontWeight: FontWeight.bold,
-            fontSize: 32.0,
+            fontSize: 32.sp,
             height: 0.5,
           ),
         ),
         SizedBox(
-          height: 28,
+          height: 20.w,
         ),
         Text(
           context.l10n.technologiesIVeBeenWorkingWithRecently,
           style: TextStyle(
-            fontSize: 20.0,
+            fontSize: 20.sp,
             height: 0.7,
           ),
         ),
         SizedBox(
-          height: 52,
+          height: 28.w,
         ),
         GridView(
           shrinkWrap: true,
           physics: const NeverScrollableScrollPhysics(),
-          gridDelegate: const SliverGridDelegateWithFixedCrossAxisCount(
+          gridDelegate:  SliverGridDelegateWithFixedCrossAxisCount(
             crossAxisCount: 6,
-            mainAxisSpacing: 24,
-            crossAxisSpacing: 32,
           ),
           children: stacks.map((e) => TechStack(techStack: e)).toList(),
         ),

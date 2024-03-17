@@ -11,7 +11,7 @@
   "readingList": "Reading List",
   "settings": "Settings",
   "resumeFileName": "Nguyen Hoang Van Nha - Mobile Engineer.pdf",
-  "summaryParagraph": "Hi \uD83D\uDC4B,\nMy name is\n{name}\nI build things for web",
+  "summaryParagraph": "Hi \uD83D\uDC4B,\nMy name is\n{name}\nI build things for mobile",
   "@summaryParagraph": {
     "description": "Share resume message",
     "placeholders": {

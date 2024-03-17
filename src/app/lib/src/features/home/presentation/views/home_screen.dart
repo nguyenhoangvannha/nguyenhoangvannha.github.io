@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_adaptive_scaffold/flutter_adaptive_scaffold.dart';
+import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:nguyenhoangvannha/src/app/helpers/extensions/build_context_extension.dart';
 import 'package:nguyenhoangvannha/src/app/helpers/extensions/route_name_ext.dart';
 import 'package:nguyenhoangvannha/src/app/routes/go_router_builder.dart';
@@ -119,7 +120,9 @@ class _HomeScreenState extends State<HomeScreen> {
                 leading: Row(
                   mainAxisAlignment: MainAxisAlignment.spaceAround,
                   children: <Widget>[
-                    const Avatar(minRadius: 12,),
+                    const Avatar(
+                      minRadius: 12,
+                    ),
                     Text(
                       context.l10n.authorName,
                       style: const TextStyle(
@@ -148,7 +151,13 @@ class _HomeScreenState extends State<HomeScreen> {
             Breakpoints.smallAndUp: SlotLayout.from(
                 key: const Key('Body Medium'),
                 builder: (_) => switch (selectedNavigation) {
-                      0 => const PortfolioPage(),
+                      0 => PortfolioPage(
+                          padding: EdgeInsets.all(80.w),
+                          onPressedDownloadCV: () {
+                            selectedNavigation = 5;
+                            HomeRoute(destination: RouteName.resume.path).go(context);
+                          },
+                        ),
                       5 => const ResumePage(),
                       6 => SettingsPage(),
                       int() => Text(

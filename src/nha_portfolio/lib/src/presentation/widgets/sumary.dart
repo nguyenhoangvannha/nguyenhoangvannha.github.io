@@ -1,11 +1,14 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:nha_portfolio/src/helpers/ext/context_ext.dart';
 import 'package:nha_portfolio/src/presentation/widgets/avatar.dart';
 import 'package:nha_portfolio/src/presentation/widgets/download_cv.dart';
 import 'package:nha_portfolio/src/presentation/widgets/social.dart';
 
 class Sumary extends StatelessWidget {
-  const Sumary({super.key});
+  const Sumary({super.key, this.onPressedDownloadCV});
+
+  final Function()? onPressedDownloadCV;
 
   @override
   Widget build(BuildContext context) {
@@ -19,20 +22,24 @@ class Sumary extends StatelessWidget {
               context.l10n.summaryParagraph(context.l10n.authorName),
               style: TextStyle(
                 fontWeight: FontWeight.bold,
-                fontSize: 38.0,
+                fontSize: 38.sp,
                 height: 1.2,
               ),
             ),
             Row(
               children: [
                 Social(),
-                DownloadCV(),
+                DownloadCV(
+                  onPressed: onPressedDownloadCV,
+                ),
               ],
             )
           ],
         ),
         Spacer(),
-        const Avatar(),
+        Avatar(
+          minRadius: 100.w,
+        ),
       ],
     );
   }
