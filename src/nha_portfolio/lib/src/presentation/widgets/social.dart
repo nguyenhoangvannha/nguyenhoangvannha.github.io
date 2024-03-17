@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:nha_portfolio/src/assets/generated/assets.gen.dart';
 import 'package:nha_portfolio/src/helpers/consts/consts.dart';
+import 'package:responsive_builder/responsive_builder.dart';
 import 'package:url_launcher/url_launcher.dart';
 
 class Social extends StatelessWidget {
@@ -16,8 +17,12 @@ class Social extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    final cacheSize = 30;
-    final size = cacheSize.w;
+    final cacheSize = getValueForScreenType(
+      context: context,
+      mobile: 24,
+      desktop: 30,
+    );
+    final size = cacheSize.toDouble();
     return Row(
       mainAxisSize: MainAxisSize.min,
       crossAxisAlignment: CrossAxisAlignment.center,

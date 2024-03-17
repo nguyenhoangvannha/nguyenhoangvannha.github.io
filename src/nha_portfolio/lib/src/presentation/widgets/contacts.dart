@@ -3,6 +3,7 @@ import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:nha_portfolio/src/helpers/consts/consts.dart';
 import 'package:nha_portfolio/src/helpers/ext/context_ext.dart';
 import 'package:nha_portfolio/src/presentation/widgets/social.dart';
+import 'package:responsive_builder/responsive_builder.dart';
 import 'package:url_launcher/url_launcher.dart';
 
 class Contacts extends StatelessWidget {
@@ -10,46 +11,66 @@ class Contacts extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return Row(
-      crossAxisAlignment: CrossAxisAlignment.center,
-      children: [
-        Text(
-          "{ ${context.l10n.authorName} }",
+    final children = [
+      Text(
+        "{ ${context.l10n.authorName} }",
+        style: TextStyle(
+          fontSize: getValueForScreenType(
+              context: context, mobile: 18, desktop: 22.sp),
+          fontWeight: FontWeight.bold,
+        ),
+      ),
+      Spacer(),
+      TextButton(
+        onPressed: () {
+          launchUrl(Uri.parse("tel:" + Consts.authorPhone));
+        },
+        child: Text(
+          Consts.authorPhone,
           style: TextStyle(
-            fontSize: 22.sp,
-            fontWeight: FontWeight.bold,
+            fontSize: getValueForScreenType(
+              context: context,
+              mobile: 14,
+              desktop: 16.sp,
+            ),
           ),
         ),
-        Spacer(),
-        TextButton(
-          onPressed: () {
-            launchUrl(Uri.parse("tel:" + Consts.authorPhone));
-          },
-          child: Text(
-            Consts.authorPhone,
-            style: TextStyle(fontSize: 16.sp),
+      ),
+      SizedBox(
+        width: 12.w,
+      ),
+      TextButton(
+        onPressed: () {
+          launchUrl(Uri.parse("mailto:" + Consts.authorEmail));
+        },
+        child: Text(
+          Consts.authorEmail,
+          style: TextStyle(
+            fontSize: getValueForScreenType(
+              context: context,
+              mobile: 14,
+              desktop: 16.sp,
+            ),
           ),
         ),
-        SizedBox(
-          width: 12.w,
+      ),
+      SizedBox(
+        width: 20.w,
+      ),
+      Social(
+        email: false,
+        phone: false,
+      ),
+    ];
+    return getValueForScreenType(
+        context: context,
+        mobile: Wrap(
+          crossAxisAlignment: WrapCrossAlignment.center,
+          children: children,
         ),
-        TextButton(
-          onPressed: () {
-            launchUrl(Uri.parse("mailto:" + Consts.authorEmail));
-          },
-          child: Text(
-            Consts.authorEmail,
-            style: TextStyle(fontSize: 16.sp),
-          ),
-        ),
-        SizedBox(
-          width: 20.w,
-        ),
-        Social(
-          email: false,
-          phone: false,
-        ),
-      ],
-    );
+        desktop: Row(
+          crossAxisAlignment: CrossAxisAlignment.center,
+          children: children,
+        ));
   }
 }

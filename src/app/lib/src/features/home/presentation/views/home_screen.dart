@@ -160,7 +160,7 @@ class _HomeScreenState extends State<HomeScreen> {
                             tablet: EdgeInsets.symmetric(
                                 horizontal: 100.w, vertical: 60.w),
                             mobile: EdgeInsets.symmetric(
-                                horizontal: 200.w, vertical: 60.w),
+                                horizontal: 40, vertical: 20),
                           ),
                           onPressedDownloadCV: () {
                             selectedNavigation = 5;

@@ -5,6 +5,7 @@ import 'package:nha_portfolio/src/presentation/widgets/make_with.dart';
 import 'package:nha_portfolio/src/presentation/widgets/projects.dart';
 import 'package:nha_portfolio/src/presentation/widgets/sumary.dart';
 import 'package:nha_portfolio/src/presentation/widgets/tech_stacks.dart';
+import 'package:responsive_builder/responsive_builder.dart';
 
 class PortfolioPage extends StatelessWidget {
   const PortfolioPage({
@@ -24,12 +25,17 @@ class PortfolioPage extends StatelessWidget {
         child: Column(
           crossAxisAlignment: CrossAxisAlignment.center,
           children: [
-            Sumary(
-              onPressedDownloadCV: onPressedDownloadCV,
-            ),
-            SizedBox(height: 140.w),
+            Sumary(onPressedDownloadCV: onPressedDownloadCV),
+            SizedBox(
+                height: getValueForScreenType(
+                    context: context, mobile: 100, desktop: 140.w)),
             TechStacks(),
-            SizedBox(height: 64.w),
+            SizedBox(
+                height: getValueForScreenType(
+              context: context,
+              mobile: 48,
+              desktop: 64.w,
+            )),
             Projects(),
             SizedBox(height: 100.w),
             Contacts(),

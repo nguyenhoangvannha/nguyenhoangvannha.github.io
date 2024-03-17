@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:nha_portfolio/src/domain/entity/tech_stack_enum.dart';
 import 'package:nha_portfolio/src/helpers/ext/tech_stack_ext.dart';
+import 'package:responsive_builder/responsive_builder.dart';
 
 class TechStack extends StatelessWidget {
   const TechStack({super.key, required this.techStack});
@@ -10,7 +11,11 @@ class TechStack extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    final size = 56.w;
+    final size = getValueForScreenType(
+      context: context,
+      mobile: 32,
+      desktop: 56.w,
+    ).toDouble();
     return Column(
       mainAxisSize: MainAxisSize.min,
       crossAxisAlignment: CrossAxisAlignment.center,
@@ -28,7 +33,8 @@ class TechStack extends StatelessWidget {
           techStack.name,
           textAlign: TextAlign.center,
           style: TextStyle(
-            fontSize: 14.sp,
+            fontSize: getValueForScreenType(
+                context: context, mobile: 12, desktop: 14.sp),
           ),
         ),
       ],

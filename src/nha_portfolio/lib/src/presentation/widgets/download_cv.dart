@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:nha_portfolio/src/helpers/ext/context_ext.dart';
+import 'package:responsive_builder/responsive_builder.dart';
 
 class DownloadCV extends StatelessWidget {
   const DownloadCV({super.key, this.onPressed});
@@ -16,7 +17,11 @@ class DownloadCV extends StatelessWidget {
         children: [
           Icon(
             Icons.attach_file,
-            size: 28.w,
+            size: getValueForScreenType(
+              context: context,
+              mobile: 24,
+              desktop: 28.w,
+            ),
           ),
           SizedBox(
             width: 8.w,
@@ -24,7 +29,11 @@ class DownloadCV extends StatelessWidget {
           Text(
             context.l10n.downloadCV,
             style: TextStyle(
-              fontSize: 20.sp,
+              fontSize: getValueForScreenType(
+                context: context,
+                mobile: 18,
+                desktop: 20.sp,
+              ),
               decoration: TextDecoration.underline,
             ),
           )

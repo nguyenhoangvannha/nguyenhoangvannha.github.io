@@ -24,11 +24,17 @@ class Sumary extends StatelessWidget {
               context.l10n.summaryParagraph(context.l10n.authorName),
               style: TextStyle(
                 fontWeight: FontWeight.bold,
-                fontSize: 42.sp,
+                fontSize: getValueForScreenType(
+                  context: context,
+                  desktop: 42.sp,
+                  mobile: 28,
+                ),
                 height: 1.2,
               ),
             ),
-            SizedBox(height: 12.w,),
+            SizedBox(
+              height: 12.w,
+            ),
             Row(
               children: [
                 Social(),
@@ -41,7 +47,11 @@ class Sumary extends StatelessWidget {
         ),
         Spacer(),
         Avatar(
-          minRadius: 120.w,
+          minRadius: getValueForScreenType(
+            context: context,
+            mobile: 42,
+            desktop: 120.w,
+          ),
         ),
       ],
     );

@@ -3,6 +3,7 @@ import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:nha_portfolio/src/domain/entity/project.dart';
 import 'package:nha_portfolio/src/helpers/ext/context_ext.dart';
 import 'package:nha_portfolio/src/presentation/widgets/project_card.dart';
+import 'package:responsive_builder/responsive_builder.dart';
 
 class Projects extends StatelessWidget {
   const Projects({super.key});
@@ -24,22 +25,38 @@ class Projects extends StatelessWidget {
           context.l10n.projects,
           style: TextStyle(
             fontWeight: FontWeight.bold,
-            fontSize: 28.sp,
+            fontSize: getValueForScreenType(
+              context: context,
+              mobile: 22,
+              desktop: 28.sp,
+            ),
             height: 0.5,
           ),
         ),
         SizedBox(
-          height: 20.w,
+          height: getValueForScreenType(
+            context: context,
+            mobile: 16,
+            desktop: 20.w,
+          ),
         ),
         Text(
           context.l10n.thingsIVeBuiltSoFar,
           style: TextStyle(
-            fontSize: 20.sp,
+            fontSize: getValueForScreenType(
+              context: context,
+              mobile: 14,
+              desktop: 20.sp,
+            ),
             height: 0.7,
           ),
         ),
         SizedBox(
-          height: 28.w,
+          height: getValueForScreenType(
+            context: context,
+            mobile: 24,
+            desktop: 28.w,
+          ),
         ),
         GridView(
           shrinkWrap: true,

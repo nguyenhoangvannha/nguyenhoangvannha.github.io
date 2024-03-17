@@ -4,6 +4,7 @@ import 'package:nha_portfolio/src/domain/entity/tech_stack_enum.dart';
 import 'package:nha_portfolio/src/helpers/ext/context_ext.dart';
 import 'package:nha_portfolio/src/helpers/ext/tech_stack_ext.dart';
 import 'package:nha_portfolio/src/presentation/widgets/tech_stack.dart';
+import 'package:responsive_builder/responsive_builder.dart';
 
 class TechStacks extends StatelessWidget {
   const TechStacks({super.key});
@@ -20,22 +21,38 @@ class TechStacks extends StatelessWidget {
           context.l10n.myTechStack,
           style: TextStyle(
             fontWeight: FontWeight.bold,
-            fontSize: 30.sp,
+            fontSize: getValueForScreenType(
+              context: context,
+              mobile: 22,
+              desktop: 30.sp,
+            ),
             height: 0.5,
           ),
         ),
         SizedBox(
-          height: 20.w,
+          height: getValueForScreenType(
+            context: context,
+            mobile: 16,
+            desktop: 20.w,
+          ),
         ),
         Text(
           context.l10n.technologiesIVeBeenWorkingWithRecently,
           style: TextStyle(
-            fontSize: 20.sp,
+            fontSize: getValueForScreenType(
+              context: context,
+              mobile: 14,
+              desktop: 20.sp,
+            ),
             height: 0.7,
           ),
         ),
         SizedBox(
-          height: 42.w,
+          height: getValueForScreenType(
+            context: context,
+            mobile: 28,
+            desktop: 42.w,
+          ),
         ),
         GridView(
           shrinkWrap: true,
@@ -43,6 +60,7 @@ class TechStacks extends StatelessWidget {
           physics: const NeverScrollableScrollPhysics(),
           gridDelegate: SliverGridDelegateWithFixedCrossAxisCount(
             crossAxisCount: 6,
+            mainAxisSpacing: getValueForScreenType(context: context, mobile: 10.0),
           ),
           children: stacks.map((e) => TechStack(techStack: e)).toList(),
         ),
