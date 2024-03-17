@@ -7,7 +7,7 @@ project(runner LANGUAGES CXX)
 set(BINARY_NAME "nguyenhoangvannha")
 # The unique GTK application identifier for this application. See:
 # https://wiki.gnome.org/HowDoI/ChooseApplicationID
-set(APPLICATION_ID "app.web.nhvnha.apps.nguyenhoangvannha")
+set(APPLICATION_ID "io.github.nguyenhoangvannha.apps.nguyenhoangvannha")
 
 # Explicitly opt in to modern CMake behaviors to avoid warnings with recent
 # versions of CMake.

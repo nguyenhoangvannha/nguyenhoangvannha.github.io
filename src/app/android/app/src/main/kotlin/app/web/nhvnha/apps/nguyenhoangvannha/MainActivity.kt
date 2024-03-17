@@ -1,4 +1,4 @@
-package app.web.nhvnha.apps.nguyenhoangvannha
+package io.github.nguyenhoangvannha.apps.nguyenhoangvannha
 
 import io.flutter.embedding.android.FlutterActivity
 
