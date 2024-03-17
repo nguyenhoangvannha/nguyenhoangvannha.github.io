@@ -2,7 +2,6 @@ import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:nha_portfolio/src/domain/entity/tech_stack_enum.dart';
 import 'package:nha_portfolio/src/helpers/ext/context_ext.dart';
-import 'package:nha_portfolio/src/helpers/ext/tech_stack_ext.dart';
 import 'package:nha_portfolio/src/presentation/widgets/tech_stack.dart';
 import 'package:responsive_builder/responsive_builder.dart';
 
@@ -24,6 +23,7 @@ class TechStacks extends StatelessWidget {
             fontSize: getValueForScreenType(
               context: context,
               mobile: 22,
+              tablet: 26,
               desktop: 30.sp,
             ),
             height: 0.5,
@@ -42,6 +42,7 @@ class TechStacks extends StatelessWidget {
             fontSize: getValueForScreenType(
               context: context,
               mobile: 14,
+              tablet: 16,
               desktop: 20.sp,
             ),
             height: 0.7,

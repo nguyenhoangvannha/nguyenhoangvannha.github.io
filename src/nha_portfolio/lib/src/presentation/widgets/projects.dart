@@ -28,6 +28,7 @@ class Projects extends StatelessWidget {
             fontSize: getValueForScreenType(
               context: context,
               mobile: 22,
+              tablet: 26,
               desktop: 28.sp,
             ),
             height: 0.5,
@@ -46,6 +47,7 @@ class Projects extends StatelessWidget {
             fontSize: getValueForScreenType(
               context: context,
               mobile: 14,
+              tablet: 16,
               desktop: 20.sp,
             ),
             height: 0.7,

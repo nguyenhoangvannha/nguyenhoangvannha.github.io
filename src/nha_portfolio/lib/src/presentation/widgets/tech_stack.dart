@@ -14,6 +14,7 @@ class TechStack extends StatelessWidget {
     final size = getValueForScreenType(
       context: context,
       mobile: 32,
+      tablet: 38,
       desktop: 56.w,
     ).toDouble();
     return Column(
@@ -34,7 +35,10 @@ class TechStack extends StatelessWidget {
           textAlign: TextAlign.center,
           style: TextStyle(
             fontSize: getValueForScreenType(
-                context: context, mobile: 12, desktop: 14.sp),
+              context: context,
+              mobile: 12,
+              desktop: 14.sp,
+            ),
           ),
         ),
       ],

@@ -14,6 +14,7 @@ import 'package:nguyenhoangvannha/src/app/di/injection.dart';
 import 'package:nguyenhoangvannha/src/app/observers/app_bloc_observer.dart';
 import 'package:nha_portfolio/nha_portfolio.dart';
 import 'package:path_provider/path_provider.dart';
+import 'package:responsive_builder/responsive_builder.dart';
 
 void main() async {
   initializeSingletons();

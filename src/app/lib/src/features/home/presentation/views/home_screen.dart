@@ -158,7 +158,7 @@ class _HomeScreenState extends State<HomeScreen> {
                             desktop: EdgeInsets.symmetric(
                                 horizontal: 340.w, vertical: 140.w),
                             tablet: EdgeInsets.symmetric(
-                                horizontal: 100.w, vertical: 60.w),
+                                horizontal: 100, vertical: 40),
                             mobile: EdgeInsets.symmetric(
                                 horizontal: 40, vertical: 20),
                           ),

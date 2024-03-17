@@ -27,6 +27,7 @@ class Sumary extends StatelessWidget {
                 fontSize: getValueForScreenType(
                   context: context,
                   desktop: 42.sp,
+                  tablet: 32,
                   mobile: 28,
                 ),
                 height: 1.2,
@@ -50,6 +51,7 @@ class Sumary extends StatelessWidget {
           minRadius: getValueForScreenType(
             context: context,
             mobile: 42,
+            tablet: 52,
             desktop: 120.w,
           ),
         ),
