@@ -61,7 +61,12 @@ class TechStacks extends StatelessWidget {
           physics: const NeverScrollableScrollPhysics(),
           gridDelegate: SliverGridDelegateWithFixedCrossAxisCount(
             crossAxisCount: 6,
-            mainAxisSpacing: getValueForScreenType(context: context, mobile: 28.0),
+            childAspectRatio: getValueForScreenType(
+              context: context,
+              mobile: 0.7,
+              tablet: 1.2,
+              desktop: 1.5,
+            ),
           ),
           children: stacks.map((e) => TechStack(techStack: e)).toList(),
         ),

@@ -20,7 +20,7 @@ class Social extends StatelessWidget {
     final cacheSize = getValueForScreenType(
       context: context,
       mobile: 18,
-      desktop: 30,
+      desktop: 26,
     );
     final size = cacheSize.toDouble();
     return Row(

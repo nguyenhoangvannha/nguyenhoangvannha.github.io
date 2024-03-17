@@ -37,10 +37,18 @@ class PortfolioPage extends StatelessWidget {
             SizedBox(
                 height: getValueForScreenType(
               context: context,
-              mobile: 68,
-              desktop: 64.w,
+              mobile: 42,
+              desktop: 64,
             )),
-            Projects(),
+            Padding(
+              padding: EdgeInsets.symmetric(
+                  horizontal: getValueForScreenType(
+                context: context,
+                mobile: 0,
+                desktop: 76,
+              )),
+              child: Projects(),
+            ),
             SizedBox(height: 100.w),
             Contacts(),
             Divider(),

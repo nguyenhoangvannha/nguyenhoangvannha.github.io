@@ -15,8 +15,8 @@ class Contacts extends StatelessWidget {
       Text(
         "{ ${context.l10n.authorName} }",
         style: TextStyle(
-          fontSize: getValueForScreenType(
-              context: context, mobile: 16, desktop: 22.sp),
+          fontSize:
+              getValueForScreenType(context: context, mobile: 16, desktop: 22),
           fontWeight: FontWeight.bold,
         ),
       ),
@@ -32,7 +32,7 @@ class Contacts extends StatelessWidget {
             fontSize: getValueForScreenType(
               context: context,
               mobile: 12,
-              desktop: 16.sp,
+              desktop: 15,
             ),
           ),
         ),
@@ -50,7 +50,7 @@ class Contacts extends StatelessWidget {
             fontSize: getValueForScreenType(
               context: context,
               mobile: 12,
-              desktop: 16.sp,
+              desktop: 16,
             ),
           ),
         ),

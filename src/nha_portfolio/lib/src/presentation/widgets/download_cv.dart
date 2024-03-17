@@ -20,7 +20,7 @@ class DownloadCV extends StatelessWidget {
             size: getValueForScreenType(
               context: context,
               mobile: 18,
-              desktop: 28.w,
+              desktop: 28,
             ),
           ),
           SizedBox(
@@ -32,7 +32,7 @@ class DownloadCV extends StatelessWidget {
               fontSize: getValueForScreenType(
                 context: context,
                 mobile: 16,
-                desktop: 20.sp,
+                desktop: 20,
               ),
               decoration: TextDecoration.underline,
             ),

@@ -43,7 +43,11 @@ class Sumary extends StatelessWidget {
               ),
             ),
             getValueForScreenType(
-                context: context, mobile: SizedBox.shrink(), desktop: Spacer()),
+              context: context,
+              mobile: SizedBox.shrink(),
+              tablet: Spacer(),
+              desktop: Spacer(),
+            ),
           ],
         ),
         SizedBox(

@@ -19,8 +19,7 @@ class MakeWith extends StatelessWidget {
         Text(
           context.l10n.makeByAndWith(context.l10n.authorName),
           style: TextStyle(
-            fontSize: getValueForScreenType(context: context, mobile: 12)
-          ),
+              fontSize: getValueForScreenType(context: context, mobile: 12)),
         ),
         SizedBox(
           width: 4,

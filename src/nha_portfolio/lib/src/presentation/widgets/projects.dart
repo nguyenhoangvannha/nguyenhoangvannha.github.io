@@ -13,7 +13,7 @@ class Projects extends StatelessWidget {
     final project = Project((u) => u
       ..title = "Project Tile goes here"
       ..description =
-          "This is sample project description random things are here in description This is sample project lorem ipsum generator for dummy content"
+          "This is sample project description random things are here in description"
       ..techStack = "HTML , JavaScript, SASS, React"
       ..demoLink = "https://nguyenhoangvannha.github.io/"
       ..repoLink = "https://github.com/NoName-exe/revanced-extended");
@@ -65,8 +65,11 @@ class Projects extends StatelessWidget {
           physics: const NeverScrollableScrollPhysics(),
           gridDelegate: SliverGridDelegateWithFixedCrossAxisCount(
             crossAxisCount: 3,
-            mainAxisSpacing: 24.w,
-            crossAxisSpacing: 24.w,
+            childAspectRatio: 0.75,
+            mainAxisSpacing:
+                getValueForScreenType(context: context, mobile: 6, desktop: 28),
+            crossAxisSpacing:
+                getValueForScreenType(context: context, mobile: 6, desktop: 24),
           ),
           children: List.generate(6, (index) => project)
               .map((e) => ProjectCard(
