@@ -14,6 +14,12 @@ built:
 l10n:
 	flutter gen-l10n
 
+push-apk:
+	firebase appdistribution:distribute "build/app/outputs/flutter-apk/app-release.apk" \
+	--app 1:92989169508:android:deadd81a1205bd1b62e471 \
+	--groups "home, public" \
+ 	--release-notes-file "release-notes.txt" --debug
+
 install-dep:
 	dart pub add dev:build_runner
 
