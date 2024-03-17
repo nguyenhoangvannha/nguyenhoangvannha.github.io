@@ -1,3 +1,5 @@
+import 'package:device_preview/device_preview.dart';
+import 'package:flutter/foundation.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
@@ -38,6 +40,11 @@ class App extends StatelessWidget {
                   minTextAdapt: true,
                   splitScreenMode: true,
                   child: MaterialApp.router(
+                    locale: !kReleaseMode
+                        ? DevicePreview.locale(context) //Add DevicePreview
+                        : Locale.fromSubtags(
+                            languageCode: languageType.languageCode),
+                    builder: DevicePreview.appBuilder,
                     routerConfig: _appRouter.router,
                     themeMode: themeType.themeMode,
                     theme: ThemeData.light(useMaterial3: true),
@@ -48,8 +55,6 @@ class App extends StatelessWidget {
                       LanguageLocalizations.delegate,
                       PortfolioLocalizations.delegate,
                     ],
-                    locale: Locale.fromSubtags(
-                        languageCode: languageType.languageCode),
                     supportedLocales: AppLocalizations.supportedLocales,
                     debugShowCheckedModeBanner: false,
                   ),
