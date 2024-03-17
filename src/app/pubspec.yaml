@@ -67,6 +67,7 @@ dependencies:
   firebase_analytics: ^10.8.10
   responsive_builder: ^0.7.0
   device_preview: ^1.1.0
+  flutter_native_splash: ^2.3.10
 
 dev_dependencies:
   flutter_test:
