@@ -19,7 +19,7 @@ class DownloadCV extends StatelessWidget {
             Icons.attach_file,
             size: getValueForScreenType(
               context: context,
-              mobile: 24,
+              mobile: 18,
               desktop: 28.w,
             ),
           ),
@@ -31,7 +31,7 @@ class DownloadCV extends StatelessWidget {
             style: TextStyle(
               fontSize: getValueForScreenType(
                 context: context,
-                mobile: 18,
+                mobile: 16,
                 desktop: 20.sp,
               ),
               decoration: TextDecoration.underline,

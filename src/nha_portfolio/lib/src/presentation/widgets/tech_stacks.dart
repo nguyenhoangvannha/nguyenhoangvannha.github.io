@@ -22,7 +22,7 @@ class TechStacks extends StatelessWidget {
             fontWeight: FontWeight.bold,
             fontSize: getValueForScreenType(
               context: context,
-              mobile: 22,
+              mobile: 20,
               tablet: 26,
               desktop: 30.sp,
             ),
@@ -41,7 +41,7 @@ class TechStacks extends StatelessWidget {
           style: TextStyle(
             fontSize: getValueForScreenType(
               context: context,
-              mobile: 14,
+              mobile: 12,
               tablet: 16,
               desktop: 20.sp,
             ),
@@ -61,7 +61,7 @@ class TechStacks extends StatelessWidget {
           physics: const NeverScrollableScrollPhysics(),
           gridDelegate: SliverGridDelegateWithFixedCrossAxisCount(
             crossAxisCount: 6,
-            mainAxisSpacing: getValueForScreenType(context: context, mobile: 10.0),
+            mainAxisSpacing: getValueForScreenType(context: context, mobile: 28.0),
           ),
           children: stacks.map((e) => TechStack(techStack: e)).toList(),
         ),

@@ -19,7 +19,7 @@ class Social extends StatelessWidget {
   Widget build(BuildContext context) {
     final cacheSize = getValueForScreenType(
       context: context,
-      mobile: 24,
+      mobile: 18,
       desktop: 30,
     );
     final size = cacheSize.toDouble();

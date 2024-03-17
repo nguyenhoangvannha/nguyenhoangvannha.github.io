@@ -13,12 +13,12 @@ class Sumary extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return Row(
-      crossAxisAlignment: CrossAxisAlignment.center,
+    return Column(
+      mainAxisAlignment: MainAxisAlignment.start,
       children: [
-        Column(
+        Row(
           mainAxisSize: MainAxisSize.min,
-          crossAxisAlignment: CrossAxisAlignment.start,
+          crossAxisAlignment: CrossAxisAlignment.center,
           children: [
             Text(
               context.l10n.summaryParagraph(context.l10n.authorName),
@@ -28,32 +28,32 @@ class Sumary extends StatelessWidget {
                   context: context,
                   desktop: 42.sp,
                   tablet: 32,
-                  mobile: 28,
+                  mobile: 22,
                 ),
                 height: 1.2,
               ),
             ),
-            SizedBox(
-              height: 12.w,
+            Spacer(),
+            Avatar(
+              minRadius: getValueForScreenType(
+                context: context,
+                mobile: 36,
+                tablet: 52,
+                desktop: 120.w,
+              ),
             ),
-            Row(
-              children: [
-                Social(),
-                DownloadCV(
-                  onPressed: onPressedDownloadCV,
-                ),
-              ],
-            )
           ],
         ),
-        Spacer(),
-        Avatar(
-          minRadius: getValueForScreenType(
-            context: context,
-            mobile: 42,
-            tablet: 52,
-            desktop: 120.w,
-          ),
+        SizedBox(
+          height: 12.w,
+        ),
+        Row(
+          children: [
+            Social(),
+            DownloadCV(
+              onPressed: onPressedDownloadCV,
+            ),
+          ],
         ),
       ],
     );

@@ -27,13 +27,17 @@ class PortfolioPage extends StatelessWidget {
           children: [
             Sumary(onPressedDownloadCV: onPressedDownloadCV),
             SizedBox(
-                height: getValueForScreenType(
-                    context: context, mobile: 100, desktop: 140.w)),
+              height: getValueForScreenType(
+                context: context,
+                mobile: 60,
+                desktop: 140.w,
+              ),
+            ),
             TechStacks(),
             SizedBox(
                 height: getValueForScreenType(
               context: context,
-              mobile: 48,
+              mobile: 68,
               desktop: 64.w,
             )),
             Projects(),
