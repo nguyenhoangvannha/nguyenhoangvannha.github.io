@@ -123,12 +123,21 @@ class $AssetsImagesGen {
   AssetGenImage get avatarWork =>
       const AssetGenImage('assets/images/avatar_work.JPG');
 
+  /// File path: assets/images/nhaBlack.jpeg
+  AssetGenImage get nhaBlack =>
+      const AssetGenImage('assets/images/nhaBlack.jpeg');
+
+  /// File path: assets/images/nhaForest.jpeg
+  AssetGenImage get nhaForest =>
+      const AssetGenImage('assets/images/nhaForest.jpeg');
+
   /// File path: assets/images/projectCover.png
   AssetGenImage get projectCover =>
       const AssetGenImage('assets/images/projectCover.png');
 
   /// List of all assets
-  List<AssetGenImage> get values => [avatarWork, projectCover];
+  List<AssetGenImage> get values =>
+      [avatarWork, nhaBlack, nhaForest, projectCover];
 }
 
 class $AssetsResumeGen {

@@ -9,7 +9,7 @@ class Avatar extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return CircleAvatar(
-      foregroundImage: Assets.images.avatarWork.provider(),
+      foregroundImage: Assets.images.nhaBlack.provider(),
       backgroundColor: Colors.red,
       minRadius: minRadius,
     );
