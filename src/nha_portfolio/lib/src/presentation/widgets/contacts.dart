@@ -20,7 +20,7 @@ class Contacts extends StatelessWidget {
           fontWeight: FontWeight.bold,
         ),
       ),
-      Spacer(),
+      //Spacer(),
       TextButton(
         onPressed: () {
           launchUrl(Uri.parse("tel:" + Consts.authorPhone));
