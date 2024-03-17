@@ -10,7 +10,7 @@ class TechStack extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    final size = 48.w;
+    final size = 56.w;
     return Column(
       mainAxisSize: MainAxisSize.min,
       crossAxisAlignment: CrossAxisAlignment.center,
@@ -18,13 +18,19 @@ class TechStack extends StatelessWidget {
         techStack.assetGenImage.image(
           width: size,
           height: size,
-          cacheHeight: 32,
-          cacheWidth: 32,
+          cacheHeight: 56,
+          cacheWidth: 56,
         ),
-        SizedBox(height: 8.w,),
-        Text(techStack.name, textAlign: TextAlign.center, style: TextStyle(
-          fontSize: 14,
-        ),),
+        SizedBox(
+          height: 8.w,
+        ),
+        Text(
+          techStack.name,
+          textAlign: TextAlign.center,
+          style: TextStyle(
+            fontSize: 14.sp,
+          ),
+        ),
       ],
     );
   }

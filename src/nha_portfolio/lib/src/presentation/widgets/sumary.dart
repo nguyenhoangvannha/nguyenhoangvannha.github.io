@@ -14,6 +14,7 @@ class Sumary extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Row(
+      crossAxisAlignment: CrossAxisAlignment.center,
       children: [
         Column(
           mainAxisSize: MainAxisSize.min,
@@ -23,10 +24,11 @@ class Sumary extends StatelessWidget {
               context.l10n.summaryParagraph(context.l10n.authorName),
               style: TextStyle(
                 fontWeight: FontWeight.bold,
-                fontSize: 32,
+                fontSize: 42.sp,
                 height: 1.2,
               ),
             ),
+            SizedBox(height: 12.w,),
             Row(
               children: [
                 Social(),
@@ -39,7 +41,7 @@ class Sumary extends StatelessWidget {
         ),
         Spacer(),
         Avatar(
-          minRadius: 90.w,
+          minRadius: 120.w,
         ),
       ],
     );

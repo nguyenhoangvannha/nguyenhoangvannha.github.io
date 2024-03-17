@@ -20,7 +20,7 @@ class TechStacks extends StatelessWidget {
           context.l10n.myTechStack,
           style: TextStyle(
             fontWeight: FontWeight.bold,
-            fontSize: 28,
+            fontSize: 30.sp,
             height: 0.5,
           ),
         ),
@@ -30,17 +30,18 @@ class TechStacks extends StatelessWidget {
         Text(
           context.l10n.technologiesIVeBeenWorkingWithRecently,
           style: TextStyle(
-            fontSize: 16,
+            fontSize: 20.sp,
             height: 0.7,
           ),
         ),
         SizedBox(
-          height: 28.w,
+          height: 42.w,
         ),
         GridView(
           shrinkWrap: true,
+          padding: EdgeInsets.zero,
           physics: const NeverScrollableScrollPhysics(),
-          gridDelegate:  SliverGridDelegateWithFixedCrossAxisCount(
+          gridDelegate: SliverGridDelegateWithFixedCrossAxisCount(
             crossAxisCount: 6,
           ),
           children: stacks.map((e) => TechStack(techStack: e)).toList(),

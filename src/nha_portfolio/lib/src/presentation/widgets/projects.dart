@@ -24,7 +24,7 @@ class Projects extends StatelessWidget {
           context.l10n.projects,
           style: TextStyle(
             fontWeight: FontWeight.bold,
-            fontSize: 28,
+            fontSize: 28.sp,
             height: 0.5,
           ),
         ),
@@ -34,7 +34,7 @@ class Projects extends StatelessWidget {
         Text(
           context.l10n.thingsIVeBuiltSoFar,
           style: TextStyle(
-            fontSize: 16,
+            fontSize: 20.sp,
             height: 0.7,
           ),
         ),
@@ -44,14 +44,16 @@ class Projects extends StatelessWidget {
         GridView(
           shrinkWrap: true,
           physics: const NeverScrollableScrollPhysics(),
-          gridDelegate:  SliverGridDelegateWithFixedCrossAxisCount(
+          gridDelegate: SliverGridDelegateWithFixedCrossAxisCount(
             crossAxisCount: 3,
             mainAxisSpacing: 24.w,
             crossAxisSpacing: 24.w,
           ),
-          children: List.generate(6, (index) => project).map((e) => ProjectCard(
-            project: project,
-          )).toList(),
+          children: List.generate(6, (index) => project)
+              .map((e) => ProjectCard(
+                    project: project,
+                  ))
+              .toList(),
         ),
       ],
     );

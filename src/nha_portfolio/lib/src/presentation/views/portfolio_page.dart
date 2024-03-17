@@ -9,7 +9,7 @@ import 'package:nha_portfolio/src/presentation/widgets/tech_stacks.dart';
 class PortfolioPage extends StatelessWidget {
   const PortfolioPage({
     super.key,
-    this.padding = const EdgeInsets.all(80.0),
+    this.padding = const EdgeInsets.all(0.0),
     this.onPressedDownloadCV,
   });
 
@@ -27,7 +27,7 @@ class PortfolioPage extends StatelessWidget {
             Sumary(
               onPressedDownloadCV: onPressedDownloadCV,
             ),
-            SizedBox(height: 100.w),
+            SizedBox(height: 140.w),
             TechStacks(),
             SizedBox(height: 64.w),
             Projects(),

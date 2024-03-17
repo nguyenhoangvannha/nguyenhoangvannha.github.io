@@ -1,8 +1,9 @@
 abstract class FirebaseConsts {
-  static const rootCollection = "io.github.nguyenhoangvannha.apps.nguyenhoangvannha";
+  static const rootCollection =
+      "io.github.nguyenhoangvannha.apps.nguyenhoangvannha";
 }
 
-enum FireBaseDocuments{
+enum FireBaseDocuments {
   public("public"),
   techStacks("techStacks");
 

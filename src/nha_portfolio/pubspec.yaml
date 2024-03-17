@@ -19,6 +19,7 @@ dependencies:
   flutter_svg: ^2.0.10+1
   intl: 0.18.1
   pdfrx: ^1.0.49
+  responsive_builder: ^0.7.0
   share_plus: ^7.2.2
   url_launcher: ^6.2.5
 

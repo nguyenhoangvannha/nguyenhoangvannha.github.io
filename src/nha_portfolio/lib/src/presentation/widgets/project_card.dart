@@ -77,9 +77,11 @@ class ProjectCard extends StatelessWidget {
     );
   }
 
-  Widget textButton(BuildContext context,
-      String text,
-      ImageProvider image,) {
+  Widget textButton(
+    BuildContext context,
+    String text,
+    ImageProvider image,
+  ) {
     return TextButton(
       onPressed: () {},
       child: Row(

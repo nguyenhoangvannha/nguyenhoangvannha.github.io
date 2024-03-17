@@ -76,6 +76,7 @@ class DefaultFirebaseOptions {
     messagingSenderId: '92989169508',
     projectId: 'nhvnha',
     storageBucket: 'nhvnha.appspot.com',
-    iosBundleId: 'io.github.nguyenhoangvannha.apps.nguyenhoangvannha.RunnerTests',
+    iosBundleId:
+        'io.github.nguyenhoangvannha.apps.nguyenhoangvannha.RunnerTests',
   );
 }

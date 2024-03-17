@@ -7,6 +7,7 @@ import 'package:nguyenhoangvannha/src/app/routes/go_router_builder.dart';
 import 'package:nguyenhoangvannha/src/app/routes/route_name.dart';
 import 'package:nguyenhoangvannha/src/features/settings/presentation/view/settings_page.dart';
 import 'package:nha_portfolio/nha_portfolio.dart';
+import 'package:responsive_builder/responsive_builder.dart';
 
 /// Creates a basic adaptive page with navigational elements and a body using
 /// [AdaptiveLayout].
@@ -152,10 +153,19 @@ class _HomeScreenState extends State<HomeScreen> {
                 key: const Key('Body Medium'),
                 builder: (_) => switch (selectedNavigation) {
                       0 => PortfolioPage(
-                          padding: EdgeInsets.all(120.w),
+                          padding: getValueForScreenType<EdgeInsetsGeometry>(
+                            context: context,
+                            desktop: EdgeInsets.symmetric(
+                                horizontal: 340.w, vertical: 140.w),
+                            tablet: EdgeInsets.symmetric(
+                                horizontal: 100.w, vertical: 60.w),
+                            mobile: EdgeInsets.symmetric(
+                                horizontal: 200.w, vertical: 60.w),
+                          ),
                           onPressedDownloadCV: () {
                             selectedNavigation = 5;
-                            HomeRoute(destination: RouteName.resume.path).go(context);
+                            HomeRoute(destination: RouteName.resume.path)
+                                .go(context);
                           },
                         ),
                       5 => const ResumePage(),

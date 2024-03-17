@@ -10,13 +10,13 @@ class Contacts extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return Wrap(
-      crossAxisAlignment: WrapCrossAlignment.center,
+    return Row(
+      crossAxisAlignment: CrossAxisAlignment.center,
       children: [
         Text(
           "{ ${context.l10n.authorName} }",
           style: TextStyle(
-            fontSize: 18,
+            fontSize: 22.sp,
             fontWeight: FontWeight.bold,
           ),
         ),
@@ -27,7 +27,7 @@ class Contacts extends StatelessWidget {
           },
           child: Text(
             Consts.authorPhone,
-            style: TextStyle(fontSize: 12),
+            style: TextStyle(fontSize: 16.sp),
           ),
         ),
         SizedBox(
@@ -39,7 +39,7 @@ class Contacts extends StatelessWidget {
           },
           child: Text(
             Consts.authorEmail,
-            style: TextStyle(fontSize: 12),
+            style: TextStyle(fontSize: 16.sp),
           ),
         ),
         SizedBox(

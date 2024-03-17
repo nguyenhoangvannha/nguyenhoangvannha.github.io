@@ -5,7 +5,7 @@ import 'package:nha_portfolio/src/helpers/ext/context_ext.dart';
 class DownloadCV extends StatelessWidget {
   const DownloadCV({super.key, this.onPressed});
 
-  final  Function()? onPressed;
+  final Function()? onPressed;
 
   @override
   Widget build(BuildContext context) {

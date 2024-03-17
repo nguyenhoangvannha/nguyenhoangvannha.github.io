@@ -32,28 +32,29 @@ class App extends StatelessWidget {
         child: BlocBuilder<LanguageBloc, LanguageType>(
           builder: (context, languageType) {
             return BlocBuilder<ThemeBloc, ThemeType>(
-              builder: (BuildContext context, ThemeType themeType) =>
-                  ScreenUtilInit(
-                designSize: const Size(1080, 1920),
-                minTextAdapt: true,
-                splitScreenMode: true,
-                child: MaterialApp.router(
-                  routerConfig: _appRouter.router,
-                  themeMode: themeType.themeMode,
-                  theme: ThemeData.light(useMaterial3: true),
-                  darkTheme: ThemeData.dark(useMaterial3: true),
-                  localizationsDelegates: const [
-                    ...AppLocalizations.localizationsDelegates,
-                    ThemeLocalizations.delegate,
-                    LanguageLocalizations.delegate,
-                    PortfolioLocalizations.delegate,
-                  ],
-                  locale: Locale.fromSubtags(
-                      languageCode: languageType.languageCode),
-                  supportedLocales: AppLocalizations.supportedLocales,
-                  debugShowCheckedModeBanner: false,
-                ),
-              ),
+              builder: (BuildContext context, ThemeType themeType) {
+                return ScreenUtilInit(
+                  designSize: const Size(1920, 1080),
+                  minTextAdapt: true,
+                  splitScreenMode: true,
+                  child: MaterialApp.router(
+                    routerConfig: _appRouter.router,
+                    themeMode: themeType.themeMode,
+                    theme: ThemeData.light(useMaterial3: true),
+                    darkTheme: ThemeData.dark(useMaterial3: true),
+                    localizationsDelegates: const [
+                      ...AppLocalizations.localizationsDelegates,
+                      ThemeLocalizations.delegate,
+                      LanguageLocalizations.delegate,
+                      PortfolioLocalizations.delegate,
+                    ],
+                    locale: Locale.fromSubtags(
+                        languageCode: languageType.languageCode),
+                    supportedLocales: AppLocalizations.supportedLocales,
+                    debugShowCheckedModeBanner: false,
+                  ),
+                );
+              },
             );
           },
         ),
