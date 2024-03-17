@@ -1,0 +1,29 @@
+{
+  "project_info": {
+    "project_number": "92989169508",
+    "project_id": "nhvnha",
+    "storage_bucket": "nhvnha.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:92989169508:android:deadd81a1205bd1b62e471",
+        "android_client_info": {
+          "package_name": "io.github.nguyenhoangvannha.apps.nguyenhoangvannha"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyDGpo7275jucgMY8muFg9V0X1mTcGZnRm0"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
