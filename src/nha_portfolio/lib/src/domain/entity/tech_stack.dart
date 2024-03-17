@@ -31,17 +31,3 @@ abstract class TechStack implements Built<TechStack, TechStackBuilder> {
 
   static Serializer<TechStack> get serializer => _$techStackSerializer;
 }
-
-enum TechStackEnum {
-  flutter,
-  dart,
-  android,
-  java,
-  kotlin,
-  androidStudio,
-  git,
-  js,
-  agile,
-  ciCd,
-  vsCode,
-}

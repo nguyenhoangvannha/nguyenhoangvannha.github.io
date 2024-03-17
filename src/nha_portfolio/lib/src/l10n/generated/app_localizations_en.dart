@@ -61,5 +61,19 @@ class PortfolioLocalizationsEn extends PortfolioLocalizations {
   String get livePreview => 'Live Preview';
 
   @override
-  String get techStack => 'Tech stack';
+  String get techStack => 'Tech stack :';
+
+  @override
+  String get downloadCV => 'Download CV';
+
+  @override
+  String makeByAndWith(String makeBy) {
+    return 'Make by $makeBy using';
+  }
+
+  @override
+  String get flutter => 'Flutter';
+
+  @override
+  String get dart => 'Dart';
 }

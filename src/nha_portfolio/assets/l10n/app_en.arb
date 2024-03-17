@@ -37,5 +37,17 @@
   "thingsIVeBuiltSoFar": "Things I’ve built so far",
   "viewCode": "View Code",
   "livePreview": "Live Preview",
-  "techStack": "Tech stack"
+  "techStack": "Tech stack :",
+  "downloadCV": "Download CV",
+  "makeByAndWith": "Make by {makeBy} using",
+  "@makeByAndWith": {
+    "placeholders": {
+      "makeBy": {
+        "type": "String",
+        "example": "Nha"
+      }
+    }
+  },
+  "flutter": "Flutter",
+  "dart": "Dart"
 }

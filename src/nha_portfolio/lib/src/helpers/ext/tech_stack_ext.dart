@@ -1,5 +1,5 @@
 import 'package:nha_portfolio/src/assets/generated/assets.gen.dart';
-import 'package:nha_portfolio/src/domain/entity/tech_stack.dart';
+import 'package:nha_portfolio/src/domain/entity/tech_stack_enum.dart';
 
 extension TechStackExt on TechStackEnum {
   AssetGenImage get assetGenImage => switch (this) {
@@ -14,5 +14,21 @@ extension TechStackExt on TechStackEnum {
         TechStackEnum.agile => Assets.icons.icons8Scrum64,
         TechStackEnum.ciCd => Assets.icons.icons8Agile264,
         TechStackEnum.vsCode => Assets.icons.icons8VisualStudioCode48,
+        TechStackEnum.testing => Assets.icons.icons8Testing96,
+      };
+
+  String get name => switch (this) {
+        TechStackEnum.flutter => "Flutter",
+        TechStackEnum.dart => "Dart",
+        TechStackEnum.android => "Android",
+        TechStackEnum.androidStudio => "Android Studio",
+        TechStackEnum.java => "Java",
+        TechStackEnum.kotlin => "Kotlin",
+        TechStackEnum.git => "Git",
+        TechStackEnum.js => "Javascript",
+        TechStackEnum.agile => "Agile/Scrum",
+        TechStackEnum.ciCd => "CI/CD",
+        TechStackEnum.vsCode => "VS Code",
+        TechStackEnum.testing => "Testing",
       };
 }

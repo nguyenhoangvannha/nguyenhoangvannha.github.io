@@ -12,6 +12,10 @@ import 'package:flutter/widgets.dart';
 class $AssetsIconsGen {
   const $AssetsIconsGen();
 
+  /// File path: assets/icons/akar-icons_link-chain.png
+  AssetGenImage get akarIconsLinkChain =>
+      const AssetGenImage('assets/icons/akar-icons_link-chain.png');
+
   /// File path: assets/icons/android-studio-stable.png
   AssetGenImage get androidStudioStable =>
       const AssetGenImage('assets/icons/android-studio-stable.png');
@@ -34,6 +38,10 @@ class $AssetsIconsGen {
   /// File path: assets/icons/icons8-dart-48.png
   AssetGenImage get icons8Dart48 =>
       const AssetGenImage('assets/icons/icons8-dart-48.png');
+
+  /// File path: assets/icons/icons8-firebase-48.png
+  AssetGenImage get icons8Firebase48 =>
+      const AssetGenImage('assets/icons/icons8-firebase-48.png');
 
   /// File path: assets/icons/icons8-flutter-48.png
   AssetGenImage get icons8Flutter48 =>
@@ -63,6 +71,10 @@ class $AssetsIconsGen {
   AssetGenImage get icons8Scrum64 =>
       const AssetGenImage('assets/icons/icons8-scrum-64.png');
 
+  /// File path: assets/icons/icons8-testing-96.png
+  AssetGenImage get icons8Testing96 =>
+      const AssetGenImage('assets/icons/icons8-testing-96.png');
+
   /// File path: assets/icons/icons8-visual-studio-code-48.png
   AssetGenImage get icons8VisualStudioCode48 =>
       const AssetGenImage('assets/icons/icons8-visual-studio-code-48.png');
@@ -77,12 +89,14 @@ class $AssetsIconsGen {
 
   /// List of all assets
   List<AssetGenImage> get values => [
+        akarIconsLinkChain,
         androidStudioStable,
         github,
         icons8Agile64,
         icons8Agile264,
         icons8Android48,
         icons8Dart48,
+        icons8Firebase48,
         icons8Flutter48,
         icons8Git48,
         icons8Gmail48,
@@ -90,6 +104,7 @@ class $AssetsIconsGen {
         icons8Javascript48,
         icons8Kotlin48,
         icons8Scrum64,
+        icons8Testing96,
         icons8VisualStudioCode48,
         linkedin,
         logosReact
@@ -103,8 +118,12 @@ class $AssetsImagesGen {
   AssetGenImage get avatarWork =>
       const AssetGenImage('assets/images/avatar_work.JPG');
 
+  /// File path: assets/images/projectCover.png
+  AssetGenImage get projectCover =>
+      const AssetGenImage('assets/images/projectCover.png');
+
   /// List of all assets
-  List<AssetGenImage> get values => [avatarWork];
+  List<AssetGenImage> get values => [avatarWork, projectCover];
 }
 
 class $AssetsResumeGen {

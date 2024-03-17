@@ -21,11 +21,24 @@ class Projects extends StatelessWidget {
       children: [
         Text(
           context.l10n.projects,
-          style: context.themeData.textTheme.labelLarge,
+          style: TextStyle(
+            fontWeight: FontWeight.bold,
+            fontSize: 28.0,
+            height: 0.5,
+          ),
+        ),
+        SizedBox(
+          height: 28,
         ),
         Text(
           context.l10n.thingsIVeBuiltSoFar,
-          style: context.themeData.textTheme.bodySmall,
+          style: TextStyle(
+            fontSize: 16.0,
+            height: 0.7,
+          ),
+        ),
+        SizedBox(
+          height: 48,
         ),
         GridView.builder(
           shrinkWrap: true,
@@ -33,8 +46,8 @@ class Projects extends StatelessWidget {
           physics: const NeverScrollableScrollPhysics(),
           gridDelegate: const SliverGridDelegateWithFixedCrossAxisCount(
             crossAxisCount: 3,
-            mainAxisSpacing: 32,
-            crossAxisSpacing: 32,
+            mainAxisSpacing: 24,
+            crossAxisSpacing: 24,
           ),
           itemBuilder: (context, index) {
             return ProjectCard(

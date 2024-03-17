@@ -202,8 +202,32 @@ abstract class PortfolioLocalizations {
   /// No description provided for @techStack.
   ///
   /// In en, this message translates to:
-  /// **'Tech stack'**
+  /// **'Tech stack :'**
   String get techStack;
+
+  /// No description provided for @downloadCV.
+  ///
+  /// In en, this message translates to:
+  /// **'Download CV'**
+  String get downloadCV;
+
+  /// No description provided for @makeByAndWith.
+  ///
+  /// In en, this message translates to:
+  /// **'Make by {makeBy} using'**
+  String makeByAndWith(String makeBy);
+
+  /// No description provided for @flutter.
+  ///
+  /// In en, this message translates to:
+  /// **'Flutter'**
+  String get flutter;
+
+  /// No description provided for @dart.
+  ///
+  /// In en, this message translates to:
+  /// **'Dart'**
+  String get dart;
 }
 
 class _PortfolioLocalizationsDelegate

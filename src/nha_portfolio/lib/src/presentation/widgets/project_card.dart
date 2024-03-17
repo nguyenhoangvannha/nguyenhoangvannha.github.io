@@ -15,54 +15,79 @@ class ProjectCard extends StatelessWidget {
         mainAxisSize: MainAxisSize.min,
         crossAxisAlignment: CrossAxisAlignment.center,
         children: [
-          Assets.images.avatarWork.image(height: 120, fit: BoxFit.fill),
-          Text(
-            project.title,
-            style: context.themeData.textTheme.titleSmall,
+          Assets.images.projectCover.image(
+            height: 120,
+            fit: BoxFit.scaleDown,
           ),
-          Text(
-            project.description,
-            style: context.themeData.textTheme.titleSmall,
-          ),
-          Row(
-            mainAxisSize: MainAxisSize.min,
-            crossAxisAlignment: CrossAxisAlignment.center,
-            children: [
-              Text(
-                context.l10n.techStack,
-                style: context.themeData.textTheme.titleSmall,
-              ),
-              Text(
-                project.techStack,
-                style: context.themeData.textTheme.titleSmall,
-              ),
-            ],
-          ),
-          Row(
-            crossAxisAlignment: CrossAxisAlignment.center,
-            children: [
-              Icon(Icons.link),
-              TextButton(
-                onPressed: () {},
-                child: Text(context.l10n.livePreview),
-                style: ButtonStyle(
-                    textStyle: MaterialStateProperty.all(
-                        context.themeData.textTheme.titleSmall)),
-              ),
-              Assets.icons.github.image(
-                width: 12,
-                height: 12,
-              ),
-              TextButton(
-                onPressed: () {},
-                child: Text(context.l10n.viewCode),
-                style: ButtonStyle(
-                    textStyle: MaterialStateProperty.all(
-                        context.themeData.textTheme.titleSmall)),
-              ),
-            ],
+          Padding(
+            padding: const EdgeInsets.all(12.0),
+            child: Column(
+              mainAxisSize: MainAxisSize.min,
+              crossAxisAlignment: CrossAxisAlignment.start,
+              children: [
+                Text(
+                  project.title,
+                  style: TextStyle(
+                    fontWeight: FontWeight.w600,
+                    fontSize: 20,
+                  ),
+                ),
+                Text(
+                  project.description,
+                  style: context.themeData.textTheme.titleSmall,
+                ),
+                Row(
+                  mainAxisSize: MainAxisSize.min,
+                  crossAxisAlignment: CrossAxisAlignment.center,
+                  children: [
+                    Text(
+                      context.l10n.techStack,
+                      style: context.themeData.textTheme.titleSmall,
+                    ),
+                    Text(
+                      project.techStack,
+                      style: context.themeData.textTheme.titleSmall,
+                    ),
+                  ],
+                ),
+                Row(
+                  crossAxisAlignment: CrossAxisAlignment.center,
+                  children: [
+                    textButton(context, context.l10n.livePreview, Assets.icons.akarIconsLinkChain.provider()),
+                    textButton(context, context.l10n.viewCode, Assets.icons.github.provider()),
+                  ],
+                ),
+              ],
+            ),
           ),
         ],
+      ),
+    );
+  }
+
+  Widget textButton(
+    BuildContext context,
+    String text,
+    ImageProvider image,
+  ) {
+    return TextButton(
+      onPressed: () {},
+      child: Row(
+        children: [
+          ImageIcon(
+            image,
+            size: 12.0,
+          ),
+          Text(text),
+        ],
+      ),
+      style: ButtonStyle(
+        textStyle: MaterialStateProperty.all(
+          TextStyle(
+            fontSize: 12,
+            decoration: TextDecoration.underline,
+          ),
+        ),
       ),
     );
   }

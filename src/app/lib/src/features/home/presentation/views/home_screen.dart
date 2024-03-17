@@ -119,7 +119,7 @@ class _HomeScreenState extends State<HomeScreen> {
                 leading: Row(
                   mainAxisAlignment: MainAxisAlignment.spaceAround,
                   children: <Widget>[
-                    const Icon(Icons.account_circle_rounded),
+                    const Avatar(minRadius: 12,),
                     Text(
                       context.l10n.authorName,
                       style: const TextStyle(
