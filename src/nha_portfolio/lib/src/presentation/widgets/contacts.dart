@@ -20,7 +20,8 @@ class Contacts extends StatelessWidget {
           fontWeight: FontWeight.bold,
         ),
       ),
-      //Spacer(),
+      getValueForScreenType(
+          context: context, mobile: SizedBox.shrink(), desktop: Spacer()),
       TextButton(
         onPressed: () {
           launchUrl(Uri.parse("tel:" + Consts.authorPhone));

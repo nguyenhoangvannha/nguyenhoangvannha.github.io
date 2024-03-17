@@ -156,7 +156,7 @@ class _HomeScreenState extends State<HomeScreen> {
                           padding: getValueForScreenType<EdgeInsetsGeometry>(
                             context: context,
                             desktop: EdgeInsets.symmetric(
-                                horizontal: 340.w, vertical: 140.w),
+                                horizontal: 200.w, vertical: 140.w),
                             tablet: const EdgeInsets.symmetric(
                                 horizontal: 40, vertical: 40),
                             mobile: const EdgeInsets.only(
