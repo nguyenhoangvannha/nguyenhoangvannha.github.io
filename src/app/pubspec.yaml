@@ -60,6 +60,8 @@ dependencies:
   download: ^1.0.0
   pdfrx: ^1.0.49
   url_launcher: ^6.2.5
+  firebase_core: ^2.27.1
+  cloud_firestore: ^4.15.9
 
 dev_dependencies:
   flutter_test:
