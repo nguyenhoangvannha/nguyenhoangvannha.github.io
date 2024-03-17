@@ -21,8 +21,9 @@ class TechStack extends StatelessWidget {
           cacheHeight: 32,
           cacheWidth: 32,
         ),
+        SizedBox(height: 8.w,),
         Text(techStack.name, textAlign: TextAlign.center, style: TextStyle(
-          fontSize: 14.sp,
+          fontSize: 14,
         ),),
       ],
     );

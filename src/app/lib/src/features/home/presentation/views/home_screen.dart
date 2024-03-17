@@ -152,7 +152,7 @@ class _HomeScreenState extends State<HomeScreen> {
                 key: const Key('Body Medium'),
                 builder: (_) => switch (selectedNavigation) {
                       0 => PortfolioPage(
-                          padding: EdgeInsets.all(80.w),
+                          padding: EdgeInsets.all(120.w),
                           onPressedDownloadCV: () {
                             selectedNavigation = 5;
                             HomeRoute(destination: RouteName.resume.path).go(context);

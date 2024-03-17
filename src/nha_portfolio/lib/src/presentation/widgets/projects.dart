@@ -24,7 +24,7 @@ class Projects extends StatelessWidget {
           context.l10n.projects,
           style: TextStyle(
             fontWeight: FontWeight.bold,
-            fontSize: 28.sp,
+            fontSize: 28,
             height: 0.5,
           ),
         ),
@@ -34,7 +34,7 @@ class Projects extends StatelessWidget {
         Text(
           context.l10n.thingsIVeBuiltSoFar,
           style: TextStyle(
-            fontSize: 16.sp,
+            fontSize: 16,
             height: 0.7,
           ),
         ),

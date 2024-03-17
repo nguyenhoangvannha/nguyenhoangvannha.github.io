@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
+import 'package:responsive_builder/responsive_builder.dart';
 import 'package:nha_portfolio/src/helpers/ext/context_ext.dart';
 import 'package:nha_portfolio/src/presentation/widgets/avatar.dart';
 import 'package:nha_portfolio/src/presentation/widgets/download_cv.dart';
@@ -22,7 +23,7 @@ class Sumary extends StatelessWidget {
               context.l10n.summaryParagraph(context.l10n.authorName),
               style: TextStyle(
                 fontWeight: FontWeight.bold,
-                fontSize: 38.sp,
+                fontSize: 32,
                 height: 1.2,
               ),
             ),
@@ -38,7 +39,7 @@ class Sumary extends StatelessWidget {
         ),
         Spacer(),
         Avatar(
-          minRadius: 100.w,
+          minRadius: 90.w,
         ),
       ],
     );

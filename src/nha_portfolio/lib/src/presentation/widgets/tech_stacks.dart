@@ -20,7 +20,7 @@ class TechStacks extends StatelessWidget {
           context.l10n.myTechStack,
           style: TextStyle(
             fontWeight: FontWeight.bold,
-            fontSize: 32.sp,
+            fontSize: 28,
             height: 0.5,
           ),
         ),
@@ -30,7 +30,7 @@ class TechStacks extends StatelessWidget {
         Text(
           context.l10n.technologiesIVeBeenWorkingWithRecently,
           style: TextStyle(
-            fontSize: 20.sp,
+            fontSize: 16,
             height: 0.7,
           ),
         ),

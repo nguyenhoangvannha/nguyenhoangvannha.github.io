@@ -24,10 +24,6 @@ class PortfolioPage extends StatelessWidget {
         child: Column(
           crossAxisAlignment: CrossAxisAlignment.center,
           children: [
-            TextButton(
-              onPressed: () => throw Exception(),
-              child: const Text("Throw Test Exception"),
-            ),
             Sumary(
               onPressedDownloadCV: onPressedDownloadCV,
             ),
@@ -35,7 +31,7 @@ class PortfolioPage extends StatelessWidget {
             TechStacks(),
             SizedBox(height: 64.w),
             Projects(),
-            SizedBox(height: 184.w),
+            SizedBox(height: 100.w),
             Contacts(),
             Divider(),
             Padding(
