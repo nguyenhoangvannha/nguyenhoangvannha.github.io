@@ -30,6 +30,7 @@ class Projects extends StatelessWidget {
         GridView.builder(
           shrinkWrap: true,
           itemCount: 6,
+          physics: const NeverScrollableScrollPhysics(),
           gridDelegate: const SliverGridDelegateWithFixedCrossAxisCount(
             crossAxisCount: 3,
             mainAxisSpacing: 32,

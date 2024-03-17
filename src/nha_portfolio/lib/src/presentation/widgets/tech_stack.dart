@@ -22,24 +22,18 @@ class TechStack extends StatelessWidget {
           context.l10n.technologiesIVeBeenWorkingWithRecently,
           style: context.themeData.textTheme.labelLarge,
         ),
-        GridView.builder(
+        GridView(
           shrinkWrap: true,
-          itemCount: TechStackEnum.values.length,
+          physics: const NeverScrollableScrollPhysics(),
           gridDelegate: const SliverGridDelegateWithFixedCrossAxisCount(
             crossAxisCount: 6,
             mainAxisSpacing: 32,
             crossAxisSpacing: 32,
           ),
-          itemBuilder: (context, index) {
-            return SizedBox(
-              width: 32,
-              height: 32,
-              child: stacks[index].assetGenImage.image(
-                    width: 32,
-                    height: 32,
-                  ),
-            );
-          },
+          children: stacks.map((e) => e.assetGenImage.image(
+            width: 32,
+            height: 32,
+          )).toList(),
         ),
       ],
     );
