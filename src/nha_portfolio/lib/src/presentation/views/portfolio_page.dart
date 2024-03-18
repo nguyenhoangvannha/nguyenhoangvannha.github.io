@@ -12,10 +12,12 @@ class PortfolioPage extends StatelessWidget {
     super.key,
     this.padding = const EdgeInsets.all(0.0),
     this.onPressedDownloadCV,
+    this.onProjectTap,
   });
 
   final EdgeInsetsGeometry padding;
   final Function()? onPressedDownloadCV;
+  final Function(String id)? onProjectTap;
 
   @override
   Widget build(BuildContext context) {
@@ -47,7 +49,9 @@ class PortfolioPage extends StatelessWidget {
                 mobile: 0,
                 desktop: 76,
               )),
-              child: Projects(),
+              child: Projects(
+                onProjectTap: onProjectTap,
+              ),
             ),
             SizedBox(height: 100),
             Contacts(),

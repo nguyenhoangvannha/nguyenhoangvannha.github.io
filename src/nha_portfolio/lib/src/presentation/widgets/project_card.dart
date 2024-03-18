@@ -5,6 +5,7 @@ import 'package:nha_portfolio/src/assets/generated/assets.gen.dart';
 import 'package:nha_portfolio/src/domain/entity/project.dart';
 import 'package:nha_portfolio/src/helpers/ext/context_ext.dart';
 import 'package:responsive_builder/responsive_builder.dart';
+import 'package:url_launcher/url_launcher.dart';
 
 class ProjectCard extends StatelessWidget {
   const ProjectCard({super.key, required this.project, this.onTap});
@@ -72,7 +73,7 @@ class ProjectCard extends StatelessWidget {
                         ),
                       ),
                       Text(
-                        project.techStack,
+                        project.techStacks,
                         maxLines: 1,
                         overflow: TextOverflow.ellipsis,
                         style: TextStyle(
@@ -84,11 +85,23 @@ class ProjectCard extends StatelessWidget {
                   Row(
                     crossAxisAlignment: CrossAxisAlignment.center,
                     children: [
-                      textButton(context, context.l10n.livePreview,
-                          Assets.icons.akarIconsLinkChain.provider()),
+                      textButton(
+                        context,
+                        context.l10n.livePreview,
+                        Assets.icons.akarIconsLinkChain.provider(),
+                        onPressed: () {
+                          launchUrl(Uri.parse(project.demoLink));
+                        },
+                      ),
                       Spacer(),
-                      textButton(context, context.l10n.viewCode,
-                          Assets.icons.github.provider()),
+                      textButton(
+                        context,
+                        context.l10n.viewCode,
+                        Assets.icons.github.provider(),
+                        onPressed: () {
+                          launchUrl(Uri.parse(project.repoLink));
+                        },
+                      ),
                     ],
                   ),
                 ],
@@ -100,13 +113,10 @@ class ProjectCard extends StatelessWidget {
     );
   }
 
-  Widget textButton(
-    BuildContext context,
-    String text,
-    ImageProvider image,
-  ) {
+  Widget textButton(BuildContext context, String text, ImageProvider image,
+      {VoidCallback? onPressed}) {
     return TextButton(
-      onPressed: () {},
+      onPressed: onPressed,
       child: Row(
         children: [
           ImageIcon(

@@ -9,7 +9,8 @@ class HomeScreen extends StatelessWidget {
   const HomeScreen({
     super.key,
     required this.navigationShell,
-    required this.children, required this.onDestinationSelected,
+    required this.children,
+    required this.onDestinationSelected,
   });
 
   final StatefulNavigationShell navigationShell;

@@ -12,9 +12,11 @@ class _$Project extends Project {
   @override
   final String title;
   @override
+  final BuiltSet<String> strengths;
+  @override
   final String description;
   @override
-  final String techStack;
+  final String techStacks;
   @override
   final String repoLink;
   @override
@@ -26,16 +28,18 @@ class _$Project extends Project {
   _$Project._(
       {required this.id,
       required this.title,
+      required this.strengths,
       required this.description,
-      required this.techStack,
+      required this.techStacks,
       required this.repoLink,
       required this.demoLink})
       : super._() {
     BuiltValueNullFieldError.checkNotNull(id, r'Project', 'id');
     BuiltValueNullFieldError.checkNotNull(title, r'Project', 'title');
+    BuiltValueNullFieldError.checkNotNull(strengths, r'Project', 'strengths');
     BuiltValueNullFieldError.checkNotNull(
         description, r'Project', 'description');
-    BuiltValueNullFieldError.checkNotNull(techStack, r'Project', 'techStack');
+    BuiltValueNullFieldError.checkNotNull(techStacks, r'Project', 'techStacks');
     BuiltValueNullFieldError.checkNotNull(repoLink, r'Project', 'repoLink');
     BuiltValueNullFieldError.checkNotNull(demoLink, r'Project', 'demoLink');
   }
@@ -53,8 +57,9 @@ class _$Project extends Project {
     return other is Project &&
         id == other.id &&
         title == other.title &&
+        strengths == other.strengths &&
         description == other.description &&
-        techStack == other.techStack &&
+        techStacks == other.techStacks &&
         repoLink == other.repoLink &&
         demoLink == other.demoLink;
   }
@@ -64,8 +69,9 @@ class _$Project extends Project {
     var _$hash = 0;
     _$hash = $jc(_$hash, id.hashCode);
     _$hash = $jc(_$hash, title.hashCode);
+    _$hash = $jc(_$hash, strengths.hashCode);
     _$hash = $jc(_$hash, description.hashCode);
-    _$hash = $jc(_$hash, techStack.hashCode);
+    _$hash = $jc(_$hash, techStacks.hashCode);
     _$hash = $jc(_$hash, repoLink.hashCode);
     _$hash = $jc(_$hash, demoLink.hashCode);
     _$hash = $jf(_$hash);
@@ -77,8 +83,9 @@ class _$Project extends Project {
     return (newBuiltValueToStringHelper(r'Project')
           ..add('id', id)
           ..add('title', title)
+          ..add('strengths', strengths)
           ..add('description', description)
-          ..add('techStack', techStack)
+          ..add('techStacks', techStacks)
           ..add('repoLink', repoLink)
           ..add('demoLink', demoLink))
         .toString();
@@ -96,13 +103,18 @@ class ProjectBuilder implements Builder<Project, ProjectBuilder> {
   String? get title => _$this._title;
   set title(String? title) => _$this._title = title;
 
+  SetBuilder<String>? _strengths;
+  SetBuilder<String> get strengths =>
+      _$this._strengths ??= new SetBuilder<String>();
+  set strengths(SetBuilder<String>? strengths) => _$this._strengths = strengths;
+
   String? _description;
   String? get description => _$this._description;
   set description(String? description) => _$this._description = description;
 
-  String? _techStack;
-  String? get techStack => _$this._techStack;
-  set techStack(String? techStack) => _$this._techStack = techStack;
+  String? _techStacks;
+  String? get techStacks => _$this._techStacks;
+  set techStacks(String? techStacks) => _$this._techStacks = techStacks;
 
   String? _repoLink;
   String? get repoLink => _$this._repoLink;
@@ -112,15 +124,18 @@ class ProjectBuilder implements Builder<Project, ProjectBuilder> {
   String? get demoLink => _$this._demoLink;
   set demoLink(String? demoLink) => _$this._demoLink = demoLink;
 
-  ProjectBuilder();
+  ProjectBuilder() {
+    Project._init(this);
+  }
 
   ProjectBuilder get _$this {
     final $v = _$v;
     if ($v != null) {
       _id = $v.id;
       _title = $v.title;
+      _strengths = $v.strengths.toBuilder();
       _description = $v.description;
-      _techStack = $v.techStack;
+      _techStacks = $v.techStacks;
       _repoLink = $v.repoLink;
       _demoLink = $v.demoLink;
       _$v = null;
@@ -143,19 +158,33 @@ class ProjectBuilder implements Builder<Project, ProjectBuilder> {
   Project build() => _build();
 
   _$Project _build() {
-    final _$result = _$v ??
-        new _$Project._(
-            id: BuiltValueNullFieldError.checkNotNull(id, r'Project', 'id'),
-            title: BuiltValueNullFieldError.checkNotNull(
-                title, r'Project', 'title'),
-            description: BuiltValueNullFieldError.checkNotNull(
-                description, r'Project', 'description'),
-            techStack: BuiltValueNullFieldError.checkNotNull(
-                techStack, r'Project', 'techStack'),
-            repoLink: BuiltValueNullFieldError.checkNotNull(
-                repoLink, r'Project', 'repoLink'),
-            demoLink: BuiltValueNullFieldError.checkNotNull(
-                demoLink, r'Project', 'demoLink'));
+    _$Project _$result;
+    try {
+      _$result = _$v ??
+          new _$Project._(
+              id: BuiltValueNullFieldError.checkNotNull(id, r'Project', 'id'),
+              title: BuiltValueNullFieldError.checkNotNull(
+                  title, r'Project', 'title'),
+              strengths: strengths.build(),
+              description: BuiltValueNullFieldError.checkNotNull(
+                  description, r'Project', 'description'),
+              techStacks: BuiltValueNullFieldError.checkNotNull(
+                  techStacks, r'Project', 'techStacks'),
+              repoLink: BuiltValueNullFieldError.checkNotNull(
+                  repoLink, r'Project', 'repoLink'),
+              demoLink: BuiltValueNullFieldError.checkNotNull(
+                  demoLink, r'Project', 'demoLink'));
+    } catch (_) {
+      late String _$failedField;
+      try {
+        _$failedField = 'strengths';
+        strengths.build();
+      } catch (e) {
+        throw new BuiltValueNestedFieldError(
+            r'Project', _$failedField, e.toString());
+      }
+      rethrow;
+    }
     replace(_$result);
     return _$result;
   }

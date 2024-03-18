@@ -108,6 +108,9 @@ class HomePageRouteData extends GoRouteData {
       onPressedDownloadCV: () {
         const ResumePageRouteData().go(context);
       },
+      onProjectTap: (String id) {
+        ProjectPageRouteData(id: id).go(context);
+      },
     );
   }
 }
@@ -117,7 +120,7 @@ class ProjectsPageRouteData extends GoRouteData {
 
   @override
   Widget build(BuildContext context, GoRouterState state) {
-    return Padding(
+    return SingleChildScrollView(
       padding: getValueForScreenType<EdgeInsetsGeometry>(
         context: context,
         desktop: const EdgeInsets.symmetric(horizontal: 200, vertical: 70),
