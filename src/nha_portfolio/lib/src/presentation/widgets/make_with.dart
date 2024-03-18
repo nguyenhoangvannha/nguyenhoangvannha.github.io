@@ -21,7 +21,7 @@ class MakeWith extends StatelessWidget {
           style: TextStyle(
               fontSize: getValueForScreenType(context: context, mobile: 12)),
         ),
-        SizedBox(
+        const SizedBox(
           width: 4,
         ),
         IconButton(

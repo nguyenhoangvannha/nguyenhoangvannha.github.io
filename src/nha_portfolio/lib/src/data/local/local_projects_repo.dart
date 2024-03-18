@@ -1,6 +1,5 @@
 import 'dart:async';
 
-import 'package:built_collection/built_collection.dart';
 import 'package:nha_portfolio/src/domain/entity/framework.dart';
 import 'package:nha_portfolio/src/domain/entity/project.dart';
 import 'package:nha_portfolio/src/domain/export.dart';

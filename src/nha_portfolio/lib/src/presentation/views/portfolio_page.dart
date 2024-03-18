@@ -36,7 +36,7 @@ class PortfolioPage extends StatelessWidget {
                 desktop: 140,
               ),
             ),
-            TechStacks(),
+            const TechStacks(),
             SizedBox(
                 height: getValueForScreenType(
               context: context,
@@ -55,9 +55,9 @@ class PortfolioPage extends StatelessWidget {
               ),
             ),
             SizedBox(height: 80.w),
-            Contacts(),
-            Divider(),
-            Padding(
+            const Contacts(),
+            const Divider(),
+            const Padding(
               padding: EdgeInsets.symmetric(vertical: 12),
               child: MakeWith(),
             ),

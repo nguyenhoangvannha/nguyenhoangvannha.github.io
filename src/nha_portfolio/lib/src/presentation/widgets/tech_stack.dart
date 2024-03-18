@@ -29,8 +29,8 @@ class TechStack extends StatelessWidget {
           cacheWidth: size.toInt(),
         ),
         SizedBox(
-          height:
-              getValueForScreenType(context: context, mobile: 6, tablet: 7, desktop: 8),
+          height: getValueForScreenType(
+              context: context, mobile: 6, tablet: 7, desktop: 8),
         ),
         Text(
           techStack.name,

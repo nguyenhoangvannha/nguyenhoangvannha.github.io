@@ -25,10 +25,12 @@ class Contacts extends StatelessWidget {
         ),
       ),
       getValueForScreenType(
-          context: context, mobile: SizedBox.shrink(), desktop: Spacer()),
+          context: context,
+          mobile: const SizedBox.shrink(),
+          desktop: const Spacer()),
       TextButton(
         onPressed: () {
-          launchUrl(Uri.parse("tel:" + Consts.authorPhone));
+          launchUrl(Uri.parse("tel:${Consts.authorPhone}"));
         },
         child: Text(
           Consts.authorPhone,
@@ -41,12 +43,12 @@ class Contacts extends StatelessWidget {
           ),
         ),
       ),
-      SizedBox(
+      const SizedBox(
         width: 12,
       ),
       TextButton(
         onPressed: () {
-          launchUrl(Uri.parse("mailto:" + Consts.authorEmail));
+          launchUrl(Uri.parse("mailto:${Consts.authorEmail}"));
         },
         child: Text(
           Consts.authorEmail,
@@ -59,10 +61,10 @@ class Contacts extends StatelessWidget {
           ),
         ),
       ),
-      SizedBox(
+      const SizedBox(
         width: 20,
       ),
-      Social(
+      const Social(
         email: false,
         phone: false,
       ),

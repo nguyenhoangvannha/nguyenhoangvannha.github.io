@@ -23,7 +23,7 @@ class DownloadCV extends StatelessWidget {
               desktop: 28,
             ),
           ),
-          SizedBox(
+          const SizedBox(
             width: 8,
           ),
           Text(

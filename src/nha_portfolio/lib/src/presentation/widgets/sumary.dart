@@ -34,7 +34,7 @@ class Sumary extends StatelessWidget {
                 height: 1.2,
               ),
             ),
-            Spacer(),
+            const Spacer(),
             Avatar(
               minRadius: getValueForScreenType(
                 context: context,
@@ -45,18 +45,18 @@ class Sumary extends StatelessWidget {
             ),
             getValueForScreenType(
               context: context,
-              mobile: SizedBox.shrink(),
-              tablet: Spacer(),
-              desktop: Spacer(),
+              mobile: const SizedBox.shrink(),
+              tablet: const Spacer(),
+              desktop: const Spacer(),
             ),
           ],
         ),
-        SizedBox(
+        const SizedBox(
           height: 12,
         ),
         Row(
           children: [
-            Social(),
+            const Social(),
             DownloadCV(
               onPressed: onPressedDownloadCV,
             ),

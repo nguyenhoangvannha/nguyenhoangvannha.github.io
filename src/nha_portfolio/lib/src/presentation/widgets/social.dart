@@ -1,5 +1,4 @@
 import 'package:flutter/material.dart';
-import 'package:flutter_screenutil/flutter_screenutil.dart';
 
 import 'package:nha_portfolio/src/assets/generated/assets.gen.dart';
 import 'package:nha_portfolio/src/helpers/consts/consts.dart';
@@ -31,7 +30,7 @@ class Social extends StatelessWidget {
         if (phone)
           IconButton(
               onPressed: () {
-                launchUrl(Uri.parse("tel:" + Consts.authorPhone));
+                launchUrl(Uri.parse("tel:${Consts.authorPhone}"));
               },
               icon: Assets.icons.icons8Phone48.image(
                 width: size,
@@ -42,7 +41,7 @@ class Social extends StatelessWidget {
         if (email)
           IconButton(
               onPressed: () {
-                launchUrl(Uri.parse("mailto:" + Consts.authorEmail));
+                launchUrl(Uri.parse("mailto:${Consts.authorEmail}"));
               },
               icon: Assets.icons.icons8Gmail48.image(
                 width: size,
