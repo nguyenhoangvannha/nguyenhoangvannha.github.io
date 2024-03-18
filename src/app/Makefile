@@ -1,6 +1,4 @@
-temp:
-
-web:
+webs:
 	flutter build web -o ../../docs
 apk:
 	flutter build apk
