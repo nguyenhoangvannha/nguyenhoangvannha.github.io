@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:flutter_screenutil/flutter_screenutil.dart';
+
 import 'package:nha_portfolio/src/helpers/ext/context_ext.dart';
 import 'package:responsive_builder/responsive_builder.dart';
 
@@ -24,7 +24,7 @@ class DownloadCV extends StatelessWidget {
             ),
           ),
           SizedBox(
-            width: 8.w,
+            width: 8,
           ),
           Text(
             context.l10n.downloadCV,

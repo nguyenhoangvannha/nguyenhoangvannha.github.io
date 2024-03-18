@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:flutter_screenutil/flutter_screenutil.dart';
+
 import 'package:nha_portfolio/src/presentation/widgets/contacts.dart';
 import 'package:nha_portfolio/src/presentation/widgets/make_with.dart';
 import 'package:nha_portfolio/src/presentation/widgets/projects.dart';
@@ -30,7 +30,7 @@ class PortfolioPage extends StatelessWidget {
               height: getValueForScreenType(
                 context: context,
                 mobile: 60,
-                desktop: 140.w,
+                desktop: 140,
               ),
             ),
             TechStacks(),
@@ -49,11 +49,11 @@ class PortfolioPage extends StatelessWidget {
               )),
               child: Projects(),
             ),
-            SizedBox(height: 100.w),
+            SizedBox(height: 100),
             Contacts(),
             Divider(),
             Padding(
-              padding: EdgeInsets.symmetric(vertical: 12.w),
+              padding: EdgeInsets.symmetric(vertical: 12),
               child: MakeWith(),
             ),
           ],

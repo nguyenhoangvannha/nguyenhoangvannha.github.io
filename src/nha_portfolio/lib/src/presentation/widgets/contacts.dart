@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:flutter_screenutil/flutter_screenutil.dart';
+
 import 'package:nha_portfolio/src/helpers/consts/consts.dart';
 import 'package:nha_portfolio/src/helpers/ext/context_ext.dart';
 import 'package:nha_portfolio/src/presentation/widgets/social.dart';
@@ -38,7 +38,7 @@ class Contacts extends StatelessWidget {
         ),
       ),
       SizedBox(
-        width: 12.w,
+        width: 12,
       ),
       TextButton(
         onPressed: () {
@@ -56,7 +56,7 @@ class Contacts extends StatelessWidget {
         ),
       ),
       SizedBox(
-        width: 20.w,
+        width: 20,
       ),
       Social(
         email: false,

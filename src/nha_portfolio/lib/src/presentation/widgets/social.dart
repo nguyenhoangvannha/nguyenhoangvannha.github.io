@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:flutter_screenutil/flutter_screenutil.dart';
+
 import 'package:nha_portfolio/src/assets/generated/assets.gen.dart';
 import 'package:nha_portfolio/src/helpers/consts/consts.dart';
 import 'package:responsive_builder/responsive_builder.dart';
@@ -27,27 +27,6 @@ class Social extends StatelessWidget {
       mainAxisSize: MainAxisSize.min,
       crossAxisAlignment: CrossAxisAlignment.center,
       children: [
-        IconButton(
-            onPressed: () {
-              launchUrl(Uri.parse(Consts.authorLinkedIn));
-            },
-            icon: Assets.icons.linkedin.image(
-              width: size,
-              height: size,
-              cacheWidth: cacheSize,
-              cacheHeight: cacheSize,
-            )),
-        if (email)
-          IconButton(
-              onPressed: () {
-                launchUrl(Uri.parse("mailto:" + Consts.authorEmail));
-              },
-              icon: Assets.icons.icons8Gmail48.image(
-                width: size,
-                height: size,
-                cacheWidth: cacheSize,
-                cacheHeight: cacheSize,
-              )),
         if (phone)
           IconButton(
               onPressed: () {
@@ -59,6 +38,27 @@ class Social extends StatelessWidget {
                 cacheWidth: cacheSize,
                 cacheHeight: cacheSize,
               )),
+        if (email)
+          IconButton(
+              onPressed: () {
+                launchUrl(Uri.parse("mailto:" + Consts.authorEmail));
+              },
+              icon: Assets.icons.icons8Gmail48.image(
+                width: size,
+                height: size,
+                cacheWidth: cacheSize,
+                cacheHeight: cacheSize,
+              )),
+        IconButton(
+            onPressed: () {
+              launchUrl(Uri.parse(Consts.authorLinkedIn));
+            },
+            icon: Assets.icons.linkedin.image(
+              width: size,
+              height: size,
+              cacheWidth: cacheSize,
+              cacheHeight: cacheSize,
+            )),
         IconButton(
             onPressed: () {
               launchUrl(Uri.parse(Consts.authorGithub));

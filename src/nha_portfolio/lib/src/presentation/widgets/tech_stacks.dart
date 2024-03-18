@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:flutter_screenutil/flutter_screenutil.dart';
+
 import 'package:nha_portfolio/src/domain/entity/tech_stack_enum.dart';
 import 'package:nha_portfolio/src/helpers/ext/context_ext.dart';
 import 'package:nha_portfolio/src/presentation/widgets/tech_stack.dart';
@@ -24,7 +24,7 @@ class TechStacks extends StatelessWidget {
               context: context,
               mobile: 20,
               tablet: 26,
-              desktop: 30.sp,
+              desktop: 30,
             ),
             height: 0.5,
           ),
@@ -33,7 +33,7 @@ class TechStacks extends StatelessWidget {
           height: getValueForScreenType(
             context: context,
             mobile: 16,
-            desktop: 20.w,
+            desktop: 20,
           ),
         ),
         Text(
@@ -43,7 +43,7 @@ class TechStacks extends StatelessWidget {
               context: context,
               mobile: 12,
               tablet: 16,
-              desktop: 20.sp,
+              desktop: 20,
             ),
             height: 0.7,
           ),
@@ -52,7 +52,7 @@ class TechStacks extends StatelessWidget {
           height: getValueForScreenType(
             context: context,
             mobile: 28,
-            desktop: 42.w,
+            desktop: 42,
           ),
         ),
         GridView(
@@ -60,10 +60,11 @@ class TechStacks extends StatelessWidget {
           padding: EdgeInsets.zero,
           physics: const NeverScrollableScrollPhysics(),
           gridDelegate: SliverGridDelegateWithFixedCrossAxisCount(
-            crossAxisCount: 6,
+            crossAxisCount:
+                getValueForScreenType(context: context, mobile: 4, tablet: 6),
             childAspectRatio: getValueForScreenType(
               context: context,
-              mobile: 0.7,
+              mobile: 1,
               tablet: 1.2,
               desktop: 1.5,
             ),

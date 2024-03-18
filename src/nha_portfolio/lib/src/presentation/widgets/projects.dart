@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:flutter_screenutil/flutter_screenutil.dart';
+
 import 'package:nha_portfolio/src/domain/entity/project.dart';
 import 'package:nha_portfolio/src/helpers/ext/context_ext.dart';
 import 'package:nha_portfolio/src/presentation/widgets/project_card.dart';
@@ -29,7 +29,7 @@ class Projects extends StatelessWidget {
               context: context,
               mobile: 20,
               tablet: 26,
-              desktop: 28.sp,
+              desktop: 28,
             ),
             height: 0.5,
           ),
@@ -38,7 +38,7 @@ class Projects extends StatelessWidget {
           height: getValueForScreenType(
             context: context,
             mobile: 16,
-            desktop: 20.w,
+            desktop: 20,
           ),
         ),
         Text(
@@ -48,7 +48,7 @@ class Projects extends StatelessWidget {
               context: context,
               mobile: 12,
               tablet: 16,
-              desktop: 20.sp,
+              desktop: 20,
             ),
             height: 0.7,
           ),
@@ -57,7 +57,7 @@ class Projects extends StatelessWidget {
           height: getValueForScreenType(
             context: context,
             mobile: 24,
-            desktop: 28.w,
+            desktop: 28,
           ),
         ),
         GridView(

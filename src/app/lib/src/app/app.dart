@@ -2,7 +2,6 @@ import 'package:device_preview/device_preview.dart';
 import 'package:flutter/foundation.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
-import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:nguyenhoangvannha/src/app/di/injection.dart';
 import 'package:nguyenhoangvannha/src/app/routes/app_router.dart';
 import 'package:nguyenhoangvannha/src/l10n/generated/app_localizations.dart';
@@ -35,29 +34,24 @@ class App extends StatelessWidget {
           builder: (context, languageType) {
             return BlocBuilder<ThemeBloc, ThemeType>(
               builder: (BuildContext context, ThemeType themeType) {
-                return ScreenUtilInit(
-                  designSize: const Size(1920, 1080),
-                  minTextAdapt: true,
-                  splitScreenMode: true,
-                  child: MaterialApp.router(
-                    locale: !kReleaseMode
-                        ? DevicePreview.locale(context) //Add DevicePreview
-                        : Locale.fromSubtags(
-                            languageCode: languageType.languageCode),
-                    builder: DevicePreview.appBuilder,
-                    routerConfig: _appRouter.router,
-                    themeMode: themeType.themeMode,
-                    theme: ThemeData.light(useMaterial3: true),
-                    darkTheme: ThemeData.dark(useMaterial3: true),
-                    localizationsDelegates: const [
-                      ...AppLocalizations.localizationsDelegates,
-                      ThemeLocalizations.delegate,
-                      LanguageLocalizations.delegate,
-                      PortfolioLocalizations.delegate,
-                    ],
-                    supportedLocales: AppLocalizations.supportedLocales,
-                    debugShowCheckedModeBanner: false,
-                  ),
+                return MaterialApp.router(
+                  locale: !kReleaseMode
+                      ? DevicePreview.locale(context) //Add DevicePreview
+                      : Locale.fromSubtags(
+                          languageCode: languageType.languageCode),
+                  builder: DevicePreview.appBuilder,
+                  routerConfig: _appRouter.router,
+                  themeMode: themeType.themeMode,
+                  theme: ThemeData.light(useMaterial3: true),
+                  darkTheme: ThemeData.dark(useMaterial3: true),
+                  localizationsDelegates: const [
+                    ...AppLocalizations.localizationsDelegates,
+                    ThemeLocalizations.delegate,
+                    LanguageLocalizations.delegate,
+                    PortfolioLocalizations.delegate,
+                  ],
+                  supportedLocales: AppLocalizations.supportedLocales,
+                  debugShowCheckedModeBanner: false,
                 );
               },
             );

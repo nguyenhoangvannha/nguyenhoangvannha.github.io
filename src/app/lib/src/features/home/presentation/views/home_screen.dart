@@ -1,6 +1,5 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_adaptive_scaffold/flutter_adaptive_scaffold.dart';
-import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:nguyenhoangvannha/src/app/helpers/extensions/build_context_extension.dart';
 import 'package:nguyenhoangvannha/src/app/helpers/extensions/route_name_ext.dart';
 import 'package:nguyenhoangvannha/src/app/routes/go_router_builder.dart';
@@ -156,7 +155,7 @@ class _HomeScreenState extends State<HomeScreen> {
                           padding: getValueForScreenType<EdgeInsetsGeometry>(
                             context: context,
                             desktop: EdgeInsets.symmetric(
-                                horizontal: 200.w, vertical: 140.w),
+                                horizontal: 200, vertical: 140),
                             tablet: const EdgeInsets.symmetric(
                                 horizontal: 40, vertical: 40),
                             mobile: const EdgeInsets.only(
