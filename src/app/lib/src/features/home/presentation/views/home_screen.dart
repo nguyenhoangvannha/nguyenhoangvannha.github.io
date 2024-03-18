@@ -1,9 +1,11 @@
+import 'package:flutter/foundation.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_adaptive_scaffold/flutter_adaptive_scaffold.dart';
 import 'package:go_router/src/route.dart';
 import 'package:nguyenhoangvannha/src/app/helpers/extensions/build_context_extension.dart';
 import 'package:nguyenhoangvannha/src/features/settings/presentation/view/settings_page.dart';
 import 'package:nha_portfolio/nha_portfolio.dart';
+import 'package:responsive_builder/responsive_builder.dart';
 
 class HomeScreen extends StatelessWidget {
   const HomeScreen({
@@ -112,6 +114,13 @@ class HomeScreen extends StatelessWidget {
               onDestinationSelected: onDestinationSelected,
             ),
           )
+        },
+      ),
+      floatingActionButton: ResponsiveBuilder(
+        builder: (context, sizedInfo) {
+          if (kReleaseMode) return SizedBox.shrink();
+          return FloatingActionButton.extended(
+              onPressed: null, label: Text(sizedInfo.deviceScreenType.name));
         },
       ),
     );

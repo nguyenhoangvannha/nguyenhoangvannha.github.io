@@ -28,6 +28,7 @@ class ProjectCard extends StatelessWidget {
       desktop: 32,
     );
 
+
     return Card(
       elevation: 5,
       clipBehavior: Clip.antiAliasWithSaveLayer,
@@ -101,7 +102,6 @@ class ProjectCard extends StatelessWidget {
                       height: getValueForScreenType(
                           context: context, mobile: 2, desktop: 4),
                     ),
-
                     Expanded(
                       child: Align(
                         alignment: Alignment.bottomCenter,
@@ -128,7 +128,7 @@ class ProjectCard extends StatelessWidget {
                                     launchUrl(Uri.parse(project.demoLink));
                                   },
                                   fontSize: fontSize,
-                                  iconSize: size,
+                                  iconSize: size / 2,
                                 ),
                                 textButton(
                                   context,
@@ -137,7 +137,7 @@ class ProjectCard extends StatelessWidget {
                                   onPressed: () {
                                     launchUrl(Uri.parse(project.repoLink));
                                   },
-                                  iconSize: size,
+                                  iconSize: size / 2,
                                   fontSize: fontSize,
                                 ),
                               ],
@@ -158,7 +158,7 @@ class ProjectCard extends StatelessWidget {
 
   Widget textButton(BuildContext context, String text, ImageProvider image,
       {VoidCallback? onPressed,
-      required int iconSize,
+      required double iconSize,
       required double fontSize}) {
     final paddingSize =
         getValueForScreenType(context: context, mobile: 6, desktop: 12);
@@ -171,7 +171,7 @@ class ProjectCard extends StatelessWidget {
           children: [
             ImageIcon(
               image,
-              size: iconSize.toDouble(),
+              size: iconSize,
             ),
             SizedBox(
               width: paddingSize / 2,
