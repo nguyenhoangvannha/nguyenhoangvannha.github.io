@@ -33,7 +33,7 @@ class ProjectCard extends StatelessWidget {
     );
 
     return Card(
-      elevation: 5,
+      elevation: 1.5,
       clipBehavior: Clip.antiAliasWithSaveLayer,
       child: InkWell(
         onTap: onTap,
