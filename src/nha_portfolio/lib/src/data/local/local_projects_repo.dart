@@ -1,6 +1,7 @@
 import 'dart:async';
 
 import 'package:built_collection/built_collection.dart';
+import 'package:nha_portfolio/src/domain/entity/framework.dart';
 import 'package:nha_portfolio/src/domain/entity/project.dart';
 import 'package:nha_portfolio/src/domain/export.dart';
 
@@ -12,6 +13,7 @@ class LocalProjectsRepo implements ProjectsRepo {
         (u) => u
           ..id = "project_movie_flutter"
           ..title = "project_movie_flutter"
+          ..framework = Framework.flutter
           ..description =
               "Impressive feature-rich movie app with search, favorites, watchlist, trailers, details, themes, and multi-languages."
           ..techStacks = "Flutter, BLoc, Clean architecture, REST, DI, Drift DB"
@@ -23,6 +25,7 @@ class LocalProjectsRepo implements ProjectsRepo {
       Project(
         (u) => u
           ..id = "nguyenhoangvannha.github.io"
+          ..framework = Framework.flutter
           ..title = "nguyenhoangvannha.github.io"
           ..description = "Nguyễn Hoàng Văn Nhã's Portfolio"
           ..techStacks =
@@ -34,6 +37,7 @@ class LocalProjectsRepo implements ProjectsRepo {
       Project(
         (u) => u
           ..id = "android_activity_lifecycle"
+          ..framework = Framework.flutter
           ..title = "android_activity_lifecycle"
           ..description =
               "Plugin for monitoring Android activity lifecycle changes within Flutter apps."
@@ -46,6 +50,7 @@ class LocalProjectsRepo implements ProjectsRepo {
       Project(
         (u) => u
           ..id = "vn-e-learning"
+          ..framework = Framework.reactNative
           ..title = "vn-e-learning"
           ..description =
               "Online learning app with course browsing, learning, and progress saving."
@@ -57,6 +62,7 @@ class LocalProjectsRepo implements ProjectsRepo {
       Project(
         (u) => u
           ..id = "OpenGallery"
+          ..framework = Framework.android
           ..title = "OpenGallery"
           ..description =
               "Photo gallery and album app for viewing and sharing photos."
@@ -67,6 +73,7 @@ class LocalProjectsRepo implements ProjectsRepo {
       Project(
         (u) => u
           ..id = "udemy-back-end"
+          ..framework = Framework.nodeJS
           ..title = "udemy-back-end"
           ..description =
               "Backend for an online learning website with features like JWT, search, and email"

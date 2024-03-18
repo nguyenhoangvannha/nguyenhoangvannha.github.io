@@ -1,4 +1,3 @@
-import 'package:device_preview/device_preview.dart';
 import 'package:flutter/foundation.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
@@ -38,25 +37,22 @@ class App extends StatelessWidget {
             return BlocBuilder<ThemeBloc, ThemeType>(
               builder: (BuildContext context, ThemeType themeType) {
                 return MaterialApp.router(
-                  locale: !kReleaseMode
-                      ? DevicePreview.locale(context) //Add DevicePreview
-                      : Locale.fromSubtags(
-                          languageCode: languageType.languageCode),
-                  builder: DevicePreview.appBuilder,
-                  routerConfig: _appRouter.router,
-                  themeMode: themeType.themeMode,
-                  theme: ThemeData.light(useMaterial3: true),
-                  darkTheme: ThemeData.dark(useMaterial3: true),
-                  localizationsDelegates: const [
-                    ...AppLocalizations.localizationsDelegates,
-                    ThemeLocalizations.delegate,
-                    LanguageLocalizations.delegate,
-                    PortfolioLocalizations.delegate,
-                  ],
-                  supportedLocales: AppLocalizations.supportedLocales,
-                  debugShowCheckedModeBanner: false,
+                    locale: Locale.fromSubtags(
+                    languageCode: languageType.languageCode),
+                routerConfig: _appRouter.router,
+                themeMode: themeType.themeMode,
+                theme: ThemeData.light(useMaterial3: true),
+                darkTheme: ThemeData.dark(useMaterial3: true),
+                localizationsDelegates: const [
+                ...AppLocalizations.localizationsDelegates,
+                ThemeLocalizations.delegate,
+                LanguageLocalizations.delegate,
+                PortfolioLocalizations.delegate,
+                ],
+                supportedLocales: AppLocalizations.supportedLocales,
+                debugShowCheckedModeBanner: false,
                 );
-              },
+                },
             );
           },
         ),

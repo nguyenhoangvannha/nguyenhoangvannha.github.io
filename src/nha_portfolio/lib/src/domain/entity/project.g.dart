@@ -21,6 +21,8 @@ class _$Project extends Project {
   final String repoLink;
   @override
   final String demoLink;
+  @override
+  final Framework framework;
 
   factory _$Project([void Function(ProjectBuilder)? updates]) =>
       (new ProjectBuilder()..update(updates))._build();
@@ -32,7 +34,8 @@ class _$Project extends Project {
       required this.description,
       required this.techStacks,
       required this.repoLink,
-      required this.demoLink})
+      required this.demoLink,
+      required this.framework})
       : super._() {
     BuiltValueNullFieldError.checkNotNull(id, r'Project', 'id');
     BuiltValueNullFieldError.checkNotNull(title, r'Project', 'title');
@@ -42,6 +45,7 @@ class _$Project extends Project {
     BuiltValueNullFieldError.checkNotNull(techStacks, r'Project', 'techStacks');
     BuiltValueNullFieldError.checkNotNull(repoLink, r'Project', 'repoLink');
     BuiltValueNullFieldError.checkNotNull(demoLink, r'Project', 'demoLink');
+    BuiltValueNullFieldError.checkNotNull(framework, r'Project', 'framework');
   }
 
   @override
@@ -61,7 +65,8 @@ class _$Project extends Project {
         description == other.description &&
         techStacks == other.techStacks &&
         repoLink == other.repoLink &&
-        demoLink == other.demoLink;
+        demoLink == other.demoLink &&
+        framework == other.framework;
   }
 
   @override
@@ -74,6 +79,7 @@ class _$Project extends Project {
     _$hash = $jc(_$hash, techStacks.hashCode);
     _$hash = $jc(_$hash, repoLink.hashCode);
     _$hash = $jc(_$hash, demoLink.hashCode);
+    _$hash = $jc(_$hash, framework.hashCode);
     _$hash = $jf(_$hash);
     return _$hash;
   }
@@ -87,7 +93,8 @@ class _$Project extends Project {
           ..add('description', description)
           ..add('techStacks', techStacks)
           ..add('repoLink', repoLink)
-          ..add('demoLink', demoLink))
+          ..add('demoLink', demoLink)
+          ..add('framework', framework))
         .toString();
   }
 }
@@ -124,6 +131,10 @@ class ProjectBuilder implements Builder<Project, ProjectBuilder> {
   String? get demoLink => _$this._demoLink;
   set demoLink(String? demoLink) => _$this._demoLink = demoLink;
 
+  Framework? _framework;
+  Framework? get framework => _$this._framework;
+  set framework(Framework? framework) => _$this._framework = framework;
+
   ProjectBuilder() {
     Project._init(this);
   }
@@ -138,6 +149,7 @@ class ProjectBuilder implements Builder<Project, ProjectBuilder> {
       _techStacks = $v.techStacks;
       _repoLink = $v.repoLink;
       _demoLink = $v.demoLink;
+      _framework = $v.framework;
       _$v = null;
     }
     return this;
@@ -173,7 +185,9 @@ class ProjectBuilder implements Builder<Project, ProjectBuilder> {
               repoLink: BuiltValueNullFieldError.checkNotNull(
                   repoLink, r'Project', 'repoLink'),
               demoLink: BuiltValueNullFieldError.checkNotNull(
-                  demoLink, r'Project', 'demoLink'));
+                  demoLink, r'Project', 'demoLink'),
+              framework: BuiltValueNullFieldError.checkNotNull(
+                  framework, r'Project', 'framework'));
     } catch (_) {
       late String _$failedField;
       try {

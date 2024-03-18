@@ -69,9 +69,9 @@ class Projects extends StatelessWidget {
                 crossAxisCount: 3,
                 childAspectRatio: 0.75,
                 mainAxisSpacing: getValueForScreenType(
-                    context: context, mobile: 6, desktop: 28),
+                    context: context, mobile: 6, desktop: 18),
                 crossAxisSpacing: getValueForScreenType(
-                    context: context, mobile: 6, desktop: 24),
+                    context: context, mobile: 6, desktop: 18),
               ),
               children: projectsMap.values
                   .map((e) => ProjectCard(

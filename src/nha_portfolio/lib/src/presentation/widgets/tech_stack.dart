@@ -24,8 +24,8 @@ class TechStack extends StatelessWidget {
         techStack.assetGenImage.image(
           width: size,
           height: size,
-          cacheHeight: 56,
-          cacheWidth: 56,
+          cacheHeight: size.toInt(),
+          cacheWidth: size.toInt(),
         ),
         SizedBox(
           height:
