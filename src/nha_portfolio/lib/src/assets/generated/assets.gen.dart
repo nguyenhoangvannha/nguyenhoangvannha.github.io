@@ -95,6 +95,9 @@ class $AssetsIconsGen {
   AssetGenImage get logosReact =>
       const AssetGenImage('assets/icons/logos_react.png');
 
+  /// File path: assets/icons/manabie.png
+  AssetGenImage get manabie => const AssetGenImage('assets/icons/manabie.png');
+
   /// List of all assets
   List<AssetGenImage> get values => [
         akarIconsLinkChain,
@@ -117,7 +120,8 @@ class $AssetsIconsGen {
         icons8Testing96,
         icons8VisualStudioCode48,
         linkedin,
-        logosReact
+        logosReact,
+        manabie
       ];
 }
 

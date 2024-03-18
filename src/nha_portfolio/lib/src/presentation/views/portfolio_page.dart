@@ -3,9 +3,11 @@ import 'package:flutter_screenutil/flutter_screenutil.dart';
 
 import 'package:nha_portfolio/src/presentation/widgets/contacts.dart';
 import 'package:nha_portfolio/src/presentation/widgets/make_with.dart';
+import 'package:nha_portfolio/src/presentation/widgets/portfolio_part.dart';
 import 'package:nha_portfolio/src/presentation/widgets/projects.dart';
 import 'package:nha_portfolio/src/presentation/widgets/sumary.dart';
 import 'package:nha_portfolio/src/presentation/widgets/tech_stacks.dart';
+import 'package:nha_portfolio/src/presentation/widgets/working_history_list.dart';
 import 'package:responsive_builder/responsive_builder.dart';
 
 class PortfolioPage extends StatelessWidget {
@@ -32,16 +34,27 @@ class PortfolioPage extends StatelessWidget {
             SizedBox(
               height: getValueForScreenType(
                 context: context,
-                mobile: 60,
-                desktop: 140,
+                mobile: 60.w,
+                desktop: 140.w,
               ),
             ),
             const TechStacks(),
             SizedBox(
                 height: getValueForScreenType(
               context: context,
-              mobile: 32,
-              desktop: 64,
+              mobile: 32.w,
+              desktop: 64.w,
+            )),
+            PortfolioPart(
+              title: "Employment",
+              subTitle: "My profesional works",
+              child: WorkingHistoryList(),
+            ),
+            SizedBox(
+                height: getValueForScreenType(
+              context: context,
+              mobile: 32.w,
+              desktop: 64.w,
             )),
             Padding(
               padding: EdgeInsets.symmetric(
