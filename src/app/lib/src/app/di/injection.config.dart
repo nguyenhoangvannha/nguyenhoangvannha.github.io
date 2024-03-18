@@ -11,13 +11,15 @@
 import 'package:get_it/get_it.dart' as _i1;
 import 'package:injectable/injectable.dart' as _i2;
 import 'package:nha_language/nha_language.dart' as _i6;
-import 'package:nha_theme/nha_theme.dart' as _i7;
+import 'package:nha_portfolio/nha_portfolio.dart' as _i7;
+import 'package:nha_theme/nha_theme.dart' as _i8;
 
 import '../observers/app_bloc_observer.dart' as _i3;
 import '../observers/go_route_observer.dart' as _i5;
 import '../routes/app_router.dart' as _i4;
-import 'modules/language_module.dart' as _i8;
-import 'modules/theme_module.dart' as _i9;
+import 'modules/language_module.dart' as _i9;
+import 'modules/projects_module.dart' as _i10;
+import 'modules/theme_module.dart' as _i11;
 
 extension GetItInjectableX on _i1.GetIt {
 // initializes the registration of main-scope dependencies inside of GetIt
@@ -31,6 +33,7 @@ extension GetItInjectableX on _i1.GetIt {
       environmentFilter,
     );
     final languageModule = _$LanguageModule();
+    final projectsModule = _$ProjectsModule();
     final themeModule = _$ThemeModule();
     gh.singleton<_i3.AppBlocObserver>(() => _i3.AppBlocObserver());
     gh.factory<_i4.AppRouter>(() => _i4.AppRouter());
@@ -40,11 +43,17 @@ extension GetItInjectableX on _i1.GetIt {
     ) =>
         _i5.GoRouteObserver(_navigatorLocation));
     gh.lazySingleton<_i6.LanguageBloc>(() => languageModule.languageBloc);
-    gh.lazySingleton<_i7.ThemeBloc>(() => themeModule.themeBloc);
+    gh.lazySingleton<_i7.LocalProjectsRepo>(
+        () => projectsModule.localProjectsRepo);
+    gh.lazySingleton<_i7.ProjectsBloc>(() => projectsModule.languageBloc);
+    gh.lazySingleton<_i7.ProjectsRepo>(() => projectsModule.projectsRepo);
+    gh.lazySingleton<_i8.ThemeBloc>(() => themeModule.themeBloc);
     return this;
   }
 }
 
-class _$LanguageModule extends _i8.LanguageModule {}
+class _$LanguageModule extends _i9.LanguageModule {}
 
-class _$ThemeModule extends _i9.ThemeModule {}
+class _$ProjectsModule extends _i10.ProjectsModule {}
+
+class _$ThemeModule extends _i11.ThemeModule {}

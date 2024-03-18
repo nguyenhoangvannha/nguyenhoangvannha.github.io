@@ -21,6 +21,9 @@ class App extends StatelessWidget {
     BlocProvider<LanguageBloc>(
       create: (BuildContext context) => getIt<LanguageBloc>(),
     ),
+    BlocProvider<ProjectsBloc>(
+      create: (BuildContext context) => getIt<ProjectsBloc>(),
+    ),
   ];
 
   @override

@@ -1,5 +1,7 @@
+import 'package:built_collection/built_collection.dart';
 import 'package:flutter/material.dart';
-
+import 'package:flutter_bloc/flutter_bloc.dart';
+import 'package:nha_portfolio/nha_portfolio.dart';
 import 'package:nha_portfolio/src/domain/entity/project.dart';
 import 'package:nha_portfolio/src/helpers/ext/context_ext.dart';
 import 'package:nha_portfolio/src/presentation/widgets/project_card.dart';
@@ -12,16 +14,6 @@ class Projects extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    final projects = List.generate(
-        6,
-        (index) => Project((u) => u
-          ..id = "$index"
-          ..title = "Project Tile goes here"
-          ..description =
-              "This is sample project description random things are here in description"
-          ..techStack = "HTML , JavaScript, SASS, React"
-          ..demoLink = "https://nguyenhoangvannha.github.io/"
-          ..repoLink = "https://github.com/NoName-exe/revanced-extended"));
     return Column(
       mainAxisSize: MainAxisSize.min,
       crossAxisAlignment: CrossAxisAlignment.center,
@@ -65,24 +57,31 @@ class Projects extends StatelessWidget {
             desktop: 28,
           ),
         ),
-        GridView(
-          shrinkWrap: true,
-          physics: const NeverScrollableScrollPhysics(),
-          gridDelegate: SliverGridDelegateWithFixedCrossAxisCount(
-            crossAxisCount: 3,
-            childAspectRatio: 0.75,
-            mainAxisSpacing:
-                getValueForScreenType(context: context, mobile: 6, desktop: 28),
-            crossAxisSpacing:
-                getValueForScreenType(context: context, mobile: 6, desktop: 24),
-          ),
-          children: projects
-              .map((e) => ProjectCard(
-                    project: e,
-                    onTap: () => onProjectTap?.call(e.id),
-                  ))
-              .toList(),
-        ),
+        BlocSelector<ProjectsBloc, ProjectsState, BuiltMap<String, Project>>(
+          selector: (ProjectsState state) {
+            return state.projectsMap;
+          },
+          builder: (context, projectsMap) {
+            return GridView(
+              shrinkWrap: true,
+              physics: const NeverScrollableScrollPhysics(),
+              gridDelegate: SliverGridDelegateWithFixedCrossAxisCount(
+                crossAxisCount: 3,
+                childAspectRatio: 0.75,
+                mainAxisSpacing: getValueForScreenType(
+                    context: context, mobile: 6, desktop: 28),
+                crossAxisSpacing: getValueForScreenType(
+                    context: context, mobile: 6, desktop: 24),
+              ),
+              children: projectsMap.values
+                  .map((e) => ProjectCard(
+                        project: e,
+                        onTap: () => onProjectTap?.call(e.id),
+                      ))
+                  .toList(),
+            );
+          },
+        )
       ],
     );
   }
