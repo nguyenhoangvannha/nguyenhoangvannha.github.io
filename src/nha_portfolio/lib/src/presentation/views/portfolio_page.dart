@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_screenutil/flutter_screenutil.dart';
 
 import 'package:nha_portfolio/src/presentation/widgets/contacts.dart';
 import 'package:nha_portfolio/src/presentation/widgets/make_with.dart';
@@ -47,7 +48,7 @@ class PortfolioPage extends StatelessWidget {
                   horizontal: getValueForScreenType(
                 context: context,
                 mobile: 0,
-                desktop: 76,
+                desktop: 76.w,
               )),
               child: Projects(
                 onProjectTap: onProjectTap,

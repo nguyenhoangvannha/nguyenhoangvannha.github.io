@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:go_router/go_router.dart';
 import 'package:nguyenhoangvannha/src/features/home/presentation/views/home_screen.dart';
 import 'package:nguyenhoangvannha/src/features/settings/presentation/view/settings_page.dart';
@@ -96,7 +97,7 @@ class HomePageRouteData extends GoRouteData {
     return PortfolioPage(
       padding: getValueForScreenType<EdgeInsetsGeometry>(
         context: context,
-        desktop: const EdgeInsets.symmetric(horizontal: 200, vertical: 140),
+        desktop:  EdgeInsets.symmetric(horizontal: 200.w, vertical: 140.w),
         tablet: const EdgeInsets.symmetric(horizontal: 40, vertical: 40),
         mobile: const EdgeInsets.only(
           left: 24,
@@ -123,7 +124,7 @@ class ProjectsPageRouteData extends GoRouteData {
     return SingleChildScrollView(
       padding: getValueForScreenType<EdgeInsetsGeometry>(
         context: context,
-        desktop: const EdgeInsets.symmetric(horizontal: 200, vertical: 70),
+        desktop:  EdgeInsets.symmetric(horizontal: 200.w, vertical: 70.w),
         tablet: const EdgeInsets.symmetric(horizontal: 40, vertical: 40),
         mobile: const EdgeInsets.only(
           left: 24,

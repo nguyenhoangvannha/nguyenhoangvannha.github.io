@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_screenutil/flutter_screenutil.dart';
 
 import 'package:nha_portfolio/src/domain/entity/tech_stack_enum.dart';
 import 'package:nha_portfolio/src/helpers/ext/tech_stack_ext.dart';
@@ -29,7 +30,7 @@ class TechStack extends StatelessWidget {
         ),
         SizedBox(
           height:
-              getValueForScreenType(context: context, mobile: 6, desktop: 8),
+              getValueForScreenType(context: context, mobile: 6, tablet: 7, desktop: 8),
         ),
         Text(
           techStack.name,
@@ -38,6 +39,7 @@ class TechStack extends StatelessWidget {
             fontSize: getValueForScreenType(
               context: context,
               mobile: 10,
+              tablet: 12.sp,
               desktop: 14,
             ),
           ),

@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_screenutil/flutter_screenutil.dart';
 
 import 'package:nha_portfolio/src/domain/entity/tech_stack_enum.dart';
 import 'package:nha_portfolio/src/helpers/ext/context_ext.dart';
@@ -24,7 +25,7 @@ class TechStacks extends StatelessWidget {
               context: context,
               mobile: 20,
               tablet: 26,
-              desktop: 30,
+              desktop: 30.sp,
             ),
             height: 0.5,
           ),
@@ -43,7 +44,7 @@ class TechStacks extends StatelessWidget {
               context: context,
               mobile: 12,
               tablet: 16,
-              desktop: 20,
+              desktop: 20.sp,
             ),
             height: 0.7,
           ),
@@ -66,7 +67,7 @@ class TechStacks extends StatelessWidget {
               context: context,
               mobile: 1,
               tablet: 1.2,
-              desktop: 1.5,
+              desktop: 1.5.w,
             ),
           ),
           children: stacks.map((e) => TechStack(techStack: e)).toList(),

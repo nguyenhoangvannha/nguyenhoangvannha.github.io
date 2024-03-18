@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_screenutil/flutter_screenutil.dart';
 
 import 'package:responsive_builder/responsive_builder.dart';
 import 'package:nha_portfolio/src/helpers/ext/context_ext.dart';
@@ -26,7 +27,7 @@ class Sumary extends StatelessWidget {
                 fontWeight: FontWeight.bold,
                 fontSize: getValueForScreenType(
                   context: context,
-                  desktop: 42,
+                  desktop: 42.sp,
                   tablet: 32,
                   mobile: 22,
                 ),
@@ -39,7 +40,7 @@ class Sumary extends StatelessWidget {
                 context: context,
                 mobile: 36,
                 tablet: 52,
-                desktop: 100,
+                desktop: 100.w,
               ),
             ),
             getValueForScreenType(

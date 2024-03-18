@@ -1,6 +1,7 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/widgets.dart';
+import 'package:flutter_screenutil/flutter_screenutil.dart';
 
 import 'package:nha_portfolio/src/assets/generated/assets.gen.dart';
 import 'package:nha_portfolio/src/domain/entity/project.dart';
@@ -17,17 +18,19 @@ class ProjectCard extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    final fontSize =
-        getValueForScreenType(context: context, mobile: 6, desktop: 14.0)
-            .toDouble();
+    final fontSize = getValueForScreenType(
+      context: context,
+      mobile: 6,
+      tablet: 14.sp,
+      desktop: 16.sp,
+    ).toDouble();
 
-    final size = getValueForScreenType<int>(
+    final size = getValueForScreenType(
       context: context,
       mobile: 10,
-      tablet: 18,
-      desktop: 32,
+      tablet: 22.w,
+      desktop: 32.w,
     );
-
 
     return Card(
       elevation: 5,
@@ -40,8 +43,9 @@ class ProjectCard extends StatelessWidget {
             Assets.images.projectCover.image(
               height: getValueForScreenType(
                 context: context,
-                mobile: 60,
-                desktop: 140,
+                mobile: 60.w,
+                tablet: 100.w,
+                desktop: 140.w,
               ),
               width: double.infinity,
               fit: BoxFit.fitWidth,
@@ -49,7 +53,11 @@ class ProjectCard extends StatelessWidget {
             Expanded(
               child: Padding(
                 padding: EdgeInsets.all(getValueForScreenType(
-                    context: context, mobile: 6, desktop: 18)),
+                  context: context,
+                  mobile: 6,
+                  tablet: 14.w,
+                  desktop: 18.w,
+                )),
                 child: Column(
                   crossAxisAlignment: CrossAxisAlignment.stretch,
                   children: [
@@ -58,8 +66,8 @@ class ProjectCard extends StatelessWidget {
                         project.framework.asset.image(
                           width: size.toDouble(),
                           height: size.toDouble(),
-                          cacheHeight: size,
-                          cacheWidth: size,
+                          cacheHeight: size.toInt(),
+                          cacheWidth: size.toInt(),
                         ),
                         SizedBox(
                           width: getValueForScreenType(
@@ -78,7 +86,8 @@ class ProjectCard extends StatelessWidget {
                               fontSize: getValueForScreenType(
                                 context: context,
                                 mobile: 8,
-                                desktop: 18,
+                                tablet: 14.sp,
+                                desktop: 18.sp,
                               ),
                             ),
                           ),
@@ -160,8 +169,11 @@ class ProjectCard extends StatelessWidget {
       {VoidCallback? onPressed,
       required double iconSize,
       required double fontSize}) {
-    final paddingSize =
-        getValueForScreenType(context: context, mobile: 6, desktop: 12);
+    final paddingSize = getValueForScreenType(
+      context: context,
+      mobile: 6,
+      desktop: 12.w,
+    );
     return InkWell(
       onTap: onPressed,
       child: Padding(

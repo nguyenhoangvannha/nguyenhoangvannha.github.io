@@ -1,6 +1,7 @@
 import 'package:built_collection/built_collection.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
+import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:nha_portfolio/nha_portfolio.dart';
 import 'package:nha_portfolio/src/domain/entity/project.dart';
 import 'package:nha_portfolio/src/helpers/ext/context_ext.dart';
@@ -26,7 +27,7 @@ class Projects extends StatelessWidget {
               context: context,
               mobile: 20,
               tablet: 26,
-              desktop: 28,
+              desktop: 28.sp,
             ),
             height: 0.5,
           ),
@@ -45,7 +46,7 @@ class Projects extends StatelessWidget {
               context: context,
               mobile: 12,
               tablet: 16,
-              desktop: 20,
+              desktop: 20.sp,
             ),
             height: 0.7,
           ),

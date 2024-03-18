@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_screenutil/flutter_screenutil.dart';
 
 import 'package:nha_portfolio/src/helpers/consts/consts.dart';
 import 'package:nha_portfolio/src/helpers/ext/context_ext.dart';
@@ -15,8 +16,11 @@ class Contacts extends StatelessWidget {
       Text(
         "{ ${context.l10n.authorName} }",
         style: TextStyle(
-          fontSize:
-              getValueForScreenType(context: context, mobile: 16, desktop: 22),
+          fontSize: getValueForScreenType(
+            context: context,
+            mobile: 16,
+            desktop: 22.sp,
+          ),
           fontWeight: FontWeight.bold,
         ),
       ),
@@ -32,7 +36,7 @@ class Contacts extends StatelessWidget {
             fontSize: getValueForScreenType(
               context: context,
               mobile: 12,
-              desktop: 15,
+              desktop: 15.sp,
             ),
           ),
         ),
@@ -50,7 +54,7 @@ class Contacts extends StatelessWidget {
             fontSize: getValueForScreenType(
               context: context,
               mobile: 12,
-              desktop: 16,
+              desktop: 16.sp,
             ),
           ),
         ),

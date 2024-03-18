@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_screenutil/flutter_screenutil.dart';
 
 import 'package:nha_portfolio/src/assets/generated/assets.gen.dart';
 import 'package:nha_portfolio/src/helpers/consts/consts.dart';
@@ -35,8 +36,8 @@ class Social extends StatelessWidget {
               icon: Assets.icons.icons8Phone48.image(
                 width: size,
                 height: size,
-                cacheWidth: cacheSize,
-                cacheHeight: cacheSize,
+                cacheWidth: cacheSize.toInt(),
+                cacheHeight: cacheSize.toInt(),
               )),
         if (email)
           IconButton(
@@ -46,8 +47,8 @@ class Social extends StatelessWidget {
               icon: Assets.icons.icons8Gmail48.image(
                 width: size,
                 height: size,
-                cacheWidth: cacheSize,
-                cacheHeight: cacheSize,
+                cacheWidth: cacheSize.toInt(),
+                cacheHeight: cacheSize.toInt(),
               )),
         IconButton(
             onPressed: () {
@@ -56,8 +57,8 @@ class Social extends StatelessWidget {
             icon: Assets.icons.linkedin.image(
               width: size,
               height: size,
-              cacheWidth: cacheSize,
-              cacheHeight: cacheSize,
+              cacheWidth: cacheSize.toInt(),
+              cacheHeight: cacheSize.toInt(),
             )),
         IconButton(
             onPressed: () {
@@ -66,8 +67,8 @@ class Social extends StatelessWidget {
             icon: Assets.icons.github.image(
               width: size,
               height: size,
-              cacheWidth: cacheSize,
-              cacheHeight: cacheSize,
+              cacheWidth: cacheSize.toInt(),
+              cacheHeight: cacheSize.toInt(),
             )),
       ],
     );
