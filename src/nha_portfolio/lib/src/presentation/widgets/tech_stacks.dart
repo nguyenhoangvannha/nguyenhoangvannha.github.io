@@ -25,7 +25,7 @@ class TechStacks extends StatelessWidget {
               context: context,
               mobile: 20,
               tablet: 26,
-              desktop: 30.sp,
+              desktop: 32.sp,
             ),
             height: 0.5,
           ),
@@ -44,7 +44,7 @@ class TechStacks extends StatelessWidget {
               context: context,
               mobile: 12,
               tablet: 16,
-              desktop: 20.sp,
+              desktop: 14.sp,
             ),
             height: 0.7,
           ),
@@ -53,7 +53,7 @@ class TechStacks extends StatelessWidget {
           height: getValueForScreenType(
             context: context,
             mobile: 28,
-            desktop: 42,
+            desktop: 52.w,
           ),
         ),
         GridView(

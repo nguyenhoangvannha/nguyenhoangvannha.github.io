@@ -27,7 +27,7 @@ class Projects extends StatelessWidget {
               context: context,
               mobile: 20,
               tablet: 26,
-              desktop: 28.sp,
+              desktop: 32.sp,
             ),
             height: 0.5,
           ),
@@ -46,7 +46,7 @@ class Projects extends StatelessWidget {
               context: context,
               mobile: 12,
               tablet: 16,
-              desktop: 20.sp,
+              desktop: 14.sp,
             ),
             height: 0.7,
           ),
@@ -68,7 +68,7 @@ class Projects extends StatelessWidget {
               physics: const NeverScrollableScrollPhysics(),
               gridDelegate: SliverGridDelegateWithFixedCrossAxisCount(
                 crossAxisCount: 3,
-                childAspectRatio: 0.75,
+                childAspectRatio: 1/1.3,
                 mainAxisSpacing: getValueForScreenType(
                     context: context, mobile: 6, desktop: 18),
                 crossAxisSpacing: getValueForScreenType(

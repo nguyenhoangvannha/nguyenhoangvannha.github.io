@@ -119,7 +119,7 @@ class ProjectCard extends StatelessWidget {
                           children: [
                             Text(
                               project.techStacks,
-                              maxLines: 1,
+                              maxLines: 2,
                               overflow: TextOverflow.ellipsis,
                               style: TextStyle(
                                 fontSize: fontSize,

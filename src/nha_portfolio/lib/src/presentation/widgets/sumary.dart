@@ -27,7 +27,7 @@ class Sumary extends StatelessWidget {
                 fontWeight: FontWeight.bold,
                 fontSize: getValueForScreenType(
                   context: context,
-                  desktop: 42.sp,
+                  desktop: 52.sp,
                   tablet: 32,
                   mobile: 22,
                 ),
