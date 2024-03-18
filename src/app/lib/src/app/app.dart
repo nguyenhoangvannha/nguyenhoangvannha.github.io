@@ -40,7 +40,7 @@ class App extends StatelessWidget {
                 return ScreenUtilInit(
                   designSize: getValueForScreenType(
                     context: context,
-                    mobile: Size.fromWidth(375),
+                    mobile: Size(375, 667),
                     tablet: Size.fromWidth(768),
                     desktop: Size.fromWidth(1920),
                   ),

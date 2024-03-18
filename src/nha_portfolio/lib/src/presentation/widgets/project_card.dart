@@ -20,14 +20,14 @@ class ProjectCard extends StatelessWidget {
   Widget build(BuildContext context) {
     final fontSize = getValueForScreenType(
       context: context,
-      mobile: 6,
+      mobile: 6.sp,
       tablet: 14.sp,
       desktop: 16.sp,
     ).toDouble();
 
     final size = getValueForScreenType(
       context: context,
-      mobile: 10,
+      mobile: 8.w,
       tablet: 22.w,
       desktop: 32.w,
     );
@@ -43,7 +43,7 @@ class ProjectCard extends StatelessWidget {
             Assets.images.projectCover.image(
               height: getValueForScreenType(
                 context: context,
-                mobile: 60.w,
+                mobile: 50.w,
                 tablet: 100.w,
                 desktop: 140.w,
               ),
@@ -54,7 +54,7 @@ class ProjectCard extends StatelessWidget {
               child: Padding(
                 padding: EdgeInsets.all(getValueForScreenType(
                   context: context,
-                  mobile: 6,
+                  mobile: 6.w,
                   tablet: 14.w,
                   desktop: 18.w,
                 )),
@@ -85,7 +85,7 @@ class ProjectCard extends StatelessWidget {
                               fontWeight: FontWeight.w500,
                               fontSize: getValueForScreenType(
                                 context: context,
-                                mobile: 8,
+                                mobile: 8.sp,
                                 tablet: 14.sp,
                                 desktop: 18.sp,
                               ),
@@ -101,7 +101,7 @@ class ProjectCard extends StatelessWidget {
                     Text(
                       project.description,
                       maxLines: getValueForScreenType(
-                          context: context, mobile: 3, desktop: 4),
+                          context: context, mobile: 2, desktop: 4),
                       overflow: TextOverflow.ellipsis,
                       style: TextStyle(
                         fontSize: fontSize,

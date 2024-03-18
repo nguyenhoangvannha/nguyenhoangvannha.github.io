@@ -54,7 +54,7 @@ class PortfolioPage extends StatelessWidget {
                 onProjectTap: onProjectTap,
               ),
             ),
-            SizedBox(height: 100),
+            SizedBox(height: 80.w),
             Contacts(),
             Divider(),
             Padding(
