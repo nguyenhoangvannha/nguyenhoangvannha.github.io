@@ -28,12 +28,12 @@ class _HomeScreenState extends State<HomeScreen> {
   int _transitionDuration = 1000;
   final routeNumberToName = {
     0: RouteName.home,
-    1: RouteName.articles,
-    2: RouteName.chat,
-    3: RouteName.reading,
-    4: RouteName.projects,
-    5: RouteName.resume,
-    6: RouteName.settings,
+    // 1: RouteName.articles,
+    // 2: RouteName.chat,
+    // 3: RouteName.reading,
+    1: RouteName.projects,
+    2: RouteName.resume,
+    3: RouteName.settings,
   };
 
   // Initialize transition time variable.
@@ -166,13 +166,13 @@ class _HomeScreenState extends State<HomeScreen> {
                             ),
                           ),
                           onPressedDownloadCV: () {
-                            selectedNavigation = 5;
+                            selectedNavigation = 2;
                             HomeRoute(destination: RouteName.resume.path)
                                 .go(context);
                           },
                         ),
-                      5 => const ResumePage(),
-                      6 => SettingsPage(),
+                      2 => const ResumePage(),
+                      3 => SettingsPage(),
                       int() => Text(
                           "mediumAndUp selectedNavigation=$selectedNavigation"),
                     })
@@ -216,21 +216,21 @@ class _HomeScreenState extends State<HomeScreen> {
           icon: const Icon(Icons.home_outlined),
           selectedIcon: const Icon(Icons.home),
         ),
-        NavigationDestination(
-          label: context.l10n.articles,
-          icon: const Icon(Icons.article_outlined),
-          selectedIcon: const Icon(Icons.article),
-        ),
-        NavigationDestination(
-          label: context.l10n.chat,
-          icon: const Icon(Icons.chat_outlined),
-          selectedIcon: const Icon(Icons.chat),
-        ),
-        NavigationDestination(
-          label: context.l10n.readingList,
-          icon: const Icon(Icons.book_outlined),
-          selectedIcon: const Icon(Icons.book),
-        ),
+        // NavigationDestination(
+        //   label: context.l10n.articles,
+        //   icon: const Icon(Icons.article_outlined),
+        //   selectedIcon: const Icon(Icons.article),
+        // ),
+        // NavigationDestination(
+        //   label: context.l10n.chat,
+        //   icon: const Icon(Icons.chat_outlined),
+        //   selectedIcon: const Icon(Icons.chat),
+        // ),
+        // NavigationDestination(
+        //   label: context.l10n.readingList,
+        //   icon: const Icon(Icons.book_outlined),
+        //   selectedIcon: const Icon(Icons.book),
+        // ),
         NavigationDestination(
           label: context.l10n.projects,
           icon: const Icon(Icons.work_history_outlined),
