@@ -163,16 +163,15 @@ class WorkingHistoryList extends StatelessWidget {
     return Column(
       crossAxisAlignment: CrossAxisAlignment.start,
       children: [
-        RichText(
-          text: TextSpan(
-            children: [
-              TextSpan(
-                text: "Project: ",
-                style: titleStyle,
-              ),
-              TextSpan(text: project.name, style: bodyStyle),
-            ],
-          ),
+        Row(
+          mainAxisAlignment: MainAxisAlignment.start,
+          children: [
+            Text(
+              "Project: ",
+              style: titleStyle,
+            ),
+            Text(project.name, style: bodyStyle),
+          ],
         ),
         Padding(
             padding: EdgeInsets.only(left: paddingLeft, top: paddingTop),
