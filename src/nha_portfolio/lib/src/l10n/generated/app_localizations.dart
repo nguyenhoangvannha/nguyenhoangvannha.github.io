@@ -193,6 +193,12 @@ abstract class PortfolioLocalizations {
   /// **'View Code'**
   String get viewCode;
 
+  /// No description provided for @demo.
+  ///
+  /// In en, this message translates to:
+  /// **'Demo'**
+  String get demo;
+
   /// No description provided for @livePreview.
   ///
   /// In en, this message translates to:

@@ -58,6 +58,9 @@ class PortfolioLocalizationsEn extends PortfolioLocalizations {
   String get viewCode => 'View Code';
 
   @override
+  String get demo => 'Demo';
+
+  @override
   String get livePreview => 'Live Preview';
 
   @override

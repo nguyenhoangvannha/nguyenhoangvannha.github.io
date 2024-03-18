@@ -39,7 +39,7 @@ class PortfolioPage extends StatelessWidget {
             SizedBox(
                 height: getValueForScreenType(
               context: context,
-              mobile: 42,
+              mobile: 32,
               desktop: 64,
             )),
             Padding(

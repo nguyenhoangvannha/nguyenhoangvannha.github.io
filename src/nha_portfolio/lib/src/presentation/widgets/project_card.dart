@@ -23,7 +23,7 @@ class ProjectCard extends StatelessWidget {
 
     final size = getValueForScreenType<int>(
       context: context,
-      mobile: 12,
+      mobile: 10,
       tablet: 18,
       desktop: 32,
     );
@@ -38,7 +38,10 @@ class ProjectCard extends StatelessWidget {
           children: [
             Assets.images.projectCover.image(
               height: getValueForScreenType(
-                  context: context, mobile: 40, desktop: 140),
+                context: context,
+                mobile: 60,
+                desktop: 140,
+              ),
               width: double.infinity,
               fit: BoxFit.fitWidth,
             ),
@@ -58,7 +61,11 @@ class ProjectCard extends StatelessWidget {
                           cacheWidth: size,
                         ),
                         SizedBox(
-                          width: 8,
+                          width: getValueForScreenType(
+                            context: context,
+                            mobile: 4,
+                            desktop: 8,
+                          ),
                         ),
                         Flexible(
                           child: Text(
@@ -68,7 +75,10 @@ class ProjectCard extends StatelessWidget {
                             style: TextStyle(
                               fontWeight: FontWeight.w500,
                               fontSize: getValueForScreenType(
-                                  context: context, mobile: 8, desktop: 18),
+                                context: context,
+                                mobile: 8,
+                                desktop: 18,
+                              ),
                             ),
                           ),
                         ),
@@ -80,7 +90,8 @@ class ProjectCard extends StatelessWidget {
                     ),
                     Text(
                       project.description,
-                      maxLines: 4,
+                      maxLines: getValueForScreenType(
+                          context: context, mobile: 3, desktop: 4),
                       overflow: TextOverflow.ellipsis,
                       style: TextStyle(
                         fontSize: fontSize,
@@ -90,38 +101,51 @@ class ProjectCard extends StatelessWidget {
                       height: getValueForScreenType(
                           context: context, mobile: 2, desktop: 4),
                     ),
-                    Text(
-                      project.techStacks,
-                      maxLines: 1,
-                      overflow: TextOverflow.ellipsis,
-                    ),
+
                     Expanded(
                       child: Align(
                         alignment: Alignment.bottomCenter,
-                        child:Row(
-                          crossAxisAlignment: CrossAxisAlignment.center,
+                        child: Column(
+                          mainAxisSize: MainAxisSize.min,
                           children: [
-                            textButton(
-                              context,
-                              context.l10n.livePreview,
-                              Assets.icons.akarIconsLinkChain.provider(),
-                              onPressed: () {
-                                launchUrl(Uri.parse(project.demoLink));
-                              },
+                            Text(
+                              project.techStacks,
+                              maxLines: 1,
+                              overflow: TextOverflow.ellipsis,
+                              style: TextStyle(
+                                fontSize: fontSize,
+                              ),
                             ),
-                            Spacer(),
-                            textButton(
-                              context,
-                              context.l10n.viewCode,
-                              Assets.icons.github.provider(),
-                              onPressed: () {
-                                launchUrl(Uri.parse(project.repoLink));
-                              },
+                            Row(
+                              crossAxisAlignment: CrossAxisAlignment.center,
+                              mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                              children: [
+                                textButton(
+                                  context,
+                                  context.l10n.demo,
+                                  Assets.icons.akarIconsLinkChain.provider(),
+                                  onPressed: () {
+                                    launchUrl(Uri.parse(project.demoLink));
+                                  },
+                                  fontSize: fontSize,
+                                  iconSize: size,
+                                ),
+                                textButton(
+                                  context,
+                                  context.l10n.viewCode,
+                                  Assets.icons.github.provider(),
+                                  onPressed: () {
+                                    launchUrl(Uri.parse(project.repoLink));
+                                  },
+                                  iconSize: size,
+                                  fontSize: fontSize,
+                                ),
+                              ],
                             ),
                           ],
                         ),
                       ),
-                    ),
+                    )
                   ],
                 ),
               ),
@@ -133,29 +157,33 @@ class ProjectCard extends StatelessWidget {
   }
 
   Widget textButton(BuildContext context, String text, ImageProvider image,
-      {VoidCallback? onPressed}) {
-    return TextButton(
-      onPressed: onPressed,
-      child: Row(
-        children: [
-          ImageIcon(
-            image,
-            size: 18,
-          ),
-          Text(text),
-        ],
-      ),
-      style: ButtonStyle(
-        padding: MaterialStateProperty.all(
-          EdgeInsets.symmetric(
-            horizontal: 0,
-          ),
-        ),
-        textStyle: MaterialStateProperty.all(
-          TextStyle(
-            fontSize: 18,
-            decoration: TextDecoration.underline,
-          ),
+      {VoidCallback? onPressed,
+      required int iconSize,
+      required double fontSize}) {
+    final paddingSize =
+        getValueForScreenType(context: context, mobile: 6, desktop: 12);
+    return InkWell(
+      onTap: onPressed,
+      child: Padding(
+        padding: EdgeInsets.all(paddingSize.toDouble()),
+        child: Row(
+          mainAxisSize: MainAxisSize.min,
+          children: [
+            ImageIcon(
+              image,
+              size: iconSize.toDouble(),
+            ),
+            SizedBox(
+              width: paddingSize / 2,
+            ),
+            Text(
+              text,
+              style: TextStyle(
+                fontSize: fontSize,
+                decoration: TextDecoration.underline,
+              ),
+            ),
+          ],
         ),
       ),
     );
