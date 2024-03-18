@@ -6,17 +6,22 @@ import 'package:nha_portfolio/src/presentation/widgets/project_card.dart';
 import 'package:responsive_builder/responsive_builder.dart';
 
 class Projects extends StatelessWidget {
-  const Projects({super.key});
+  const Projects({super.key, this.onProjectTap});
+
+  final Function(String id)? onProjectTap;
 
   @override
   Widget build(BuildContext context) {
-    final project = Project((u) => u
-      ..title = "Project Tile goes here"
-      ..description =
-          "This is sample project description random things are here in description"
-      ..techStack = "HTML , JavaScript, SASS, React"
-      ..demoLink = "https://nguyenhoangvannha.github.io/"
-      ..repoLink = "https://github.com/NoName-exe/revanced-extended");
+    final projects = List.generate(
+        6,
+        (index) => Project((u) => u
+          ..id = "$index"
+          ..title = "Project Tile goes here"
+          ..description =
+              "This is sample project description random things are here in description"
+          ..techStack = "HTML , JavaScript, SASS, React"
+          ..demoLink = "https://nguyenhoangvannha.github.io/"
+          ..repoLink = "https://github.com/NoName-exe/revanced-extended"));
     return Column(
       mainAxisSize: MainAxisSize.min,
       crossAxisAlignment: CrossAxisAlignment.center,
@@ -71,9 +76,10 @@ class Projects extends StatelessWidget {
             crossAxisSpacing:
                 getValueForScreenType(context: context, mobile: 6, desktop: 24),
           ),
-          children: List.generate(6, (index) => project)
+          children: projects
               .map((e) => ProjectCard(
-                    project: project,
+                    project: e,
+                    onTap: () => onProjectTap?.call(e.id),
                   ))
               .toList(),
         ),

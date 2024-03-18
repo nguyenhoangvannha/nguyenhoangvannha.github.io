@@ -5,28 +5,23 @@ import 'package:nguyenhoangvannha/src/app/helpers/extensions/build_context_exten
 import 'package:nguyenhoangvannha/src/features/settings/presentation/view/settings_page.dart';
 import 'package:nha_portfolio/nha_portfolio.dart';
 
-class HomeScreen extends StatefulWidget {
-  /// Creates a const [HomeScreen].
+class HomeScreen extends StatelessWidget {
   const HomeScreen({
     super.key,
     required this.navigationShell,
-    required this.children,
+    required this.children, required this.onDestinationSelected,
   });
 
   final StatefulNavigationShell navigationShell;
   final List<Widget> children;
+  final Function(int index) onDestinationSelected;
 
-  @override
-  State<HomeScreen> createState() => _HomeScreenState();
-}
-
-class _HomeScreenState extends State<HomeScreen> {
   @override
   Widget build(BuildContext context) {
     final navRailTheme = Theme.of(context).navigationRailTheme;
     // Define the list of destinations to be used within the app.
-    final List<NavigationDestination> destinations = _destinations();
-    final selectedNavigation = widget.navigationShell.currentIndex;
+    final List<NavigationDestination> destinations = _destinations(context);
+    final selectedNavigation = navigationShell.currentIndex;
 
     return Scaffold(
       body: AdaptiveLayout(
@@ -97,8 +92,8 @@ class _HomeScreenState extends State<HomeScreen> {
                 key: const Key('Body Medium'),
                 builder: (_) {
                   return IndexedStack(
-                    index: widget.navigationShell.currentIndex,
-                    children: widget.children,
+                    index: navigationShell.currentIndex,
+                    children: children,
                   );
                 })
           },
@@ -121,20 +116,7 @@ class _HomeScreenState extends State<HomeScreen> {
     );
   }
 
-  void onDestinationSelected(int newIndex) {
-    widget.navigationShell.goBranch(
-      newIndex,
-      // A common pattern when using bottom navigation bars is to support
-      // navigating to the initial location when tapping the item that is
-      // already active. This example demonstrates how to support this behavior,
-      // using the initialLocation parameter of goBranch.
-      initialLocation: newIndex == widget.navigationShell.currentIndex,
-    );
-  }
-
-  Icon buildSettingIcon() => Icon(Icons.settings);
-
-  _destinations() => <NavigationDestination>[
+  _destinations(BuildContext context) => <NavigationDestination>[
         NavigationDestination(
           label: context.l10n.home,
           icon: const Icon(Icons.home_outlined),

@@ -8,6 +8,8 @@ part of 'project.dart';
 
 class _$Project extends Project {
   @override
+  final String id;
+  @override
   final String title;
   @override
   final String description;
@@ -22,12 +24,14 @@ class _$Project extends Project {
       (new ProjectBuilder()..update(updates))._build();
 
   _$Project._(
-      {required this.title,
+      {required this.id,
+      required this.title,
       required this.description,
       required this.techStack,
       required this.repoLink,
       required this.demoLink})
       : super._() {
+    BuiltValueNullFieldError.checkNotNull(id, r'Project', 'id');
     BuiltValueNullFieldError.checkNotNull(title, r'Project', 'title');
     BuiltValueNullFieldError.checkNotNull(
         description, r'Project', 'description');
@@ -47,6 +51,7 @@ class _$Project extends Project {
   bool operator ==(Object other) {
     if (identical(other, this)) return true;
     return other is Project &&
+        id == other.id &&
         title == other.title &&
         description == other.description &&
         techStack == other.techStack &&
@@ -57,6 +62,7 @@ class _$Project extends Project {
   @override
   int get hashCode {
     var _$hash = 0;
+    _$hash = $jc(_$hash, id.hashCode);
     _$hash = $jc(_$hash, title.hashCode);
     _$hash = $jc(_$hash, description.hashCode);
     _$hash = $jc(_$hash, techStack.hashCode);
@@ -69,6 +75,7 @@ class _$Project extends Project {
   @override
   String toString() {
     return (newBuiltValueToStringHelper(r'Project')
+          ..add('id', id)
           ..add('title', title)
           ..add('description', description)
           ..add('techStack', techStack)
@@ -80,6 +87,10 @@ class _$Project extends Project {
 
 class ProjectBuilder implements Builder<Project, ProjectBuilder> {
   _$Project? _$v;
+
+  String? _id;
+  String? get id => _$this._id;
+  set id(String? id) => _$this._id = id;
 
   String? _title;
   String? get title => _$this._title;
@@ -106,6 +117,7 @@ class ProjectBuilder implements Builder<Project, ProjectBuilder> {
   ProjectBuilder get _$this {
     final $v = _$v;
     if ($v != null) {
+      _id = $v.id;
       _title = $v.title;
       _description = $v.description;
       _techStack = $v.techStack;
@@ -133,6 +145,7 @@ class ProjectBuilder implements Builder<Project, ProjectBuilder> {
   _$Project _build() {
     final _$result = _$v ??
         new _$Project._(
+            id: BuiltValueNullFieldError.checkNotNull(id, r'Project', 'id'),
             title: BuiltValueNullFieldError.checkNotNull(
                 title, r'Project', 'title'),
             description: BuiltValueNullFieldError.checkNotNull(

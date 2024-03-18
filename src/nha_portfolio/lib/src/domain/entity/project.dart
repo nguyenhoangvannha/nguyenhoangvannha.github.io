@@ -7,6 +7,8 @@ abstract class Project implements Built<Project, ProjectBuilder> {
 
   factory Project([void Function(ProjectBuilder) updates]) = _$Project;
 
+  String get id;
+
   String get title;
 
   String get description;

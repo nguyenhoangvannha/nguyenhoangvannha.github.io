@@ -16,7 +16,12 @@ part 'go_router_builder.g.dart';
     ),
     TypedStatefulShellBranch<ProjectsPageStatefulShellBranchData>(
       routes: <TypedRoute<RouteData>>[
-        TypedGoRoute<ProjectsPageRouteData>(path: '/projects'),
+        TypedGoRoute<ProjectsPageRouteData>(
+          path: '/projects',
+          routes: [
+            TypedGoRoute<ProjectPageRouteData>(path: ':id'),
+          ],
+        ),
       ],
     ),
     TypedStatefulShellBranch<ResumePageStatefulShellBranchData>(
@@ -50,6 +55,16 @@ class HomeScreenShellRouteData extends StatefulShellRouteData {
     return HomeScreen(
       navigationShell: navigationShell,
       children: children,
+      onDestinationSelected: (newIndex) {
+        navigationShell.goBranch(
+          newIndex,
+          // A common pattern when using bottom navigation bars is to support
+          // navigating to the initial location when tapping the item that is
+          // already active. This example demonstrates how to support this behavior,
+          // using the initialLocation parameter of goBranch.
+          initialLocation: newIndex == navigationShell.currentIndex,
+        );
+      },
     );
   }
 }
@@ -102,7 +117,35 @@ class ProjectsPageRouteData extends GoRouteData {
 
   @override
   Widget build(BuildContext context, GoRouterState state) {
-    return const Text('Project screen');
+    return Padding(
+      padding: getValueForScreenType<EdgeInsetsGeometry>(
+        context: context,
+        desktop: const EdgeInsets.symmetric(horizontal: 200, vertical: 70),
+        tablet: const EdgeInsets.symmetric(horizontal: 40, vertical: 40),
+        mobile: const EdgeInsets.only(
+          left: 24,
+          right: 24,
+          top: 32,
+          bottom: 18,
+        ),
+      ),
+      child: Projects(
+        onProjectTap: (String id) {
+          ProjectPageRouteData(id: id).go(context);
+        },
+      ),
+    );
+  }
+}
+
+class ProjectPageRouteData extends GoRouteData {
+  const ProjectPageRouteData({required this.id});
+
+  final String id;
+
+  @override
+  Widget build(BuildContext context, GoRouterState state) {
+    return Text("projectId = $id");
   }
 }
 

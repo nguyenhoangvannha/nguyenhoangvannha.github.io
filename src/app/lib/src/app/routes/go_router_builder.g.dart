@@ -29,6 +29,12 @@ RouteBase get $homeScreenShellRouteData => StatefulShellRouteData.$route(
             GoRouteData.$route(
               path: '/projects',
               factory: $ProjectsPageRouteDataExtension._fromState,
+              routes: [
+                GoRouteData.$route(
+                  path: ':id',
+                  factory: $ProjectPageRouteDataExtension._fromState,
+                ),
+              ],
             ),
           ],
         ),
@@ -80,6 +86,26 @@ extension $ProjectsPageRouteDataExtension on ProjectsPageRouteData {
 
   String get location => GoRouteData.$location(
         '/projects',
+      );
+
+  void go(BuildContext context) => context.go(location);
+
+  Future<T?> push<T>(BuildContext context) => context.push<T>(location);
+
+  void pushReplacement(BuildContext context) =>
+      context.pushReplacement(location);
+
+  void replace(BuildContext context) => context.replace(location);
+}
+
+extension $ProjectPageRouteDataExtension on ProjectPageRouteData {
+  static ProjectPageRouteData _fromState(GoRouterState state) =>
+      ProjectPageRouteData(
+        id: state.pathParameters['id']!,
+      );
+
+  String get location => GoRouteData.$location(
+        '/projects/${Uri.encodeComponent(id)}',
       );
 
   void go(BuildContext context) => context.go(location);
