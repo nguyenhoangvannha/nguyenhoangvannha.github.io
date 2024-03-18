@@ -21,14 +21,14 @@ class ProjectCard extends StatelessWidget {
     final fontSize = getValueForScreenType(
       context: context,
       mobile: 6.sp,
-      tablet: 14.sp,
+      tablet: 12.sp,
       desktop: 16.sp,
     ).toDouble();
 
     final size = getValueForScreenType(
       context: context,
       mobile: 8.w,
-      tablet: 22.w,
+      tablet: 20.w,
       desktop: 32.w,
     );
 
@@ -101,7 +101,10 @@ class ProjectCard extends StatelessWidget {
                     Text(
                       project.description,
                       maxLines: getValueForScreenType(
-                          context: context, mobile: 2, desktop: 4),
+                        context: context,
+                        mobile: 2,
+                        desktop: 3,
+                      ),
                       overflow: TextOverflow.ellipsis,
                       style: TextStyle(
                         fontSize: fontSize,

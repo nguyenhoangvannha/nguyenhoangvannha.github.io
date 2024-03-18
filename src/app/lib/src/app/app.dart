@@ -41,8 +41,8 @@ class App extends StatelessWidget {
                   designSize: getValueForScreenType(
                     context: context,
                     mobile: Size(375, 667),
-                    tablet: Size.fromWidth(768),
-                    desktop: Size.fromWidth(1920),
+                    tablet: Size(768, 1024),
+                    desktop: Size(1920, 1080),
                   ),
                   minTextAdapt: true,
                   splitScreenMode: true,
