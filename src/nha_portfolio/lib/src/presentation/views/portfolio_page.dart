@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 
 import 'package:nha_portfolio/src/presentation/widgets/contacts.dart';
+import 'package:nha_portfolio/src/presentation/widgets/education_history_list.dart';
 import 'package:nha_portfolio/src/presentation/widgets/make_with.dart';
 import 'package:nha_portfolio/src/presentation/widgets/portfolio_part.dart';
 import 'package:nha_portfolio/src/presentation/widgets/projects.dart';
@@ -49,6 +50,22 @@ class PortfolioPage extends StatelessWidget {
               title: "Employment",
               subTitle: "My profesional works",
               child: WorkingHistoryList(),
+            ),
+            SizedBox(
+                height: getValueForScreenType(
+              context: context,
+              mobile: 32.w,
+              desktop: 64.w,
+            )),SizedBox(
+                height: getValueForScreenType(
+              context: context,
+              mobile: 32.w,
+              desktop: 64.w,
+            )),
+            PortfolioPart(
+              title: "Education",
+              subTitle: "My profesional learning experiences",
+              child: EducationHistoryList(),
             ),
             SizedBox(
                 height: getValueForScreenType(

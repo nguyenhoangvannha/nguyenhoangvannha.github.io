@@ -23,6 +23,9 @@ class $AssetsIconsGen {
   /// File path: assets/icons/github.png
   AssetGenImage get github => const AssetGenImage('assets/icons/github.png');
 
+  /// File path: assets/icons/hcmus.png
+  AssetGenImage get hcmus => const AssetGenImage('assets/icons/hcmus.png');
+
   /// File path: assets/icons/icons8-agile-64.png
   AssetGenImage get icons8Agile64 =>
       const AssetGenImage('assets/icons/icons8-agile-64.png');
@@ -103,6 +106,7 @@ class $AssetsIconsGen {
         akarIconsLinkChain,
         androidStudioStable,
         github,
+        hcmus,
         icons8Agile64,
         icons8Agile264,
         icons8Android48,

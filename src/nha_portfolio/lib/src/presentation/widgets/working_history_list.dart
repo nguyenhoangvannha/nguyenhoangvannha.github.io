@@ -120,6 +120,7 @@ class WorkingHistoryList extends StatelessWidget {
                 desktop: 6.w,
               )),
           child: Column(
+            crossAxisAlignment: CrossAxisAlignment.start,
             children: workingHistory.projects
                 .map(
                   (project) => buildProject(context, project),
