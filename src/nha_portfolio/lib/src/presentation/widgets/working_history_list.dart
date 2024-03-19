@@ -56,9 +56,13 @@ class WorkingHistoryList extends StatelessWidget {
                 width: indicatorSize,
                 height: indicatorSize,
                 color: MyColors.manabie,
-                padding: EdgeInsets.only(right: indicatorSize / 2),
+                padding: EdgeInsets.only(right: indicatorSize / 3),
                 indicator: CircleAvatar(
-                  foregroundImage: Assets.icons.manabie.provider(),
+                  child: Container(
+                    child: Assets.icons.manabie.image(),
+                    color: MyColors.manabie,
+                    padding: EdgeInsets.all(2.w),
+                  ),
                 ),
               ),
               beforeLineStyle: LineStyle(
@@ -79,7 +83,8 @@ class WorkingHistoryList extends StatelessWidget {
     final yearTextStyle = TextStyle(
       fontSize: getValueForScreenType(
         context: context,
-        mobile: 10,
+        mobile: 11,
+        tablet: 18.sp,
         desktop: 20.sp,
       ),
     );
@@ -143,7 +148,8 @@ class WorkingHistoryList extends StatelessWidget {
     final bodyStyle = TextStyle(
       fontSize: getValueForScreenType(
         context: context,
-        mobile: 8.sp,
+        mobile: 11.sp,
+        tablet: 16.sp,
         desktop: 18.sp,
       ),
     );

@@ -18,80 +18,126 @@ class ProjectCard extends StatelessWidget {
   Widget build(BuildContext context) {
     final fontSize = getValueForScreenType(
       context: context,
-      mobile: 6.sp,
-      tablet: 12.sp,
-      desktop: 16.sp,
+      mobile: 12.sp,
+      tablet: 13.sp,
+      desktop: 18.sp,
     ).toDouble();
 
     final size = getValueForScreenType(
       context: context,
-      mobile: 8.w,
+      mobile: 10.w,
       tablet: 20.w,
       desktop: 32.w,
     );
 
     return Card(
-      elevation: 1.5,
+      elevation: 3,
       clipBehavior: Clip.antiAliasWithSaveLayer,
       child: InkWell(
         onTap: onTap,
         child: Column(
           crossAxisAlignment: CrossAxisAlignment.center,
           children: [
-            Assets.images.projectCover.image(
+            // Assets.images.projectCover.image(
+            //   height: getValueForScreenType(
+            //     context: context,
+            //     mobile: 70.w,
+            //     tablet: 90.w,
+            //     desktop: 140.w,
+            //   ),
+            //   width: double.infinity,
+            //   fit: BoxFit.fitWidth,
+            // ),
+            Container(
+              color: context.isDark ? Colors.black : Colors.white,
               height: getValueForScreenType(
                 context: context,
-                mobile: 50.w,
-                tablet: 100.w,
+                mobile: 70.w,
+                tablet: 90.w,
                 desktop: 140.w,
               ),
-              width: double.infinity,
-              fit: BoxFit.fitWidth,
+              padding: EdgeInsets.all(getValueForScreenType(
+                context: context,
+                mobile: 12.w,
+                tablet: 22.w,
+                desktop: 32.w,
+              )),
+              alignment: Alignment.center,
+              child: Row(
+                children: [
+                  project.framework.asset.image(
+                    width: size.toDouble(),
+                    height: size.toDouble(),
+                    cacheHeight: size.toInt(),
+                    cacheWidth: size.toInt(),
+                  ),
+                  SizedBox(
+                    width: getValueForScreenType(
+                      context: context,
+                      mobile: 4,
+                      tablet: 8,
+                      desktop: 12,
+                    ),
+                  ),
+                  Flexible(
+                    child: Text(
+                      project.title,
+                      maxLines: 2,
+                      overflow: TextOverflow.ellipsis,
+                      style: TextStyle(
+                        fontWeight: FontWeight.bold,
+                        fontSize: fontSize *
+                            getValueForScreenType(
+                              context: context,
+                              mobile: 1.1,
+                              tablet: 1.2,
+                              desktop: 1.3,
+                            ),
+                      ),
+                    ),
+                  ),
+                ],
+              ),
             ),
             Expanded(
               child: Padding(
                 padding: EdgeInsets.all(getValueForScreenType(
                   context: context,
                   mobile: 6.w,
-                  tablet: 14.w,
+                  tablet: 12.w,
                   desktop: 18.w,
                 )),
                 child: Column(
                   crossAxisAlignment: CrossAxisAlignment.stretch,
                   children: [
-                    Row(
-                      children: [
-                        project.framework.asset.image(
-                          width: size.toDouble(),
-                          height: size.toDouble(),
-                          cacheHeight: size.toInt(),
-                          cacheWidth: size.toInt(),
-                        ),
-                        SizedBox(
-                          width: getValueForScreenType(
-                            context: context,
-                            mobile: 4,
-                            desktop: 8,
-                          ),
-                        ),
-                        Flexible(
-                          child: Text(
-                            project.title,
-                            maxLines: 1,
-                            overflow: TextOverflow.ellipsis,
-                            style: TextStyle(
-                              fontWeight: FontWeight.w500,
-                              fontSize: getValueForScreenType(
-                                context: context,
-                                mobile: 8.sp,
-                                tablet: 14.sp,
-                                desktop: 18.sp,
-                              ),
-                            ),
-                          ),
-                        ),
-                      ],
-                    ),
+                    // Row(
+                    //   children: [
+                    //     project.framework.asset.image(
+                    //       width: size.toDouble(),
+                    //       height: size.toDouble(),
+                    //       cacheHeight: size.toInt(),
+                    //       cacheWidth: size.toInt(),
+                    //     ),
+                    //     SizedBox(
+                    //       width: getValueForScreenType(
+                    //         context: context,
+                    //         mobile: 4,
+                    //         desktop: 8,
+                    //       ),
+                    //     ),
+                    //     Flexible(
+                    //       child: Text(
+                    //         project.title,
+                    //         maxLines: 2,
+                    //         overflow: TextOverflow.ellipsis,
+                    //         style: TextStyle(
+                    //           fontWeight: FontWeight.w500,
+                    //           fontSize: fontSize,
+                    //         ),
+                    //       ),
+                    //     ),
+                    //   ],
+                    // ),
                     SizedBox(
                       height: getValueForScreenType(
                           context: context, mobile: 2, desktop: 6),
@@ -101,7 +147,8 @@ class ProjectCard extends StatelessWidget {
                       maxLines: getValueForScreenType(
                         context: context,
                         mobile: 2,
-                        desktop: 3,
+                        tablet: 2,
+                        desktop: 4,
                       ),
                       overflow: TextOverflow.ellipsis,
                       style: TextStyle(
@@ -138,7 +185,7 @@ class ProjectCard extends StatelessWidget {
                                     launchUrl(Uri.parse(project.demoLink));
                                   },
                                   fontSize: fontSize,
-                                  iconSize: size / 2,
+                                  iconSize: size,
                                 ),
                                 textButton(
                                   context,
@@ -147,7 +194,7 @@ class ProjectCard extends StatelessWidget {
                                   onPressed: () {
                                     launchUrl(Uri.parse(project.repoLink));
                                   },
-                                  iconSize: size / 2,
+                                  iconSize: size,
                                   fontSize: fontSize,
                                 ),
                               ],

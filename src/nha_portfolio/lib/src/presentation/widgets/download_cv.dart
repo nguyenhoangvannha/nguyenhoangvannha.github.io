@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_screenutil/flutter_screenutil.dart';
 
 import 'package:nha_portfolio/src/helpers/ext/context_ext.dart';
 import 'package:responsive_builder/responsive_builder.dart';
@@ -31,8 +32,8 @@ class DownloadCV extends StatelessWidget {
             style: TextStyle(
               fontSize: getValueForScreenType(
                 context: context,
-                mobile: 16,
-                desktop: 20,
+                mobile: 14.sp,
+                desktop: 20.sp,
               ),
               decoration: TextDecoration.underline,
             ),

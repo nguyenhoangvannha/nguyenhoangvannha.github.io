@@ -10,6 +10,18 @@ class LocalProjectsRepo implements ProjectsRepo {
     return [
       Project(
         (u) => u
+          ..id = "manabie.com"
+          ..title = "Manabie Teacher and Manabie Learner"
+          ..framework = Framework.flutter
+          ..description =
+              "An SaaS Mobile (Android, iOS) and Web application providing end-to-end digital infrastructure for all educators and high-quality online and offline learning experiences for learners."
+          ..techStacks = "Flutter, Redux, Clean architecture, gRPC, DI"
+          ..demoLink =
+              "https://apps.apple.com/vn/developer/manabie/id1473118220?l=vi"
+          ..repoLink = "https://manabie.com/",
+      ),
+      Project(
+        (u) => u
           ..id = "project_movie_flutter"
           ..title = "project_movie_flutter"
           ..framework = Framework.flutter
@@ -20,31 +32,6 @@ class LocalProjectsRepo implements ProjectsRepo {
               "https://nguyenhoangvannha.github.io/project_movie_flutter/"
           ..repoLink =
               "https://github.com/nguyenhoangvannha/project_movie_flutter",
-      ),
-      Project(
-        (u) => u
-          ..id = "nguyenhoangvannha.github.io"
-          ..framework = Framework.flutter
-          ..title = "nguyenhoangvannha.github.io"
-          ..description = "Nguyễn Hoàng Văn Nhã's Portfolio"
-          ..techStacks =
-              "Flutter, Responsive, BLoc, Clean architecture, DI, go-router"
-          ..demoLink = "https://nguyenhoangvannha.github.io/#/"
-          ..repoLink =
-              "https://github.com/nguyenhoangvannha/nguyenhoangvannha.github.io",
-      ),
-      Project(
-        (u) => u
-          ..id = "android_activity_lifecycle"
-          ..framework = Framework.flutter
-          ..title = "android_activity_lifecycle"
-          ..description =
-              "Plugin for monitoring Android activity lifecycle changes within Flutter apps."
-          ..techStacks =
-              "Flutter native plugin, Platform channel, Pigeon code gen, Android native"
-          ..demoLink = "https://pub.dev/packages/android_activity_lifecycle"
-          ..repoLink =
-              "https://github.com/nguyenhoangvannha/flutter_dart_packages/tree/main/android_activity_lifecycle",
       ),
       Project(
         (u) => u
@@ -80,6 +67,31 @@ class LocalProjectsRepo implements ProjectsRepo {
               "NodeJS, JWT, elastic search, postgresql, nodemailter, express, middleware, schemas"
           ..demoLink = "https://github.com/wnc2021nnn/udemy-back-end"
           ..repoLink = "https://github.com/wnc2021nnn/udemy-back-end",
+      ),
+      Project(
+        (u) => u
+          ..id = "nguyenhoangvannha.github.io"
+          ..framework = Framework.flutter
+          ..title = "nguyenhoangvannha.github.io"
+          ..description = "Nguyễn Hoàng Văn Nhã's Portfolio"
+          ..techStacks =
+              "Flutter, Responsive, BLoc, Clean architecture, DI, go-router"
+          ..demoLink = "https://nguyenhoangvannha.github.io/#/"
+          ..repoLink =
+              "https://github.com/nguyenhoangvannha/nguyenhoangvannha.github.io",
+      ),
+      Project(
+        (u) => u
+          ..id = "android_activity_lifecycle"
+          ..framework = Framework.flutter
+          ..title = "android_activity_lifecycle"
+          ..description =
+              "Plugin for monitoring Android activity lifecycle changes within Flutter apps."
+          ..techStacks =
+              "Flutter native plugin, Platform channel, Pigeon code gen, Android native"
+          ..demoLink = "https://pub.dev/packages/android_activity_lifecycle"
+          ..repoLink =
+              "https://github.com/nguyenhoangvannha/flutter_dart_packages/tree/main/android_activity_lifecycle",
       ),
     ].asMap().map((key, value) => MapEntry(value.id, value));
   }

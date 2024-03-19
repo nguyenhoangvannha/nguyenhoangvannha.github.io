@@ -3,6 +3,7 @@ import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:nha_portfolio/src/assets/colors.dart';
 import 'package:nha_portfolio/src/assets/generated/assets.gen.dart';
 import 'package:nha_portfolio/src/domain/entity/education_history.dart';
+import 'package:nha_portfolio/src/helpers/ext/context_ext.dart';
 import 'package:responsive_builder/responsive_builder.dart';
 import 'package:timeline_tile/timeline_tile.dart';
 
@@ -38,9 +39,13 @@ class EducationHistoryList extends StatelessWidget {
                 width: indicatorSize,
                 height: indicatorSize,
                 color: MyColors.hcmus,
-                padding: EdgeInsets.only(right: indicatorSize / 2),
+                padding: EdgeInsets.only(right: indicatorSize / 3),
                 indicator: CircleAvatar(
-                  foregroundImage: Assets.icons.hcmus.provider(),
+                  child: Container(
+                    padding: EdgeInsets.all(2.w),
+                    child: Assets.icons.hcmus.image(),
+                  ),
+                  backgroundColor: context.isDark ? Colors.black : Colors.white,
                 ),
               ),
               beforeLineStyle: LineStyle(
@@ -61,7 +66,8 @@ class EducationHistoryList extends StatelessWidget {
     final yearTextStyle = TextStyle(
       fontSize: getValueForScreenType(
         context: context,
-        mobile: 10,
+        mobile: 11.sp,
+        tablet: 18.sp,
         desktop: 20.sp,
       ),
     );
@@ -102,7 +108,7 @@ class EducationHistoryList extends StatelessWidget {
             crossAxisAlignment: CrossAxisAlignment.start,
             children: educationHistory.degrees
                 .map(
-                  (project) => buildProject(context, project),
+                  (degree) => buildDegree(context, degree),
                 )
                 .toList(),
           ),
@@ -111,11 +117,12 @@ class EducationHistoryList extends StatelessWidget {
     );
   }
 
-  Widget buildProject(BuildContext context, String project) {
+  Widget buildDegree(BuildContext context, String degree) {
     final bodyStyle = TextStyle(
       fontSize: getValueForScreenType(
         context: context,
-        mobile: 8.sp,
+        mobile: 10.sp,
+        tablet: 16.sp,
         desktop: 18.sp,
       ),
     );
@@ -143,7 +150,7 @@ class EducationHistoryList extends StatelessWidget {
         ),
         Flexible(
           child: Text(
-            project,
+            degree,
             style: titleStyle,
           ),
         ),

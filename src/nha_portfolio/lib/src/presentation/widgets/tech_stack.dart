@@ -39,7 +39,7 @@ class TechStack extends StatelessWidget {
             fontSize: getValueForScreenType(
               context: context,
               mobile: 10,
-              tablet: 12.sp,
+              tablet: 13.sp,
               desktop: 14,
             ),
           ),

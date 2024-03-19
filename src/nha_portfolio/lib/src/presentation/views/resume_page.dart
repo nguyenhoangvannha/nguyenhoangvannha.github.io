@@ -2,6 +2,7 @@ import 'dart:async';
 
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
+import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:nha_portfolio/src/assets/generated/assets.gen.dart';
 import 'package:nha_portfolio/src/helpers/consts/resume_constrants.dart';
 import 'package:nha_portfolio/src/helpers/ext/context_ext.dart';
@@ -37,9 +38,6 @@ class _ResumePageState extends State<ResumePage> {
               PdfPageNumber(
                 onPageChangeStream: onPageChangeStreamController.stream,
                 pagesCount: pdfViewerController?.pages.length ?? 0,
-              ),
-              const SizedBox(
-                width: 8,
               ),
               IconButton(
                 onPressed: () {

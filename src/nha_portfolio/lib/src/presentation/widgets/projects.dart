@@ -29,7 +29,11 @@ class Projects extends StatelessWidget {
             shrinkWrap: true,
             physics: const NeverScrollableScrollPhysics(),
             gridDelegate: SliverGridDelegateWithFixedCrossAxisCount(
-              crossAxisCount: 3,
+              crossAxisCount: getValueForScreenType(
+                context: context,
+                mobile: 2,
+                tablet: 3,
+              ),
               childAspectRatio: 1 / 1.3,
               mainAxisSpacing: getValueForScreenType(
                   context: context, mobile: 6, desktop: 18),

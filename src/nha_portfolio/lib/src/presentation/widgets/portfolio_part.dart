@@ -26,7 +26,7 @@ class PortfolioPart extends StatelessWidget {
             fontSize: getValueForScreenType(
               context: context,
               mobile: 20,
-              tablet: 26,
+              tablet: 22.sp,
               desktop: 32.sp,
             ),
             height: 0.5,
@@ -45,8 +45,8 @@ class PortfolioPart extends StatelessWidget {
             fontSize: getValueForScreenType(
               context: context,
               mobile: 12,
-              tablet: 16,
-              desktop: 14.sp,
+              tablet: 16.sp,
+              desktop: 20.sp,
             ),
             height: 0.7,
           ),

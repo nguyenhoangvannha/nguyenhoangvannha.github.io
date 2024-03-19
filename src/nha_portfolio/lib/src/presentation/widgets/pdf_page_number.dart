@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_screenutil/flutter_screenutil.dart';
 
 class PdfPageNumber extends StatelessWidget {
   const PdfPageNumber(
@@ -17,7 +18,7 @@ class PdfPageNumber extends StatelessWidget {
       ) {
         return Text(
           '${snapshot.hasData ? snapshot.data ?? 0 : 0}/${pagesCount ?? 0}',
-          style: const TextStyle(fontSize: 22),
+          style:  TextStyle(fontSize: 18.sp),
         );
       },
     );
