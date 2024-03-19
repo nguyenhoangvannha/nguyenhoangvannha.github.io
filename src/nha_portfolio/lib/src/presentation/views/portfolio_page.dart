@@ -26,6 +26,12 @@ class PortfolioPage extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    final spacer = SizedBox(
+        height: getValueForScreenType(
+      context: context,
+      mobile: 52.w,
+      desktop: 100.w,
+    ));
     return SingleChildScrollView(
       child: Padding(
         padding: padding,
@@ -36,8 +42,8 @@ class PortfolioPage extends StatelessWidget {
             SizedBox(
               height: getValueForScreenType(
                 context: context,
-                mobile: 60.w,
-                desktop: 140.w,
+                mobile: 40.w,
+                desktop: 100.w,
               ),
             ),
             PortfolioPart(
@@ -55,58 +61,32 @@ class PortfolioPage extends StatelessWidget {
                 ),
               ),
             ),
-            SizedBox(
-                height: getValueForScreenType(
-              context: context,
-              mobile: 32.w,
-              desktop: 64.w,
-            )),
+            spacer,
             const TechStacks(),
             SizedBox(
                 height: getValueForScreenType(
               context: context,
-              mobile: 32.w,
-              desktop: 64.w,
+              mobile: 22.w,
+              desktop: 52.w,
             )),
             PortfolioPart(
               title: context.l10n.employment,
               subTitle: context.l10n.myProfessionalWorks,
               child: const WorkingHistoryList(),
             ),
-            SizedBox(
-                height: getValueForScreenType(
-              context: context,
-              mobile: 32.w,
-              desktop: 64.w,
-            )),
-            SizedBox(
-                height: getValueForScreenType(
-              context: context,
-              mobile: 32.w,
-              desktop: 64.w,
-            )),
+            spacer,
             PortfolioPart(
               title: context.l10n.awards,
               subTitle: context.l10n.myAwards,
               child: const AwardHistoryList(),
             ),
-            SizedBox(
-                height: getValueForScreenType(
-              context: context,
-              mobile: 32.w,
-              desktop: 64.w,
-            )),
+            spacer,
             PortfolioPart(
               title: context.l10n.education,
               subTitle: context.l10n.myProfessionalLearningExperiences,
               child: const EducationHistoryList(),
             ),
-            SizedBox(
-                height: getValueForScreenType(
-              context: context,
-              mobile: 32.w,
-              desktop: 64.w,
-            )),
+            spacer,
             Padding(
               padding: EdgeInsets.symmetric(
                   horizontal: getValueForScreenType(

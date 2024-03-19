@@ -1,10 +1,12 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:go_router/go_router.dart';
 import 'package:nguyenhoangvannha/src/features/home/presentation/views/home_screen.dart';
 import 'package:nguyenhoangvannha/src/features/settings/presentation/view/settings_page.dart';
 import 'package:nha_portfolio/nha_portfolio.dart';
 import 'package:responsive_builder/responsive_builder.dart';
+import 'package:url_launcher/url_launcher.dart';
 
 part 'go_router_builder.g.dart';
 
@@ -110,7 +112,13 @@ class HomePageRouteData extends GoRouteData {
         const ResumePageRouteData().go(context);
       },
       onProjectTap: (String id) {
-        ProjectPageRouteData(id: id).go(context);
+        final project =
+            BlocProvider.of<ProjectsBloc>(context).state.projectsMap[id];
+        final demoLink = project?.demoLink ?? "";
+        if (demoLink.isNotEmpty) {
+          launchUrl(Uri.parse(demoLink));
+        }
+        //ProjectPageRouteData(id: id).go(context);
       },
     );
   }
