@@ -2,7 +2,7 @@ import 'app_localizations.dart';
 
 /// The translations for Vietnamese (`vi`).
 class AppLocalizationsVi extends AppLocalizations {
-  AppLocalizationsVi([super.locale = 'vi']);
+  AppLocalizationsVi([String locale = 'vi']) : super(locale);
 
   @override
   String get authorName => 'Nguyễn Hoàng Văn Nhã';
