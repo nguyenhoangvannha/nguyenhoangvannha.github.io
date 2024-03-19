@@ -39,11 +39,11 @@ class EducationHistoryList extends StatelessWidget {
                 color: MyColors.hcmus,
                 padding: EdgeInsets.only(right: indicatorSize / 2.5),
                 indicator: CircleAvatar(
+                  backgroundColor: context.isDark ? Colors.white : Colors.black,
                   child: Container(
                     padding: EdgeInsets.all(2.w),
                     child: Assets.icons.hcmus.image(),
                   ),
-                  backgroundColor: context.isDark ? Colors.white : Colors.black,
                 ),
               ),
               beforeLineStyle: LineStyle(

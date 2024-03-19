@@ -29,7 +29,7 @@ class HomeScreen extends StatelessWidget {
     return Scaffold(
       body: AdaptiveLayout(
         // An option to override the default transition duration.
-        transitionDuration: Duration(milliseconds: 1000),
+        transitionDuration: const Duration(milliseconds: 1000),
         // Primary navigation config has nothing from 0 to 600 dp screen width,
         // then an unextended NavigationRail with no labels and just icons then an
         // extended NavigationRail with both icons and labels.
@@ -118,7 +118,7 @@ class HomeScreen extends StatelessWidget {
       ),
       floatingActionButton: ResponsiveBuilder(
         builder: (context, sizedInfo) {
-          if (kReleaseMode) return SizedBox.shrink();
+          if (kReleaseMode) return const SizedBox.shrink();
           return FloatingActionButton.extended(
               onPressed: null, label: Text(sizedInfo.deviceScreenType.name));
         },
@@ -164,7 +164,7 @@ class HomeScreen extends StatelessWidget {
         ),
       ];
 
-  Widget trailingNavRail() => Expanded(
+  Widget trailingNavRail() => const Expanded(
         child: Column(
           mainAxisSize: MainAxisSize.max,
           mainAxisAlignment: MainAxisAlignment.end,

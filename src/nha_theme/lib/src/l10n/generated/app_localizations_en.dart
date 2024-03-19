@@ -2,7 +2,7 @@ import 'app_localizations.dart';
 
 /// The translations for English (`en`).
 class ThemeLocalizationsEn extends ThemeLocalizations {
-  ThemeLocalizationsEn([String locale = 'en']) : super(locale);
+  ThemeLocalizationsEn([super.locale = 'en']);
 
   @override
   String get theme => 'Theme';

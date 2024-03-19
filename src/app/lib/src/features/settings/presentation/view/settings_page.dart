@@ -1,10 +1,9 @@
 import 'package:flutter/material.dart';
-import 'package:nguyenhoangvannha/src/app/helpers/extensions/build_context_extension.dart';
 import 'package:nha_language/nha_language.dart';
 import 'package:nha_theme/nha_theme.dart';
 
 class SettingsPage extends StatelessWidget {
-  SettingsPage({super.key, this.hasTitle = true});
+  const SettingsPage({super.key, this.hasTitle = true});
 
   final bool hasTitle;
 
@@ -18,7 +17,7 @@ class SettingsPage extends StatelessWidget {
           ThemeListTile(
             hasTitle: hasTitle,
           ),
-          Divider(),
+          const Divider(),
           LanguageListTile(
             hasTitle: hasTitle,
           ),

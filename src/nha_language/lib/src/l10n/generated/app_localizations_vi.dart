@@ -2,7 +2,7 @@ import 'app_localizations.dart';
 
 /// The translations for Vietnamese (`vi`).
 class LanguageLocalizationsVi extends LanguageLocalizations {
-  LanguageLocalizationsVi([String locale = 'vi']) : super(locale);
+  LanguageLocalizationsVi([super.locale = 'vi']);
 
   @override
   String get language => 'Language';

@@ -2,7 +2,7 @@ import 'app_localizations.dart';
 
 /// The translations for English (`en`).
 class PortfolioLocalizationsEn extends PortfolioLocalizations {
-  PortfolioLocalizationsEn([String locale = 'en']) : super(locale);
+  PortfolioLocalizationsEn([super.locale = 'en']);
 
   @override
   String get authorName => 'Nguyen Hoang Van Nha';

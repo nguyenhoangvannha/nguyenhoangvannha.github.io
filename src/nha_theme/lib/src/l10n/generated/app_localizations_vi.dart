@@ -2,7 +2,7 @@ import 'app_localizations.dart';
 
 /// The translations for Vietnamese (`vi`).
 class ThemeLocalizationsVi extends ThemeLocalizations {
-  ThemeLocalizationsVi([String locale = 'vi']) : super(locale);
+  ThemeLocalizationsVi([super.locale = 'vi']);
 
   @override
   String get theme => 'Giao diện';

@@ -71,7 +71,7 @@ class PortfolioPage extends StatelessWidget {
             PortfolioPart(
               title: context.l10n.employment,
               subTitle: context.l10n.myProfessionalWorks,
-              child: WorkingHistoryList(),
+              child: const WorkingHistoryList(),
             ),
             SizedBox(
                 height: getValueForScreenType(
@@ -88,7 +88,7 @@ class PortfolioPage extends StatelessWidget {
             PortfolioPart(
               title: context.l10n.awards,
               subTitle: context.l10n.myAwards,
-              child: AwardHistoryList(),
+              child: const AwardHistoryList(),
             ),
             SizedBox(
                 height: getValueForScreenType(
@@ -99,7 +99,7 @@ class PortfolioPage extends StatelessWidget {
             PortfolioPart(
               title: context.l10n.education,
               subTitle: context.l10n.myProfessionalLearningExperiences,
-              child: EducationHistoryList(),
+              child: const EducationHistoryList(),
             ),
             SizedBox(
                 height: getValueForScreenType(

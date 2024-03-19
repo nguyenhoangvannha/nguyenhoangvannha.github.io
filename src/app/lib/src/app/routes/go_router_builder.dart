@@ -167,6 +167,6 @@ class SettingsPageRouteData extends GoRouteData {
 
   @override
   Widget build(BuildContext context, GoRouterState state) {
-    return SettingsPage();
+    return const SettingsPage();
   }
 }
