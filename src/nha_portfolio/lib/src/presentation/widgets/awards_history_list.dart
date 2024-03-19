@@ -2,22 +2,23 @@ import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:nha_portfolio/src/assets/colors.dart';
 import 'package:nha_portfolio/src/assets/generated/assets.gen.dart';
-import 'package:nha_portfolio/src/domain/entity/education_history.dart';
+import 'package:nha_portfolio/src/domain/entity/award.dart';
 import 'package:nha_portfolio/src/helpers/ext/context_ext.dart';
 import 'package:responsive_builder/responsive_builder.dart';
 import 'package:timeline_tile/timeline_tile.dart';
 
-class EducationHistoryList extends StatelessWidget {
-  const EducationHistoryList({super.key});
+class AwardHistoryList extends StatelessWidget {
+  const AwardHistoryList({super.key});
 
   @override
   Widget build(BuildContext context) {
-    final educationHistorySet = {
-      EducationHistory(
-          schoolName: "Ho Chi Minh City - University of Science",
-          startDate: DateTime(2015),
-          endDate: DateTime(2019),
-          degrees: {"Bachelor of Science in Software Engineering"})
+    final awardHistorySet = {
+      Award(
+        title: "Manabian of the month award",
+        descriptions: {
+          'In recognition of bloody good performance and have lived and breathed the Manabie way. Has been chosen from ~30 team members.',
+        },
+      )
     };
 
     final indicatorSize =
@@ -26,9 +27,9 @@ class EducationHistoryList extends StatelessWidget {
         getValueForScreenType(context: context, mobile: 2.w, desktop: 4.w);
 
     return Column(
-      children: educationHistorySet
+      children: awardHistorySet
           .map(
-            (educationHistory) => TimelineTile(
+            (awardHistory) => TimelineTile(
               alignment: TimelineAlign.start,
               lineXY: 0.1,
               isFirst: true,
@@ -36,21 +37,21 @@ class EducationHistoryList extends StatelessWidget {
                 indicatorXY: 0.0,
                 width: indicatorSize,
                 height: indicatorSize,
-                color: MyColors.hcmus,
+                color: MyColors.manabie,
                 padding: EdgeInsets.only(right: indicatorSize / 2.5),
                 indicator: CircleAvatar(
                   child: Container(
                     padding: EdgeInsets.all(2.w),
-                    child: Assets.icons.hcmus.image(),
+                    color: MyColors.manabie,
+                    child: Assets.icons.manabie.image(),
                   ),
-                  backgroundColor: context.isDark ? Colors.white : Colors.black,
                 ),
               ),
               beforeLineStyle: LineStyle(
-                color: MyColors.hcmus,
+                color: MyColors.manabie,
                 thickness: lineThickness,
               ),
-              endChild: buildEndChild(context, educationHistory),
+              endChild: buildEndChild(context, awardHistory),
             ),
           )
           .toList(),
@@ -59,7 +60,7 @@ class EducationHistoryList extends StatelessWidget {
 
   Widget buildEndChild(
     BuildContext context,
-    EducationHistory educationHistory,
+    Award awardHistory,
   ) {
     final yearTextStyle = TextStyle(
       fontSize: getValueForScreenType(
@@ -74,19 +75,11 @@ class EducationHistoryList extends StatelessWidget {
     );
 
     return Column(
+      crossAxisAlignment: CrossAxisAlignment.start,
       children: [
-        Row(
-          mainAxisAlignment: MainAxisAlignment.spaceBetween,
-          children: [
-            Text(
-              educationHistory.schoolName,
-              style: titleStyle,
-            ),
-            Text(
-              "${educationHistory.startDate.year} - ${educationHistory.endDate.year}",
-              style: yearTextStyle,
-            ),
-          ],
+        Text(
+          awardHistory.title,
+          style: titleStyle,
         ),
         Padding(
           padding: EdgeInsets.only(
@@ -103,9 +96,9 @@ class EducationHistoryList extends StatelessWidget {
               )),
           child: Column(
             crossAxisAlignment: CrossAxisAlignment.start,
-            children: educationHistory.degrees
+            children: awardHistory.descriptions
                 .map(
-                  (degree) => buildDegree(context, degree),
+                  (description) => buildDegree(context, description),
                 )
                 .toList(),
           ),
@@ -114,7 +107,7 @@ class EducationHistoryList extends StatelessWidget {
     );
   }
 
-  Widget buildDegree(BuildContext context, String degree) {
+  Widget buildDegree(BuildContext context, String description) {
     final bodyStyle = TextStyle(
       fontSize: getValueForScreenType(
         context: context,
@@ -123,9 +116,7 @@ class EducationHistoryList extends StatelessWidget {
         desktop: 22.sp,
       ),
     );
-    final titleStyle = bodyStyle.copyWith(
-      fontWeight: FontWeight.bold,
-    );
+    final titleStyle = bodyStyle;
 
     final dotPadding = getValueForScreenType(
       context: context,
@@ -147,7 +138,7 @@ class EducationHistoryList extends StatelessWidget {
         ),
         Flexible(
           child: Text(
-            degree,
+            description,
             style: titleStyle,
           ),
         ),

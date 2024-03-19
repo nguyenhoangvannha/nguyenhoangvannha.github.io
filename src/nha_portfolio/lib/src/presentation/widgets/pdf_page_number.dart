@@ -18,7 +18,7 @@ class PdfPageNumber extends StatelessWidget {
       ) {
         return Text(
           '${snapshot.hasData ? snapshot.data ?? 0 : 0}/${pagesCount ?? 0}',
-          style:  TextStyle(fontSize: 18.sp),
+          style: TextStyle(fontSize: 18.sp),
         );
       },
     );

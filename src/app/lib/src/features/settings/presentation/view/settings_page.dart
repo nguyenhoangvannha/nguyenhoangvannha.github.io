@@ -10,17 +10,20 @@ class SettingsPage extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return Column(
-      crossAxisAlignment: CrossAxisAlignment.start,
-      children: [
-        ThemeListTile(
-          hasTitle: hasTitle,
-        ),
-        Divider(),
-        LanguageListTile(
-          hasTitle: hasTitle,
-        ),
-      ],
+    return Padding(
+      padding: const EdgeInsets.all(18.0),
+      child: Column(
+        crossAxisAlignment: CrossAxisAlignment.start,
+        children: [
+          ThemeListTile(
+            hasTitle: hasTitle,
+          ),
+          Divider(),
+          LanguageListTile(
+            hasTitle: hasTitle,
+          ),
+        ],
+      ),
     );
   }
 }

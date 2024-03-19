@@ -18,14 +18,14 @@ class ProjectCard extends StatelessWidget {
   Widget build(BuildContext context) {
     final fontSize = getValueForScreenType(
       context: context,
-      mobile: 12.sp,
-      tablet: 13.sp,
+      mobile: 11.sp,
+      tablet: 11.sp,
       desktop: 18.sp,
     ).toDouble();
 
     final size = getValueForScreenType(
       context: context,
-      mobile: 10.w,
+      mobile: 14.w,
       tablet: 20.w,
       desktop: 32.w,
     );
@@ -58,7 +58,7 @@ class ProjectCard extends StatelessWidget {
               ),
               padding: EdgeInsets.all(getValueForScreenType(
                 context: context,
-                mobile: 12.w,
+                mobile: 8.w,
                 tablet: 22.w,
                 desktop: 32.w,
               )),
@@ -157,7 +157,10 @@ class ProjectCard extends StatelessWidget {
                     ),
                     SizedBox(
                       height: getValueForScreenType(
-                          context: context, mobile: 2, desktop: 4),
+                        context: context,
+                        mobile: 2,
+                        desktop: 4,
+                      ),
                     ),
                     Expanded(
                       child: Align(
@@ -217,34 +220,29 @@ class ProjectCard extends StatelessWidget {
       {VoidCallback? onPressed,
       required double iconSize,
       required double fontSize}) {
-    final paddingSize = getValueForScreenType(
-      context: context,
-      mobile: 6,
-      desktop: 12.w,
-    );
-    return InkWell(
-      onTap: onPressed,
-      child: Padding(
-        padding: EdgeInsets.all(paddingSize.toDouble()),
-        child: Row(
-          mainAxisSize: MainAxisSize.min,
-          children: [
-            ImageIcon(
-              image,
-              size: iconSize,
+    return TextButton(
+      onPressed: onPressed,
+      child: Row(
+        mainAxisSize: MainAxisSize.min,
+        children: [
+          ImageIcon(
+            image,
+            size: iconSize *
+                getValueForScreenType(
+                  context: context,
+                  mobile: 1,
+                  tablet: 0.7,
+                  desktop: 0.6,
+                ),
+          ),
+          Text(
+            text,
+            style: TextStyle(
+              fontSize: fontSize * 1.2,
+              decoration: TextDecoration.underline,
             ),
-            SizedBox(
-              width: paddingSize / 2,
-            ),
-            Text(
-              text,
-              style: TextStyle(
-                fontSize: fontSize,
-                decoration: TextDecoration.underline,
-              ),
-            ),
-          ],
-        ),
+          ),
+        ],
       ),
     );
   }

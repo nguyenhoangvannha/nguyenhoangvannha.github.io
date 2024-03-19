@@ -79,4 +79,38 @@ class PortfolioLocalizationsVi extends PortfolioLocalizations {
 
   @override
   String get dart => 'Dart';
+
+  @override
+  String get summary => 'Summary';
+
+  @override
+  String get employment => 'Employment';
+
+  @override
+  String get myProfessionalWorks => 'My professional works';
+
+  @override
+  String get awards => 'Awards';
+
+  @override
+  String get myAwards => 'My awards';
+
+  @override
+  String get education => 'Education';
+
+  @override
+  String get myProfessionalLearningExperiences =>
+      'My professional learning experiences';
+
+  @override
+  String get project_ => 'Project: ';
+
+  @override
+  String get description_ => 'Description: ';
+
+  @override
+  String get technologies_ => 'Technologies: ';
+
+  @override
+  String get contribution_ => 'Contribution: ';
 }

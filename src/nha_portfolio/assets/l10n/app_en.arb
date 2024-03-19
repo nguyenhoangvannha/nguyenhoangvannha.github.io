@@ -50,5 +50,16 @@
     }
   },
   "flutter": "Flutter",
-  "dart": "Dart"
+  "dart": "Dart",
+  "summary": "Summary",
+  "employment": "Employment",
+  "myProfessionalWorks": "My professional works",
+  "awards": "Awards",
+  "myAwards": "My awards",
+  "education": "Education",
+  "myProfessionalLearningExperiences": "My professional learning experiences",
+  "project_": "Project: ",
+  "description_": "Description: ",
+  "technologies_": "Technologies: ",
+  "contribution_": "Contribution: "
 }

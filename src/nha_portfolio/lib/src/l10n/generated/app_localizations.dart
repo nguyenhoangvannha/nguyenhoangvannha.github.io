@@ -234,6 +234,72 @@ abstract class PortfolioLocalizations {
   /// In en, this message translates to:
   /// **'Dart'**
   String get dart;
+
+  /// No description provided for @summary.
+  ///
+  /// In en, this message translates to:
+  /// **'Summary'**
+  String get summary;
+
+  /// No description provided for @employment.
+  ///
+  /// In en, this message translates to:
+  /// **'Employment'**
+  String get employment;
+
+  /// No description provided for @myProfessionalWorks.
+  ///
+  /// In en, this message translates to:
+  /// **'My professional works'**
+  String get myProfessionalWorks;
+
+  /// No description provided for @awards.
+  ///
+  /// In en, this message translates to:
+  /// **'Awards'**
+  String get awards;
+
+  /// No description provided for @myAwards.
+  ///
+  /// In en, this message translates to:
+  /// **'My awards'**
+  String get myAwards;
+
+  /// No description provided for @education.
+  ///
+  /// In en, this message translates to:
+  /// **'Education'**
+  String get education;
+
+  /// No description provided for @myProfessionalLearningExperiences.
+  ///
+  /// In en, this message translates to:
+  /// **'My professional learning experiences'**
+  String get myProfessionalLearningExperiences;
+
+  /// No description provided for @project_.
+  ///
+  /// In en, this message translates to:
+  /// **'Project: '**
+  String get project_;
+
+  /// No description provided for @description_.
+  ///
+  /// In en, this message translates to:
+  /// **'Description: '**
+  String get description_;
+
+  /// No description provided for @technologies_.
+  ///
+  /// In en, this message translates to:
+  /// **'Technologies: '**
+  String get technologies_;
+
+  /// No description provided for @contribution_.
+  ///
+  /// In en, this message translates to:
+  /// **'Contribution: '**
+  String get contribution_;
 }
 
 class _PortfolioLocalizationsDelegate

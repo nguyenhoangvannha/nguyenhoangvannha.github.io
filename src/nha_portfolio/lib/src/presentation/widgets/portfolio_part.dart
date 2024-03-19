@@ -39,25 +39,27 @@ class PortfolioPart extends StatelessWidget {
             desktop: 20,
           ),
         ),
-        Text(
-          subTitle,
-          style: TextStyle(
-            fontSize: getValueForScreenType(
-              context: context,
-              mobile: 12,
-              tablet: 16.sp,
-              desktop: 20.sp,
+        if (subTitle.isNotEmpty)
+          Text(
+            subTitle,
+            style: TextStyle(
+              fontSize: getValueForScreenType(
+                context: context,
+                mobile: 12,
+                tablet: 16.sp,
+                desktop: 20.sp,
+              ),
+              height: 0.7,
             ),
-            height: 0.7,
           ),
-        ),
-        SizedBox(
-          height: getValueForScreenType(
-            context: context,
-            mobile: 28,
-            desktop: 52.w,
+        if (subTitle.isNotEmpty)
+          SizedBox(
+            height: getValueForScreenType(
+              context: context,
+              mobile: 28,
+              desktop: 52.w,
+            ),
           ),
-        ),
         child,
       ],
     );

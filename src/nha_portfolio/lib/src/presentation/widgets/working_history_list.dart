@@ -3,6 +3,7 @@ import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:nha_portfolio/src/assets/colors.dart';
 import 'package:nha_portfolio/src/assets/generated/assets.gen.dart';
 import 'package:nha_portfolio/src/domain/entity/working_history.dart';
+import 'package:nha_portfolio/src/helpers/ext/context_ext.dart';
 import 'package:responsive_builder/responsive_builder.dart';
 import 'package:timeline_tile/timeline_tile.dart';
 
@@ -45,10 +46,11 @@ class WorkingHistoryList extends StatelessWidget {
         getValueForScreenType(context: context, mobile: 2.w, desktop: 4.w);
 
     return Column(
+      crossAxisAlignment: CrossAxisAlignment.center,
       children: workingHistorySet
           .map(
             (workingHistory) => TimelineTile(
-              alignment: TimelineAlign.manual,
+              alignment: TimelineAlign.start,
               lineXY: 0.1,
               isFirst: true,
               indicatorStyle: IndicatorStyle(
@@ -56,12 +58,12 @@ class WorkingHistoryList extends StatelessWidget {
                 width: indicatorSize,
                 height: indicatorSize,
                 color: MyColors.manabie,
-                padding: EdgeInsets.only(right: indicatorSize / 3),
+                padding: EdgeInsets.only(right: indicatorSize / 2.5),
                 indicator: CircleAvatar(
                   child: Container(
-                    child: Assets.icons.manabie.image(),
                     color: MyColors.manabie,
                     padding: EdgeInsets.all(2.w),
+                    child: Assets.icons.manabie.image(),
                   ),
                 ),
               ),
@@ -85,7 +87,7 @@ class WorkingHistoryList extends StatelessWidget {
         context: context,
         mobile: 11,
         tablet: 18.sp,
-        desktop: 20.sp,
+        desktop: 24.sp,
       ),
     );
     final titleStyle = yearTextStyle.copyWith(
@@ -150,7 +152,7 @@ class WorkingHistoryList extends StatelessWidget {
         context: context,
         mobile: 11.sp,
         tablet: 16.sp,
-        desktop: 18.sp,
+        desktop: 22.sp,
       ),
     );
     final titleStyle = bodyStyle.copyWith(
@@ -173,7 +175,7 @@ class WorkingHistoryList extends StatelessWidget {
           mainAxisAlignment: MainAxisAlignment.start,
           children: [
             Text(
-              "Project: ",
+              context.l10n.project_,
               style: titleStyle,
             ),
             Text(project.name, style: bodyStyle),
@@ -195,7 +197,7 @@ class WorkingHistoryList extends StatelessWidget {
                     ),
                     Flexible(
                       child: Text(
-                        "Description: ",
+                        context.l10n.description_,
                         style: titleStyle,
                       ),
                     ),
@@ -218,7 +220,7 @@ class WorkingHistoryList extends StatelessWidget {
                       width: dotPadding,
                     ),
                     Text(
-                      "Technologies: ",
+                      context.l10n.technologies_,
                       style: titleStyle,
                     ),
                   ],
@@ -258,7 +260,7 @@ class WorkingHistoryList extends StatelessWidget {
                       width: dotPadding,
                     ),
                     Text(
-                      "Contribution: ",
+                      context.l10n.contribution_,
                       style: titleStyle,
                     ),
                   ],

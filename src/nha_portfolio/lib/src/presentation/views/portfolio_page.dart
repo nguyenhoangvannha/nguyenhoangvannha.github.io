@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
-
+import 'package:nha_portfolio/src/helpers/ext/context_ext.dart';
+import 'package:nha_portfolio/src/presentation/widgets/awards_history_list.dart';
 import 'package:nha_portfolio/src/presentation/widgets/contacts.dart';
 import 'package:nha_portfolio/src/presentation/widgets/education_history_list.dart';
 import 'package:nha_portfolio/src/presentation/widgets/make_with.dart';
@@ -39,6 +40,27 @@ class PortfolioPage extends StatelessWidget {
                 desktop: 140.w,
               ),
             ),
+            PortfolioPart(
+              title: context.l10n.summary,
+              subTitle: "",
+              child: Text(
+                "I am a Mobile Engineer with 3+ years of experience in product development using Flutter and Android native. I continuously learn and apply my skills to create high-quality, performant mobile applications, while optimizing development costs and consistently delivering projects on time and within budget.",
+                style: TextStyle(
+                  fontSize: getValueForScreenType(
+                    context: context,
+                    mobile: 11.sp,
+                    tablet: 18.sp,
+                    desktop: 24.sp,
+                  ),
+                ),
+              ),
+            ),
+            SizedBox(
+                height: getValueForScreenType(
+              context: context,
+              mobile: 32.w,
+              desktop: 64.w,
+            )),
             const TechStacks(),
             SizedBox(
                 height: getValueForScreenType(
@@ -47,8 +69,8 @@ class PortfolioPage extends StatelessWidget {
               desktop: 64.w,
             )),
             PortfolioPart(
-              title: "Employment",
-              subTitle: "My profesional works",
+              title: context.l10n.employment,
+              subTitle: context.l10n.myProfessionalWorks,
               child: WorkingHistoryList(),
             ),
             SizedBox(
@@ -56,15 +78,27 @@ class PortfolioPage extends StatelessWidget {
               context: context,
               mobile: 32.w,
               desktop: 64.w,
-            )),SizedBox(
+            )),
+            SizedBox(
                 height: getValueForScreenType(
               context: context,
               mobile: 32.w,
               desktop: 64.w,
             )),
             PortfolioPart(
-              title: "Education",
-              subTitle: "My profesional learning experiences",
+              title: context.l10n.awards,
+              subTitle: context.l10n.myAwards,
+              child: AwardHistoryList(),
+            ),
+            SizedBox(
+                height: getValueForScreenType(
+              context: context,
+              mobile: 32.w,
+              desktop: 64.w,
+            )),
+            PortfolioPart(
+              title: context.l10n.education,
+              subTitle: context.l10n.myProfessionalLearningExperiences,
               child: EducationHistoryList(),
             ),
             SizedBox(
